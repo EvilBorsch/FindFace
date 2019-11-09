@@ -1,0 +1,42 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/awerkiler/progs/Mail/old1/AdvancedC ++/Project/db_template.cpp
+istream
+-
+ostream
+-
+string
+-
+vector
+-
+db_template.h
+/home/awerkiler/progs/Mail/old1/AdvancedC ++/Project/db_template.h
+
+/home/awerkiler/progs/Mail/old1/AdvancedC ++/Project/db_template.h
+istream
+-
+ostream
+-
+string
+-
+vector
+-
+
+/home/awerkiler/progs/Mail/old1/AdvancedC ++/Project/test.cpp
+iostream
+-
+string
+-
+vector
+-
+gtest/gtest.h
+-
+db_template.cpp
+/home/awerkiler/progs/Mail/old1/AdvancedC ++/Project/db_template.cpp
+
