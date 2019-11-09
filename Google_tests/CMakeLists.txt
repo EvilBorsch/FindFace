@@ -1,0 +1,5 @@
+project(Google_tests)
+add_subdirectory(googletest)
+include_directories(${gtest_SOURCE_DIR}/include ${gtest_SOURCE_DIR})
+add_executable(Google_Tests_run view_tests.cpp ../Page.h ../Page.cpp ../View.h ../View.cpp ../ContainerView.h ../ContainerView.cpp page_tests.cpp)
+target_link_libraries(Google_Tests_run gtest gtest_main)
