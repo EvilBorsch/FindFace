@@ -3,9 +3,7 @@ vector <string> FacebookAPI::get_photo_urls_by_id(const string& url) {
     return vector<string>();
 }
 
-void FacebookAPI::login() {
 
-}
 
 FacebookAPI::FacebookAPI(const string &app_key) {
 

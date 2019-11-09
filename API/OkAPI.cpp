@@ -3,9 +3,7 @@ vector <string> OkAPI::get_photo_urls_by_id(const string& url) {
     return vector<string>();
 }
 
-void OkAPI::login() {
 
-}
 
 OkAPI::OkAPI(const string &app_key) {
 

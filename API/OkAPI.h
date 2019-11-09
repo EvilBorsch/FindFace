@@ -10,7 +10,6 @@ public:
     vector<string> get_photo_urls_by_id(const string& url) override ;
     vector<string> get_friends_urls_by_id(const string& url) override ;
     vector<string> get_group_participants(const string& url) override ;
-    void login() override;
     explicit OkAPI(const string& app_key);
 
 };
