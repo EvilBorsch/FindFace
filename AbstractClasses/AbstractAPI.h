@@ -1,15 +1,21 @@
 #include <string>
 #include <vector>
+#include "../url/url.h"
 #pragma once
 
-using std::string,std::vector;
 
-class AbstractAPI{
+
+class AbstractAPI {
 public:
-    virtual vector<string> get_photo_urls_by_id(const string& url)=0;
-    virtual vector<string> get_friends_urls_by_id(const string& url)=0;
-    virtual vector<string> get_group_participants(const string& url)=0;
-    virtual ~AbstractAPI()= default;
+    virtual std::vector<url> getPhotoUrlsById(const url &m_url) = 0;
 
+    virtual std::vector<url> getFriendsUrlsById(const url &m_url) = 0;
+
+    virtual std::vector<url> getGroupParticipants(const url &m_url) = 0;
+
+    virtual void login(std::string app_key) = 0;
+    virtual ~AbstractAPI() = default;
+
+    AbstractAPI() = default;
 
 };

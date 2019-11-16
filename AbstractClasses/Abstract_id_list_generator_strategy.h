@@ -1,17 +1,20 @@
 #include <vector>
 #include <string>
 #include <iostream>
+#include "../url/url.h"
+
 #pragma once
 
-using std::vector,std::string;
-class Abstract_id_list_generator_strategy{
+
+class AbstractIdListGeneratorStrategy {
 private:
 
 public:
-    virtual vector<string> generate()=0;
-    virtual ~Abstract_id_list_generator_strategy()= default;
+    virtual std::vector<url> generate() = 0;
 
-    vector<string> load_urls_from_disk(string path) {
-        return vector<string>();
+    virtual ~AbstractIdListGeneratorStrategy() = default;
+
+    std::vector<url> loadUrls(std::string path) {
+        return {};
     };
 };
