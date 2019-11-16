@@ -3,7 +3,7 @@
 #include <unistd.h>
 
 
-Container Crowler::get_container_from_urls(const std::vector<url> &urls) {
+Container Crowler::getContainerFromUrls(const std::vector<url> &urls) {
     return {};
 }
 
@@ -22,12 +22,12 @@ void Crowler::startCrowl() {
 
     int *buf = new int[1];
     read(fd[0], buf, sizeof(buf));
-    while (buf[0] != stop_state) {
+    while (buf[0] != stopState) {
         read(fd[0], buf, sizeof(buf));
         id_list = lg->generate();
         for (const auto &id: id_list) {
-            std::vector<url> photo_urls = api->getPhotoUrlsById(id);
-            Container cont = get_container_from_urls(photo_urls);
+            std::vector<url> photoUrls = api->getPhotoUrlsById(id);
+            Container cont = getContainerFromUrls(photoUrls);
             add(cont);
         }
     }
@@ -37,7 +37,7 @@ void Crowler::startCrowl() {
 void Crowler::stopCrowlAndSaveIdList() {
 
     int *testbuf = new int[1];
-    testbuf[0] = stop_state;
+    testbuf[0] = stopState;
     write(fd[1], testbuf, sizeof(testbuf));
 
 }

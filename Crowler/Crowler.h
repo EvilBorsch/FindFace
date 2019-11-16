@@ -7,11 +7,11 @@ class Container {
 
 
 class Crowler {
-    const int stop_state = 2;
+    const int stopState = 2;
     AbstractIdListGeneratorStrategy *lg;
     std::vector<url> id_list;
 
-    Container get_container_from_urls(const std::vector<url> &urls);
+    Container getContainerFromUrls(const std::vector<url> &urls);
     int *fd;
     AbstractAPI *api;
 public:
