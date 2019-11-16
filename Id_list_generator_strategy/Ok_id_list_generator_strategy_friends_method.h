@@ -1,15 +1,16 @@
 #include "../AbstractClasses/Abstract_id_list_generator_strategy.h"
+#include "../url/url.h"
 
-class Ok_id_list_generator_strategy_friends_method : public Abstract_id_list_generator_strategy {
+class OkIdListGeneratorStrategyFriends : public AbstractIdListGeneratorStrategy {
 private:
     int size;
-    string path;
+    std::string path;
 public:
-    explicit Ok_id_list_generator_strategy_friends_method(int m_size, const string &m_path) {
+    explicit OkIdListGeneratorStrategyFriends(int m_size, const std::string &m_path) {
         size = m_size;
         path = m_path;
     }
 
-    vector<string> generate() override;
+    std::vector<url> generate() override;
 
 };

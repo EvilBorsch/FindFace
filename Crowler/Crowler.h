@@ -7,17 +7,19 @@ class Container {
 
 
 class Crowler {
+    const int stop_state = 2;
+    AbstractIdListGeneratorStrategy *lg;
+    std::vector<url> id_list;
 
-    Abstract_id_list_generator_strategy *lg;
-    vector<string> id_list;
-    Container get_container_from_urls(const vector<string> &urls);
+    Container get_container_from_urls(const std::vector<url> &urls);
     int *fd;
     AbstractAPI *api;
 public:
-    void start_crowl();
-    void stop_crowl_and_save_id_list();
+    void startCrowl();
 
-    Crowler(AbstractAPI *m_api, Abstract_id_list_generator_strategy *m_lg, int *fd);
+    void stopCrowlAndSaveIdList();
+
+    Crowler(AbstractAPI *m_api, AbstractIdListGeneratorStrategy *m_lg, int *fd);
 
 
 };

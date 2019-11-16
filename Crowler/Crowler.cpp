@@ -2,15 +2,13 @@
 #include <iostream>
 #include <unistd.h>
 
-#define stop_state 2
 
-
-Container Crowler::get_container_from_urls(const vector<string> &urls) {
-    return Container();
+Container Crowler::get_container_from_urls(const std::vector<url> &urls) {
+    return {};
 }
 
 
-Crowler::Crowler(AbstractAPI *m_api, Abstract_id_list_generator_strategy *m_lg, int *m_fd) {
+Crowler::Crowler(AbstractAPI *m_api, AbstractIdListGeneratorStrategy *m_lg, int *m_fd) {
     api = m_api;
     lg = m_lg;
     fd = m_fd;
@@ -20,7 +18,7 @@ void add(Container cont) {
 
 }
 
-void Crowler::start_crowl() {
+void Crowler::startCrowl() {
 
     int *buf = new int[1];
     read(fd[0], buf, sizeof(buf));
@@ -28,7 +26,7 @@ void Crowler::start_crowl() {
         read(fd[0], buf, sizeof(buf));
         id_list = lg->generate();
         for (const auto &id: id_list) {
-            vector<string> photo_urls = api->get_photo_urls_by_id(id);
+            std::vector<url> photo_urls = api->getPhotoUrlsById(id);
             Container cont = get_container_from_urls(photo_urls);
             add(cont);
         }
@@ -36,7 +34,7 @@ void Crowler::start_crowl() {
 
 }
 
-void Crowler::stop_crowl_and_save_id_list() {
+void Crowler::stopCrowlAndSaveIdList() {
 
     int *testbuf = new int[1];
     testbuf[0] = stop_state;
