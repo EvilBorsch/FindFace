@@ -17,7 +17,6 @@ set(ALL_SOURCES
         ${CMAKE_MODULE_PATH}/Views/SecondaryView/SecondaryView.cpp
         ${CMAKE_MODULE_PATH}/Views/UserData/UserData.cpp
         ${CMAKE_MODULE_PATH}/Views/Container/ContainerView.cpp
-        ${CMAKE_MODULE_PATH}/Views/Button/Button.cpp
         ${CMAKE_MODULE_PATH}/Views/Cell/CellView.cpp
         ${CMAKE_MODULE_PATH}/Views/Row/RowView.cpp
         ${CMAKE_MODULE_PATH}/Views/ImageView/ImageView.cpp
@@ -37,7 +36,6 @@ set(ALL_SOURCES
 set(ALL_VIEWS_HEADERS
         ${CMAKE_MODULE_PATH}/Views/UserData/
         ${CMAKE_MODULE_PATH}/Views/Container/
-        ${CMAKE_MODULE_PATH}/Views/Button/
         ${CMAKE_MODULE_PATH}/Views/Cell/
         ${CMAKE_MODULE_PATH}/Views/Row/
         ${CMAKE_MODULE_PATH}/Views/ImageView/

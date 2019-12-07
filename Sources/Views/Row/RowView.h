@@ -5,24 +5,16 @@
 #ifndef CPPROJECT_ROWVIEW_H
 #define CPPROJECT_ROWVIEW_H
 
-
-#include "Container/ContainerView.h"
-
-class RowView: public ContainerView{
+#include <Views/View/View.h>
+class RowView: public View{
 public:
-    int index;
+    int index{};
     std::string scope;
-    RowView(int indx);
+    explicit RowView(int indx);
     RowView(int indx, ContainerView& containerView);
-    RowView( ContainerView& containerView);
+    ~RowView();
+    explicit RowView( ContainerView& containerView);
     void setIndex(int indx);
-    std::string toString(int depth = 0) override;
-    std::string toStringOpen(int depth);
-    std::string toStringClose(int depth);
-    void append(ContainerView &mView);
-    bool appendInSubview(std::string subviewName, ContainerView& mView);
-    void removeSubview(std::string subviewName);
-    void destroy();
 };
 
 

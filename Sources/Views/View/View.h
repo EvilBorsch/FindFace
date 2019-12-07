@@ -10,7 +10,8 @@
 
 class View: public ContainerView{
 public:
-    View()= default;
+    View() = default;
+    ~View();
     View(std::string n, Type t, BClass c);
     View(std::string n, Type t);
 
@@ -20,12 +21,12 @@ public:
 
     std::string toString(int depth = 0) override;
 
-
     bool appendInSubview(std::string subviewName, ContainerView& mView) override;
 
-    void append(ContainerView &mView) override;
+    bool append(ContainerView &mView) override;
 
-    void removeSubview(std::string subviewName) override;
+    bool removeSubview(std::string subviewName) override;
+
     void destroy () override;
 
 };

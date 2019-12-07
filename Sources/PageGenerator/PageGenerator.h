@@ -17,14 +17,16 @@ public:
 
     Page* page;
     PageGenerator() = default;
+
     void organizeCells(Organize o, int& rows, int& cells, int count);
+
     Page* generateTablePage(std::vector<UserData*> userData, Organize o);
 
     Page* generateStartPage();
 
-    Page* generateUserPage(std::vector<UserData*> userData);
+    Page* generateUserPage(UserData userData);
 
-    Page* generatePage(PageData &pageData);
+
 
 };
 

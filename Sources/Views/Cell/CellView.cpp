@@ -15,7 +15,7 @@ CellView::CellView(int indx,int mRows){
 
 }
 
-CellView::CellView(int indx, std::vector<RowView> rows){
+CellView::CellView(int indx, std::vector<std::shared_ptr<RowView>> rows){
     type = enumToString(Type::CELL);
     rowsCount = rows.size();
     index = indx;
@@ -33,13 +33,13 @@ std::string CellView::toString(int depth){
         depth++;
     }
     if(!rows.empty()) {
-        for (RowView &v: rows) {
-            res += v.toStringOpen(depth);
+        for (std::shared_ptr<RowView> &v: rows) {
+            res += v->toStringOpen(depth);
             depth++;
-            if (!v.subviews.empty()) {
-                res += v.toString(depth);
+            if (!v->subviews.empty()) {
+                res += v->toString(depth);
             }
-            res+=v.toStringClose(--depth);
+            res+=v->toStringClose(--depth);
         }
     }
     if(--depth == 0){
@@ -67,28 +67,31 @@ std::string CellView::toStringClose(int depth){
 }
 
 
-void CellView::append(ContainerView &mView){
-    subviews.push_back(mView);
+bool CellView::append(ContainerView &mView){
+    return false;
 }
-void CellView::appendRow(RowView &mView){
+void CellView::appendRow(std::shared_ptr<RowView> &mView){
     rows.push_back(mView);
 }
 
-void CellView::appendRows(std::vector<RowView> mRows){
+void CellView::appendRows(std::vector<std::shared_ptr<RowView>> mRows){
     if(rows.size() + mRows.size() <= rowsCount) {
-        for(RowView& rowView : mRows){
+        for(std::shared_ptr<RowView>& rowView : mRows){
             rows.push_back(rowView);
-            rowView.setIndex(rows.size());
+            rowView->setIndex(rows.size());
         }
     }
 }
 
 bool CellView::appendInSubview(std::string subviewName, ContainerView& mView){
-
+    return false;
 }
-void  CellView::removeSubview(std::string subviewName){
-
+bool CellView::removeSubview(std::string subviewName){
+    return false;
 }
 void CellView::destroy(){
+
+}
+CellView::~CellView(){
 
 }

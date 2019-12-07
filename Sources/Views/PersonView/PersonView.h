@@ -21,7 +21,8 @@ public:
     TextView* username;
     TableView* infoTable;
 
-    PersonView(UserData userData);
+    explicit PersonView(UserData userData);
+    ~PersonView();
 
 private:
     void makeTemplate();

@@ -4,6 +4,7 @@
 #include "Views/Cell/CellView.h"
 #include "Views/TableView/TableView.h"
 #include "PageGenerator/PageGenerator.h"
+#include "PageManager.h"
 
 
 
@@ -25,16 +26,16 @@ int main(){
 
             new UserData("7Stalin.su","Дмитрий3", "Болдин","https://sun9-60.userapi.com/c855624/v855624982/135c19/xi-ReZmdN70.jpg",19 ),
             new UserData("8Kek","Дмитрий3", "Гуляченков","https://sun9-14.userapi.com/c844321/v844321164/1e3f38/sjVui97PcoU.jpg",9 ),
-
-
-
     };
 
     PageGenerator* pageGenerator = new PageGenerator();
-    pageGenerator->generatePage( *new PageData(userDataVec, PageType::TABLE_OF_USERS, Organize::ONE_LINE_VERTICAL));
-    std::cout<<pageGenerator->page->toString();
+    pageGenerator->generateTablePage( userDataVec,Organize::ONE_LINE_VERTICAL);
+   std::cout<<pageGenerator->page->toString();
 
-
+    PageData *pageData = new PageData(userDataVec,PageType::TABLE_OF_USERS,Organize::ONE_LINE_VERTICAL);
+    PageManager* pageManager = new PageManager(pageData);
+    pageManager->generatePages();
+    
 
     return 0;
 }

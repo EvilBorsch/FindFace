@@ -21,13 +21,13 @@ std::string TableView::toString(int depth){
         depth++;
     }
     if(!cells.empty()) {
-        for (CellView &v: cells) {
-            res += v.toStringOpen(depth);
+        for (std::shared_ptr<CellView> v: cells) {
+            res += v->toStringOpen(depth);
             depth++;
-            if (!v.rows.empty()) {
-                res += v.toString(depth);
+            if (!v->rows.empty()) {
+                res += v->toString(depth);
             }
-            res+=v.toStringClose(--depth);
+            res+=v->toStringClose(--depth);
         }
     }
     if(--depth == 0){
@@ -56,23 +56,23 @@ std::string TableView::toStringClose(int depth){
 
 
 
-void TableView::append(ContainerView &mView){
-    subviews.push_back(mView);
+bool TableView::append(ContainerView &mView){
+    subviews.emplace_back(mView);
 }
-void TableView::appendCell(CellView &mView){
+void TableView::appendCell(std::shared_ptr<CellView> mView){
 
     if(cells.size() < cellsCount) {
 
         cells.push_back(mView);
-        mView.setIndex(cells.size());
+        mView->setIndex(cells.size());
     }
 }
-void TableView::appendCells(std::vector<CellView> mViews){
+void TableView::appendCells(std::vector<std::shared_ptr<CellView>> mViews){
 
     if(cells.size() + mViews.size() <= cellsCount) {
-        for(CellView& cellView : mViews){
+        for(std::shared_ptr<CellView> cellView : mViews){
             cells.push_back(cellView);
-            cellView.setIndex(cells.size());
+            cellView->setIndex(cells.size());
         }
     }
 }
@@ -80,32 +80,35 @@ bool TableView::appendInSubview(std::string subviewName, ContainerView& mView){
 
 }
 
-bool TableView::appendRowInCell(int cellIndex, RowView& mView){
+bool TableView::appendRowInCell(int cellIndex, std::shared_ptr<RowView> mView){
     if(cellIndex <= cellsCount && cells.size() + 1 <= cellsCount){
-        if(cells[cellIndex].rows.size() + 1 <= rowsCount){
-            cells[cellIndex].rows.emplace_back(mView);
+        if(cells[cellIndex]->rows.size() + 1 <= rowsCount){
+            cells[cellIndex]->rows.emplace_back(mView);
             return true;
         }
-
     }
     return false;
 }
 
-bool TableView::appendRowsInCell(int cellIndex, std::vector<RowView> mViews){
+bool TableView::appendRowsInCell(int cellIndex, std::vector<std::shared_ptr<RowView>> mViews){
     if(cellIndex <= cellsCount && cells.size() < cellsCount){
-        if(cells[cellIndex].rows.size() + mViews.size() < cellsCount){
-            for(RowView &rowView: mViews){
-                cells[cellIndex].appendRow(rowView);
-                rowView.setIndex(cells[cellIndex].rows.size());
+        if(cells[cellIndex]->rows.size() + mViews.size() < cellsCount){
+            for(std::shared_ptr<RowView> &rowView: mViews){
+                cells[cellIndex]->appendRow(rowView);
+                rowView->setIndex(cells[cellIndex]->rows.size());
             }
         }
     }
     return false;
 }
 
-void TableView::removeSubview(std::string subviewName) {
+bool TableView::removeSubview(std::string subviewName) {
 
 }
 void TableView::destroy(){
+
+}
+
+TableView::~TableView() {
 
 }

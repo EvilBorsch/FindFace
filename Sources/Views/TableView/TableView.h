@@ -12,23 +12,27 @@
 #include "View/View.h"
 
 class TableView: public ContainerView{
-public:
+private:
     int rowsCount;
     int cellsCount;
     std::string name;
-    std::vector<CellView> cells;
+    std::vector<std::shared_ptr<CellView>> cells;
+public:
+
+
 
     TableView(std::string mName,int mRows, int mCells);
-    std::string toString(int depth);
-    std::string toStringOpen(int depth);
-    std::string toStringClose(int depth);
-    void append(ContainerView &mView);
-    void appendCell(CellView &mView);
-    void appendCells(std::vector<CellView> mViews);
+    ~TableView();
+    std::string toString(int depth) override;
+    std::string toStringOpen(int depth) override;
+    std::string toStringClose(int depth) override;
+    bool append(ContainerView &mView) override;
+    void appendCell(std::shared_ptr<CellView> mView);
+    void appendCells(std::vector<std::shared_ptr<CellView>> mViews);
     bool appendInSubview(std::string subviewName, ContainerView& mView) override ;
-    bool appendRowInCell(int cellIndex, RowView& mView);
-    bool appendRowsInCell(int cellIndex, std::vector<RowView> mViews);
-    void removeSubview(std::string subviewName) override;
+    bool appendRowInCell(int cellIndex, std::shared_ptr<RowView> mView);
+    bool appendRowsInCell(int cellIndex, std::vector<std::shared_ptr<RowView>> mViews);
+    bool removeSubview(std::string subviewName) override;
     void destroy() override;
 
 };

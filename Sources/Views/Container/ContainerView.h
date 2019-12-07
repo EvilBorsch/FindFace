@@ -144,31 +144,17 @@ public:
     virtual std::string toStringOpen(int depth) = 0;
     virtual std::string toStringClose(int depth)  = 0;
 
-
-
-    virtual void append(ContainerView &mView) = 0;
+    virtual bool append(ContainerView &mView) = 0;
     virtual bool appendInSubview(std::string subviewName, ContainerView& mView) = 0;
-    virtual void removeSubview(std::string subviewName) = 0;
+    virtual bool removeSubview(std::string subviewName) = 0;
     virtual void destroy() = 0;
 
-    std::string getName(){
-        return name;
-    }
-
-    std::string getType(){
-        return type;
-    }
-    std::string getClass(){
-        return _class;
-    }
-
+    std::string getName();
+    std::string getType();
+    std::string getClass();
     ContainerView() = default;
 
-    ContainerView(std::string n, Type t, std::string c){
-        name = n;
-        type = enumToString(t);
-        _class = c;
-    }
+    ContainerView(std::string n, Type t, std::string c);
 
 
 };

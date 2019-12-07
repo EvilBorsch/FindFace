@@ -12,17 +12,18 @@ private:
     std::string text;
 
 public:
-    void append(ContainerView &mView);
-    bool appendInSubview(std::string subviewName, ContainerView& mView);
-    void removeSubview(std::string subviewName);
-    void destroy();
+    bool append(ContainerView &mView) override;
+    bool appendInSubview(std::string subviewName, ContainerView& mView) override;
+    bool removeSubview(std::string subviewName) override;
+    void destroy() override;
     TextView(std::string n, Type t, BClass c, std::string txt);
     TextView(std::string n, Type t, std::string txt);
+    ~TextView();
     void setText(std::string mText);
     std::string getText();
-    std::string toStringOpen(int depth = 0) override;
-    std::string toStringClose(int depth = 0) override;
-    std::string toString(int depth = 0) override;
+    std::string toStringOpen(int depth) override;
+    std::string toStringClose(int depth) override;
+    std::string toString(int depth) override;
 
 };
 

@@ -12,22 +12,23 @@ class CellView: public ContainerView  {
 public:
     int rowsCount;;
     int index;
-    std::vector<RowView> rows;
+    std::vector<std::shared_ptr<RowView>> rows;
 
-    CellView(int mRows);
+    explicit CellView(int mRows);
     CellView(int indx,int mRows);
-    CellView(int indx, std::vector<RowView> rows);
+    CellView(int indx, std::vector<std::shared_ptr<RowView>> rows);
+    ~CellView();
     void setIndex(int indx);
-    void append(ContainerView &mView);
-    void appendRow(RowView &mView);
-    void appendRows(std::vector<RowView> mRows);
-    void removeSubview(std::string subviewName);
-    bool appendInSubview(std::string subviewName, ContainerView& mView);
-    void destroy();
+    bool append(ContainerView &mView)override;
+    void appendRow(std::shared_ptr<RowView> &mView);
+    void appendRows(std::vector<std::shared_ptr<RowView>> mRows);
+    bool removeSubview(std::string subviewName) override ;
+    bool appendInSubview(std::string subviewName, ContainerView& mView) override;
+    void destroy()override;
 
-    std::string toString(int depth);
-    std::string toStringOpen(int depth);
-    std::string toStringClose(int depth);
+    std::string toString(int depth) override;
+    std::string toStringOpen(int depth) override;
+    std::string toStringClose(int depth) override;
 
 
 

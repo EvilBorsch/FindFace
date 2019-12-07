@@ -24,34 +24,33 @@ infoTable = new TableView("table",
                           cellCount);
 
 
-infoTable->appendCells(std::vector<CellView> {
+infoTable->appendCells(std::vector<std::shared_ptr<CellView>> {
 
-        *new CellView(0,std::vector<RowView>{
-                *new RowView(0,
+        std::make_shared<CellView>(*new CellView(0,std::vector<std::shared_ptr<RowView>>{
+                std::make_shared<RowView>(*new RowView(0,
                              *new TextView(
                                      "fNameView",
                                      Type::H4,
                                      BClass::TEXT_NORMAL,
                                      userData.firstName))
-        }),
+                )})),
 
-        *new CellView(1,std::vector<RowView>{
-                *new RowView(0,
-                             *new TextView(
-                                     "snameView",
-                                     Type::H4,
-                                     BClass::TEXT_NORMAL,
-                                     userData.secondName))
-        }),
+        std::make_shared<CellView>(*new CellView(1,std::vector<std::shared_ptr<RowView>>{
+                std::make_shared<RowView>(*new RowView(0,
+                                                       *new TextView(
+                                                               "sNameView",
+                                                               Type::H4,
+                                                               BClass::TEXT_NORMAL,
+                                                               userData.secondName))
+                )})),
 
-        *new CellView(2,std::vector<RowView>{
-                *new RowView(0,
-                             *new TextView(
-                                     "ageView",
-                                     Type::H4,
-                                     BClass::TEXT_NORMAL,
-                                     std::to_string(userData.age)))
-        })
+        std::make_shared<CellView>(*new CellView(2,std::vector<std::shared_ptr<RowView>>{
+                std::make_shared<RowView>(*new RowView(0,
+                                                       *new TextView(
+                                                               "ageView",
+                                                               Type::H4,
+                                                               BClass::TEXT_NORMAL,
+                                                               std::to_string(userData.age))))})),
 });
 
 makeTemplate();
@@ -81,5 +80,9 @@ void PersonView::makeTemplate(){
 
     appendInSubview("CardBody", *userImage);
     appendInSubview("CardBody", *infoTable);
+
+}
+
+PersonView::~PersonView() {
 
 }

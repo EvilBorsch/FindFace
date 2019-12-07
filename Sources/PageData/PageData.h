@@ -32,8 +32,12 @@ public:
     PageData(std::vector<UserData*> u, PageType t, Organize o);
     void setOrganizeType(Organize o);
     void setPageType(PageType o);
-    PageType getpageType(){ return type;}
-    Organize getpageOrganizeType(){ return organize;}
+    PageType getpageType(){
+        return type;
+    }
+    Organize getPageOrganizeType(){
+        return organize;
+    }
 private:
     Organize organize;
     PageType type;

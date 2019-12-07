@@ -9,23 +9,22 @@
 #include "Container/ContainerView.h"
 
 class ImageView: public ContainerView{
-
-
 private:
     std::string src;
     int height;
     int width;
+    void destroy() override;
 
 public:
-    void append(ContainerView &mView);
-    bool appendInSubview(std::string subviewName, ContainerView& mView);
-    void removeSubview(std::string subviewName);
-    void destroy();
+    bool append(ContainerView &mView) override;
+    bool appendInSubview(std::string subviewName, ContainerView& mView) override;
+    bool removeSubview(std::string subviewName) override;
     ImageView() = default;
+    ~ImageView();
     ImageView(std::string n, Type t, BClass c, std::string s, int h, int w);
-    std::string toStringOpen(int depth = 0) override;
-    std::string toStringClose(int depth = 0) override;
-    std::string toString(int depth = 0) override;
+    std::string toStringOpen(int depth) override;
+    std::string toStringClose(int depth) override;
+    std::string toString(int depth) override;
 };
 
 

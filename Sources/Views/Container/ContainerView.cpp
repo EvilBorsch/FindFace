@@ -3,22 +3,21 @@
 //
 
 #include "ContainerView.h"
-//
-//ContainerView::ContainerView(string n, string t, string c){
-//    name = n;
-//    type = t;
-//    _class =c;
-//}
-//
-//std::string ContainerView::getType(){
-//    return type;
-//}
-//std::string ContainerView::getClass(){
-//    return _class;
-//}
-//
-//
-//std::string ContainerView::getName() {
-//    return this.name;
-//}
+
+std::string ContainerView::getName(){
+    return name;
+}
+
+std::string ContainerView::getType(){
+    return type;
+}
+std::string ContainerView::getClass(){
+    return _class;
+}
+
+ContainerView::ContainerView(std::string n, Type t, std::string c){
+    name = n;
+    type = enumToString(t);
+    _class = c;
+}
 

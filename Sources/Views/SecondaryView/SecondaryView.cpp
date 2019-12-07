@@ -31,7 +31,7 @@ bool SecondaryView::appendInSubview(std::string subviewName, ContainerView& mVie
     return false;
 }
 
-void SecondaryView::append(ContainerView &mView){
+bool SecondaryView::append(ContainerView &mView){
 
 }
 
@@ -39,6 +39,10 @@ void SecondaryView::destroy() {
 
 }
 
-void SecondaryView::removeSubview(std::string subviewName) {
+bool SecondaryView::removeSubview(std::string subviewName) {
+
+}
+
+SecondaryView::~SecondaryView() {
 
 }

@@ -3,6 +3,7 @@
 //
 
 #include "PageGenerator.h"
+
 void PageGenerator::organizeCells(Organize o, int& rows, int& cells, int count){
     switch(o){
         case Organize::ONE_LINE_VERTICAL:
@@ -20,6 +21,7 @@ void PageGenerator::organizeCells(Organize o, int& rows, int& cells, int count){
             break;
     }
 }
+
 Page* PageGenerator::generateTablePage(std::vector<UserData*> userData, Organize o){
     page =  new Page();
     std::vector<PersonView*> persons;
@@ -36,13 +38,13 @@ Page* PageGenerator::generateTablePage(std::vector<UserData*> userData, Organize
     TableView* tableView = new TableView("Table",rowsCount,cellsCount);
     int r = 0;
     int c = 0;
-    tableView->appendCell(*new CellView(c,rowsCount));
+    tableView->appendCell(std::make_shared<CellView>(*new CellView(c,rowsCount)));
     for(auto &p: persons){
-        tableView->appendRowInCell(c,*new RowView(r, *p));
+        tableView->appendRowInCell(c,std::make_shared<RowView>(*new RowView(r, *p)));
         r++;
         if(r >= rowsCount){
             r = 0;
-            tableView->appendCell(*new CellView(++c,rowsCount));
+            tableView->appendCell(std::make_shared<CellView>(*new CellView(++c,rowsCount)));
         }
     }
     page->appendInBody(*tableView);
@@ -52,21 +54,9 @@ Page* PageGenerator::generateStartPage(){
 
 }
 
-Page* PageGenerator::generateUserPage(std::vector<UserData*> userData){
-
-}
-
-Page* PageGenerator::generatePage(PageData &pageData){
-    switch(pageData.getpageType()){
-        case PageType::TABLE_OF_USERS :
-            page =  generateTablePage(pageData.userData, pageData.getpageOrganizeType());
-            break;
-        case PageType::ONE_USER_PAGE :
-            page = generateUserPage(pageData.userData);
-            break;
-        case PageType::START_PAGE :
-            page =  generateStartPage();
-            break;
-    }
+Page* PageGenerator::generateUserPage(UserData userData){
+    Page *page =  new Page();
+    page->appendInBody(*new TextView("test", Type::H4, BClass::TEXT_NORMAL, "hello world"));
     return page;
 }
+

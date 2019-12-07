@@ -4,63 +4,58 @@
 
 #include "View.h"
 
-
-
 View::View(std::string n, Type t, BClass c){
-name = n;
-type = enumToString(t);
-_class = enumToString(c);
+    name = n;
+    type = enumToString(t);
+    _class = enumToString(c);
 }
 View::View(std::string n, Type t){
-name = n;
-type = enumToString(t);
-_class = "";
+    name = n;
+    type = enumToString(t);
+    _class = "";
 }
-
-
 
 std::string View::toStringOpen(int depth )  {
-std::string res;
-for(int i=0;i<3*depth;i++){
-res+=" ";
-}
-res += "<"+getType() + " class=\""+ getClass()+"\">\n\n";
-return res;
+    std::string res;
+    for(int i=0;i<3*depth;i++){
+        res+=" ";
+    }
+    res += "<"+getType() + " class=\""+ getClass()+"\">\n\n";
+    return res;
 }
 
 std::string View::toStringClose(int depth ) {
-std::string res;
-for(int i=0;i<3*depth;i++){
-res+=" ";
-}
-res+="</"+getType() + ">\n\n";
-return res;
+    std::string res;
+    for(int i=0;i<3*depth;i++){
+    res+=" ";
+    }
+    res+="</"+getType() + ">\n\n";
+    return res;
 }
 
 std::string View::toString(int depth ) {
-std::string res;
-if(depth == 0){
-res += "<"+getType() + " class=\""+ getClass()+"\">\n\n";
-depth++;
-}
-if(!subviews.empty()) {
-for (ContainerView &v: subviews) {
-res += v.toStringOpen(depth);
-depth++;
-if (!v.subviews.empty()) {
-res += v.toString(depth);
-}
-res+=v.toStringClose(--depth);
+    std::string res;
+    if(depth == 0){
+        res += "<"+getType() + " class=\""+ getClass()+"\">\n\n";
+        depth++;
+    }
+    if(!subviews.empty()) {
+        for (ContainerView &v: subviews) {
+            res += v.toStringOpen(depth);
+            depth++;
+            if (!v.subviews.empty()) {
+                res += v.toString(depth);
+            }
+            res+=v.toStringClose(--depth);
 
-}
+        }
 
+    }
+    if(--depth == 0){
+        res+="</"+getType() +">\n\n";
+    }
+    return res;
 }
-if(--depth == 0){
-res+="</"+getType() +">\n\n";
-}
-return res;
-}
-
 
 bool View::appendInSubview(std::string subviewName, ContainerView& mView) {
     for(ContainerView& v : subviews){
@@ -75,7 +70,7 @@ bool View::appendInSubview(std::string subviewName, ContainerView& mView) {
     return false;
 }
 
-void View::append(ContainerView &mView){
+bool View::append(ContainerView &mView){
     subviews.emplace_back(mView);
 }
 
@@ -90,7 +85,7 @@ void View::destroy() {
     }
 }
 
-void View::removeSubview(std::string subviewName){
+bool View::removeSubview(std::string subviewName){
     int i = 0;
         for(ContainerView &v : subviews){
             auto it = std::find_if(v.subviews.begin(), v.subviews.end(),
@@ -110,6 +105,10 @@ void View::removeSubview(std::string subviewName){
             }
             i++;
         }
+}
+
+View::~View() {
+
 }
 
 
