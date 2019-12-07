@@ -1,17 +1,13 @@
-#include "../API/VkAPI.h"
-#include "../API/OkAPI.h"
-#include "../API/FacebookAPI.h"
-#include "../Id_list_generator_strategy/Vk_id_list_generator_strategy.h"
-#include "../Id_list_generator_strategy/Ok_id_list_generator_strategy.h"
-#include "../Id_list_generator_strategy/Facebook_id_list_generator_strategy.h"
-#include "../Crowler/Crowler.h"
+#include "API/VkAPI.h"
+#include "API/OkAPI.h"
+#include "API/FacebookAPI.h"
+#include "Id_list_generator_strategy/Vk_id_list_generator_strategy.h"
+#include "Id_list_generator_strategy/Ok_id_list_generator_strategy.h"
+#include "Id_list_generator_strategy/Facebook_id_list_generator_strategy.h"
+#include "Crowler/Crowler.h"
 #include <iostream>
-#include "../url/url.h"
-
-
+#include "url/url.h"
 #include "gtest/gtest.h"
-#include <fstream>
-
 
 using std::vector, std::string;
 
