@@ -1,2 +1,0 @@
-# FindFace
-findface
