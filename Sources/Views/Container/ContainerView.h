@@ -4,15 +4,15 @@
 
 #ifndef CPPROJECT_CONTAINERVIEW_H
 #define CPPROJECT_CONTAINERVIEW_H
+
 #include <string>
 #include <algorithm>
 #include <map>
 #include <vector>
-#include "UserData/UserData.h"
+#include <UserData/UserData.h>
 
 
-enum class BClass: uint8_t
-{
+enum class BClass : uint8_t {
     CARD_DECK,
     CARD_MB4_SHADOW,
     CARD_BODY,
@@ -23,8 +23,7 @@ enum class BClass: uint8_t
     TABLE,
 
 };
-enum class Type: uint8_t
-{
+enum class Type : uint8_t {
     HTML,
     BODY,
     IMG,
@@ -43,16 +42,10 @@ enum class Type: uint8_t
     CROSSORIGIN,
 
 
-
-
-
-
-
 };
-inline const char* enumToString(Type t)
-{
-    switch (t)
-    {
+
+inline const char *enumToString(Type t) {
+    switch (t) {
         case Type::HTML :
             return "html";
 
@@ -95,11 +88,9 @@ inline const char* enumToString(Type t)
             return "[Unknown type]";
     }
 }
-inline const char* enumToString(BClass b)
 
-{
-    switch (b)
-    {
+inline const char *enumToString(BClass b) {
+    switch (b) {
         case BClass::CARD_DECK :
             return "card-deck mb-3 text-center";
 
@@ -113,10 +104,10 @@ inline const char* enumToString(BClass b)
             return "card mb-4 shadow-sm";
 
         case BClass::TEXT_NORMAL :
-            return  "my-0 font-weight-normal";
+            return "my-0 font-weight-normal";
 
         case BClass::MB4 :
-            return  "mb-4";
+            return "mb-4";
 
         case BClass::LIST_ITEM:
             return "list-group-item";
@@ -139,19 +130,27 @@ public:
     std::vector<std::reference_wrapper<ContainerView>> subviews;
 
 
-
     virtual std::string toString(int depth) = 0;
+
     virtual std::string toStringOpen(int depth) = 0;
-    virtual std::string toStringClose(int depth)  = 0;
+
+    virtual std::string toStringClose(int depth) = 0;
 
     virtual bool append(ContainerView &mView) = 0;
-    virtual bool appendInSubview(std::string subviewName, ContainerView& mView) = 0;
+
+    virtual bool
+    appendInSubview(std::string subviewName, ContainerView &mView) = 0;
+
     virtual bool removeSubview(std::string subviewName) = 0;
+
     virtual void destroy() = 0;
 
     std::string getName();
+
     std::string getType();
+
     std::string getClass();
+
     ContainerView() = default;
 
     ContainerView(std::string n, Type t, std::string c);

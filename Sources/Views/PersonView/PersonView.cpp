@@ -8,12 +8,12 @@ PersonView::PersonView(UserData userData){
 type = enumToString(Type::DIV);
 _class = enumToString(BClass::CARD_DECK);
 name = "PersonView";
-userImage  = new ImageView("userImage",
-                           Type::IMG,
-                           BClass::MB4,
-                           userData.imageUrl,
-                           imageHeight,
-                           imageWidth);
+    userImage = new ImageView("userImage",
+                              Type::IMG,
+                              BClass::MB4,
+                              userData.imageUrl,
+                              imageHeight,
+                              imageWidth);
 username = new TextView("slug",
                         Type::H4,
                         BClass::TEXT_NORMAL,

@@ -4,80 +4,81 @@
 
 #include "View.h"
 
-View::View(std::string n, Type t, BClass c){
+View::View(std::string n, Type t, BClass c) {
     name = n;
     type = enumToString(t);
     _class = enumToString(c);
 }
-View::View(std::string n, Type t){
+
+View::View(std::string n, Type t) {
     name = n;
     type = enumToString(t);
     _class = "";
 }
 
-std::string View::toStringOpen(int depth )  {
+std::string View::toStringOpen(int depth) {
     std::string res;
-    for(int i=0;i<3*depth;i++){
-        res+=" ";
+    for (int i = 0; i < 3 * depth; i++) {
+        res += " ";
     }
-    res += "<"+getType() + " class=\""+ getClass()+"\">\n\n";
+    res += "<" + getType() + " class=\"" + getClass() + "\">\n\n";
     return res;
 }
 
-std::string View::toStringClose(int depth ) {
+std::string View::toStringClose(int depth) {
     std::string res;
-    for(int i=0;i<3*depth;i++){
-    res+=" ";
+    for (int i = 0; i < 3 * depth; i++) {
+        res += " ";
     }
-    res+="</"+getType() + ">\n\n";
+    res += "</" + getType() + ">\n\n";
     return res;
 }
 
-std::string View::toString(int depth ) {
+std::string View::toString(int depth) {
     std::string res;
-    if(depth == 0){
-        res += "<"+getType() + " class=\""+ getClass()+"\">\n\n";
+    if (depth == 0) {
+        res += "<" + getType() + " class=\"" + getClass() + "\">\n\n";
         depth++;
     }
-    if(!subviews.empty()) {
+    if (!subviews.empty()) {
         for (ContainerView &v: subviews) {
             res += v.toStringOpen(depth);
             depth++;
             if (!v.subviews.empty()) {
                 res += v.toString(depth);
             }
-            res+=v.toStringClose(--depth);
+            res += v.toStringClose(--depth);
 
         }
 
     }
-    if(--depth == 0){
-        res+="</"+getType() +">\n\n";
+    if (--depth == 0) {
+        res += "</" + getType() + ">\n\n";
     }
     return res;
 }
 
-bool View::appendInSubview(std::string subviewName, ContainerView& mView) {
-    for(ContainerView& v : subviews){
-        if(std::strcmp(subviewName.data(), v.getName().data()) == 0){
+bool View::appendInSubview(std::string subviewName, ContainerView &mView) {
+    for (ContainerView &v : subviews) {
+        if (std::strcmp(subviewName.data(), v.getName().data()) == 0) {
             v.append(mView);
             return true;
         }
-        if(!v.subviews.empty()){
+        if (!v.subviews.empty()) {
             v.appendInSubview(subviewName, mView);
         }
     }
     return false;
 }
 
-bool View::append(ContainerView &mView){
+bool View::append(ContainerView &mView) {
     subviews.emplace_back(mView);
 }
 
 void View::destroy() {
     int i = 0;
-    for(ContainerView &v: subviews){
-        if(!v.subviews.empty()){
+    for (ContainerView &v: subviews) {
+        if (!v.subviews.empty()) {
             v.destroy();
         }
         subviews.clear();
@@ -85,26 +86,27 @@ void View::destroy() {
     }
 }
 
-bool View::removeSubview(std::string subviewName){
+bool View::removeSubview(std::string subviewName) {
     int i = 0;
-        for(ContainerView &v : subviews){
-            auto it = std::find_if(v.subviews.begin(), v.subviews.end(),
-                    [&](ContainerView &v) {
-                return std::strcmp(v.getName().data(),subviewName.data());
-            });
-            if(it == v.subviews.end()){
-                v.subviews[i].get().destroy();
-                v.subviews.erase( v.subviews.begin() + i);
-            }
-
-            if(std::strcmp(subviewName.data(), v.getName().data()) == 0){
-                v.destroy();
-            }
-            if(!v.subviews.empty()){
-                v.removeSubview(subviewName);
-            }
-            i++;
+    for (ContainerView &v : subviews) {
+        auto it = std::find_if(v.subviews.begin(), v.subviews.end(),
+                               [&](ContainerView &v) {
+                                   return std::strcmp(v.getName().data(),
+                                                      subviewName.data());
+                               });
+        if (it == v.subviews.end()) {
+            v.subviews[i].get().destroy();
+            v.subviews.erase(v.subviews.begin() + i);
         }
+
+        if (std::strcmp(subviewName.data(), v.getName().data()) == 0) {
+            v.destroy();
+        }
+        if (!v.subviews.empty()) {
+            v.removeSubview(subviewName);
+        }
+        i++;
+    }
 }
 
 View::~View() {

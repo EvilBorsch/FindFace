@@ -14,6 +14,7 @@ public:
     std::string secondName;
     std::string imageUrl;
     int age;
+
     UserData(std::string slg, std::string fn, std::string sn, std::string img, int a);
 };
 

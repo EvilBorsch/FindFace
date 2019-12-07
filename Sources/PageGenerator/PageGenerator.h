@@ -6,26 +6,26 @@
 #define CPPROJECT_PAGEGENERATOR_H
 
 #include <math.h>
-#include "Page/Page.h"
-#include "Views/PersonView/PersonView.h"
-#include "PageData/PageData.h"
+#include <Page/Page.h>
+#include <Views/PersonView/PersonView.h>
+#include <PageData/PageData.h>
 
 
-class PageGenerator{
+class PageGenerator {
 
 public:
 
-    Page* page;
+    Page *page;
+
     PageGenerator() = default;
 
-    void organizeCells(Organize o, int& rows, int& cells, int count);
+    void organizeCells(Organize o, int &rows, int &cells, int count);
 
-    Page* generateTablePage(std::vector<UserData*> userData, Organize o);
+    Page *generateTablePage(std::vector<UserData *> userData, Organize o);
 
-    Page* generateStartPage();
+    Page *generateStartPage();
 
-    Page* generateUserPage(UserData userData);
-
+    Page *generateUserPage(UserData userData);
 
 
 };

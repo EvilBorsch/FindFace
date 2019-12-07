@@ -6,16 +6,15 @@
 #define CPPROJECT_PAGEDATA_H
 
 #include<vector>
-#include "../Views/UserData/UserData.h"
-enum class PageType: uint8_t
-{
+#include <Views/UserData/UserData.h>
+
+enum class PageType : uint8_t {
     ONE_USER_PAGE,
     TABLE_OF_USERS,
     START_PAGE,
 
 };
-enum class Organize: uint8_t
-{
+enum class Organize : uint8_t {
     ONE_LINE_VERTICAL,
     ONE_LINE_HORIZONTAL,
     SQUARE,
@@ -27,17 +26,22 @@ enum class Organize: uint8_t
 class PageData {
 public:
 
-    std::vector<UserData*> userData;
+    std::vector<UserData *> userData;
 
-    PageData(std::vector<UserData*> u, PageType t, Organize o);
+    PageData(std::vector<UserData *> u, PageType t, Organize o);
+
     void setOrganizeType(Organize o);
+
     void setPageType(PageType o);
-    PageType getpageType(){
+
+    PageType getpageType() {
         return type;
     }
-    Organize getPageOrganizeType(){
+
+    Organize getPageOrganizeType() {
         return organize;
     }
+
 private:
     Organize organize;
     PageType type;

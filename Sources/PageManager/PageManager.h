@@ -10,25 +10,28 @@
 #include <thread>
 #include <iostream>
 
-class PageManager{
+class PageManager {
 private:
-    PageData* data;
-    PageGenerator* pageGenerator;
+    PageData *data;
+    PageGenerator *pageGenerator;
 public:
-    PageManager(PageData* mData){
+    PageManager(PageData *mData) {
         data = mData;
         pageGenerator = new PageGenerator();
     }
-    ~PageManager(){
+
+    ~PageManager() {
     }
 
-    Page* generatePage(PageData &pageData){
-        switch(pageData.getpageType()){
+    Page *generatePage(PageData &pageData) {
+        switch (pageData.getpageType()) {
             case PageType::TABLE_OF_USERS :
-                return pageGenerator->generateTablePage(pageData.userData, pageData.getPageOrganizeType());
+                return pageGenerator->generateTablePage(pageData.userData,
+                                                        pageData.getPageOrganizeType());
 
             case PageType::ONE_USER_PAGE :
-                return pageGenerator->generateUserPage(reinterpret_cast<UserData &&>(data->userData[0]));
+                return pageGenerator->generateUserPage(
+                        reinterpret_cast<UserData &&>(data->userData[0]));
 
             case PageType::START_PAGE :
                 return pageGenerator->generateStartPage();
@@ -36,27 +39,28 @@ public:
     }
 
 
-
-    void generatePages(){
+    void generatePages() {
         std::ofstream out("tablepage.html");
-        out <<pageGenerator->generateTablePage(data->userData, data->getPageOrganizeType())->toString();
+        out << pageGenerator->generateTablePage(data->userData,
+                                                data->getPageOrganizeType())->toString();
         out.close();
         std::vector<std::thread> vecOfThreads;
         int i = 0;
-        for(auto& userData: data->userData) {
+        for (auto &userData: data->userData) {
             std::string name = "userpage" + std::to_string(i++);
-            vecOfThreads.push_back(std::thread(std::bind(&PageManager::threadGeneratePage, *this)));
+            vecOfThreads.push_back(std::thread(
+                    std::bind(&PageManager::threadGeneratePage, *this)));
         }
-        for (std::thread & th : vecOfThreads)
-        {
-            if (th.joinable()){
+        for (std::thread &th : vecOfThreads) {
+            if (th.joinable()) {
                 th.join();
             }
         }
     }
 
-    void threadGeneratePage(){
-        UserData* testData = new UserData("slug","fname", "sname", "imgsrc",19);
+    void threadGeneratePage() {
+        UserData *testData = new UserData("slug", "fname", "sname", "imgsrc",
+                                          19);
         std::ofstream out("file.txt");
         out << pageGenerator->generateUserPage(*testData);
         out.close();
