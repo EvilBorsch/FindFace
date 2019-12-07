@@ -1,50 +1,54 @@
 #include "Crowler.h"
 #include <iostream>
-#include <unistd.h>
+#include <utility>
 
 
-Container Crowler::getContainerFromUrls(const std::vector<url> &urls) {
+std::atomic<bool> thread_must_end(false);
+
+
+void addToBd(const std::vector<double> &vec, const std::string &url) {} //Функция из библиотеки александра
+
+
+
+
+
+Crowler::Crowler(std::shared_ptr<AbstractAPI> m_api, std::shared_ptr<AbstractIdListGeneratorStrategy> m_lg) {
+    api = std::move(m_api);
+    lg = std::move(m_lg);
+};
+
+
+void Crowler::startCrowl() {
+    t = new std::thread(std::bind(&Crowler::crowl, this));
+
+}
+
+void Crowler::stopCrowl() {
+    thread_must_end.store(true);
+
+}
+
+
+const std::vector<double> &vectorize(const std::string &url) { //Функция из библиотеки Димы
     return {};
 }
 
+void Crowler::crowl() {
 
-Crowler::Crowler(AbstractAPI *m_api, AbstractIdListGeneratorStrategy *m_lg, int *m_fd) {
-    api = m_api;
-    lg = m_lg;
-    fd = m_fd;
-}
+    while (true) {
 
-void add(Container cont) {
-
-}
-
-void Crowler::startCrowl() {
-
-    int *buf = new int[1];
-    read(fd[0], buf, sizeof(buf));
-    while (buf[0] != stopState) {
-        read(fd[0], buf, sizeof(buf));
-        id_list = lg->generate();
+        std::vector<url> id_list = lg->generate();
         for (const auto &id: id_list) {
             std::vector<url> photoUrls = api->getPhotoUrlsById(id);
-            Container cont = getContainerFromUrls(photoUrls);
-            add(cont);
+            for (auto &data: photoUrls) {
+                addToBd(vectorize(data.toStr()), data.toStr());
+                std::cout<< data.toStr() << std::endl;
+            }
         }
+        lg->save();
+        if (thread_must_end.load()) break;
+
     }
-    close(fd[0]);
-    delete[] buf;
+
 }
-
-void Crowler::stopCrowlAndSaveIdList() {
-
-    int *testbuf = new int[1];
-    testbuf[0] = stopState;
-    write(fd[1], testbuf, sizeof(testbuf));
-    close(fd[1]);
-    delete[] testbuf;
-}
-
-
-
-
 

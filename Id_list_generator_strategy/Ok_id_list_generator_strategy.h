@@ -1,5 +1,5 @@
-#include "../AbstractClasses/Abstract_id_list_generator_strategy.h"
-#include "../url/url.h"
+#include "AbstractClasses/Abstract_id_list_generator_strategy.h"
+#include "url/url.h"
 
 class OkIdListGeneratorStrategy : public AbstractIdListGeneratorStrategy {
 private:
@@ -13,4 +13,7 @@ public:
 
     std::vector<url> generate() override;
 
+    void save() override {
+
+    }
 };

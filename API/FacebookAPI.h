@@ -1,22 +1,19 @@
-#include "../AbstractClasses/AbstractAPI.h"
-#include "../Curl/Curl.h"
+#include "AbstractClasses/AbstractAPI.h"
+#include "NetService/NetService.h"
 
 #pragma once
 
 class FacebookAPI : public AbstractAPI {
 private:
-    Curl curler;
     std::string token;
+    std::string app_key;
+    std::string secret_key;
 public:
-    std::vector<url> getPhotoUrlsById(const url &url) override;
+    std::vector<url> getPhotoUrlsById(const url &mUrl) override;
 
-    std::vector<url> getFriendsUrlsById(const url &url) override;
+    FacebookAPI(const std::string &mapp_key, const std::string &msecret_key);
 
-    std::vector<url> getGroupParticipants(const url &url) override;
-
-    explicit FacebookAPI(const std::string &app_key);
-
-    void login(std::string app_key) override;
+    void login() override;
 
 
 };

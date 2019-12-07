@@ -1,7 +1,7 @@
 #include <vector>
 #include <string>
 #include <iostream>
-#include "../url/url.h"
+#include "url/url.h"
 
 #pragma once
 
@@ -14,7 +14,6 @@ public:
 
     virtual ~AbstractIdListGeneratorStrategy() = default;
 
-    std::vector<url> loadUrls(std::string path) {
-        return {};
-    };
+    virtual void save()=0;
+
 };

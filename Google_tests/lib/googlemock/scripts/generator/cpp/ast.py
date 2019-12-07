@@ -43,18 +43,16 @@ from cpp import keywords
 from cpp import tokenize
 from cpp import utils
 
-
 if not hasattr(builtins, 'reversed'):
     # Support Python 2.3 and earlier.
     def reversed(seq):
-        for i in range(len(seq)-1, -1, -1):
+        for i in range(len(seq) - 1, -1, -1):
             yield seq[i]
 
 if not hasattr(builtins, 'next'):
     # Support Python 2.5 and earlier.
     def next(obj):
         return obj.next()
-
 
 VISIBILITY_PUBLIC, VISIBILITY_PROTECTED, VISIBILITY_PRIVATE = range(3)
 
@@ -469,7 +467,7 @@ class TypeConverter(object):
                 count -= 1
                 if count == 0:
                     break
-        return tokens[start:end-1], end
+        return tokens[start:end - 1], end
 
     def ToType(self, tokens):
         """Convert [Token,...] to [Class(...), ] useful for base classes.
@@ -504,7 +502,7 @@ class TypeConverter(object):
         while i < end:
             token = tokens[i]
             if token.name == '<':
-                new_tokens, new_end = self._GetTemplateEnd(tokens, i+1)
+                new_tokens, new_end = self._GetTemplateEnd(tokens, i + 1)
                 AddType(self.ToType(new_tokens))
                 # If there is a comma after the template, we need to consume
                 # that here otherwise it becomes part of the name.
@@ -537,12 +535,12 @@ class TypeConverter(object):
             # Handle default (initial) values properly.
             for i, t in enumerate(parts):
                 if t.name == '=':
-                    default = parts[i+1:]
-                    name = parts[i-1].name
-                    if name == ']' and parts[i-2].name == '[':
-                        name = parts[i-3].name
+                    default = parts[i + 1:]
+                    name = parts[i - 1].name
+                    if name == ']' and parts[i - 2].name == '[':
+                        name = parts[i - 3].name
                         i -= 1
-                    parts = parts[:i-1]
+                    parts = parts[:i - 1]
                     break
             else:
                 if parts[-1].token_type == tokenize.NAME:
@@ -563,7 +561,7 @@ class TypeConverter(object):
             if keywords.IsKeyword(p.name):
                 modifiers.append(p.name)
             elif p.name == '<':
-                templated_tokens, new_end = self._GetTemplateEnd(parts, i+1)
+                templated_tokens, new_end = self._GetTemplateEnd(parts, i + 1)
                 templated_types = self.ToType(templated_tokens)
                 i = new_end - 1
                 # Don't add a spurious :: to data members being initialized.
@@ -668,7 +666,8 @@ class TypeConverter(object):
             if names[end] == '>':
                 break
             end -= 1
-        return start, end+1
+        return start, end + 1
+
 
 class AstBuilder(object):
     def __init__(self, token_stream, filename, in_class='', visibility=None,
@@ -735,7 +734,7 @@ class AstBuilder(object):
     def _GenerateOne(self, token):
         if token.token_type == tokenize.NAME:
             if (keywords.IsKeyword(token.name) and
-                not keywords.IsBuiltinType(token.name)):
+                    not keywords.IsBuiltinType(token.name)):
                 if token.name == 'enum':
                     # Pop the next token and only put it back if it's not
                     # 'class'.  This allows us to support the two-token
@@ -1027,14 +1026,14 @@ class AstBuilder(object):
         if name.name == self.in_class and not modifiers:
             modifiers |= FUNCTION_CTOR
         parameters = list(self._GetParameters())
-        del parameters[-1]              # Remove trailing ')'.
+        del parameters[-1]  # Remove trailing ')'.
 
         # Handling operator() is especially weird.
         if name.name == 'operator' and not parameters:
             token = self._GetNextToken()
             assert token.name == '(', token
             parameters = list(self._GetParameters())
-            del parameters[-1]          # Remove trailing ')'.
+            del parameters[-1]  # Remove trailing ')'.
 
         token = self._GetNextToken()
         while token.token_type == tokenize.NAME:
@@ -1098,13 +1097,13 @@ class AstBuilder(object):
             # Just put in something so we don't crash and can move on.
             real_name = parameters[-1]
             modifiers = [p.name for p in self._GetParameters()]
-            del modifiers[-1]           # Remove trailing ')'.
+            del modifiers[-1]  # Remove trailing ')'.
             return self._CreateVariable(indices, real_name.name, indices.name,
                                         modifiers, '', None)
 
         if token.name == '{':
             body = list(self.GetScope())
-            del body[-1]                # Remove trailing '}'.
+            del body[-1]  # Remove trailing '}'.
         else:
             body = None
             if token.name == '=':
@@ -1155,7 +1154,7 @@ class AstBuilder(object):
             i = 1
         # Ignore a :: suffix, if exists.
         end = len(token_seq) - 1
-        if token_seq[end-1].name == '::':
+        if token_seq[end - 1].name == '::':
             end -= 1
 
         # Make a copy of the sequence so we can append a sentinel
@@ -1235,7 +1234,7 @@ class AstBuilder(object):
 
         # Must be the type declaration.
         fields = list(self._GetMatchingChar('{', '}'))
-        del fields[-1]                  # Remove trailing '}'.
+        del fields[-1]  # Remove trailing '}'.
         if token.token_type == tokenize.SYNTAX and token.name == '{':
             next = self._GetNextToken()
             new_type = ctor(token.start, token.end, name, fields,
@@ -1269,7 +1268,7 @@ class AstBuilder(object):
                     # Handle methods declared to return a struct.
                     t0 = name_tokens[0]
                     struct = tokenize.Token(tokenize.NAME, 'struct',
-                                            t0.start-7, t0.start-2)
+                                            t0.start - 7, t0.start - 2)
                     type_and_name = [struct]
                     type_and_name.extend(name_tokens)
                     type_and_name.extend((var_token, next_token))
@@ -1423,7 +1422,7 @@ class AstBuilder(object):
     def _GetTemplatedTypes(self):
         result = {}
         tokens = list(self._GetMatchingChar('<', '>'))
-        len_tokens = len(tokens) - 1    # Ignore trailing '>'.
+        len_tokens = len(tokens) - 1  # Ignore trailing '>'.
         i = 0
         while i < len_tokens:
             key = tokens[i].name
@@ -1433,16 +1432,16 @@ class AstBuilder(object):
             type_name = default = None
             if i < len_tokens:
                 i += 1
-                if tokens[i-1].name == '=':
+                if tokens[i - 1].name == '=':
                     assert i < len_tokens, '%s %s' % (i, tokens)
                     default, unused_next_token = self.GetName(tokens[i:])
                     i += len(default)
                 else:
-                    if tokens[i-1].name != ',':
+                    if tokens[i - 1].name != ',':
                         # We got something like: Type variable.
                         # Re-adjust the key (variable) and type_name (Type).
-                        key = tokens[i-1].name
-                        type_name = tokens[i-2]
+                        key = tokens[i - 1].name
+                        type_name = tokens[i - 2]
 
             result[key] = (type_name, default)
         return result
@@ -1713,7 +1712,7 @@ def PrintIndentifiers(filename, should_print):
         sys.stderr.write('Unable to find: %s\n' % filename)
         return
 
-    #print('Processing %s' % actual_filename)
+    # print('Processing %s' % actual_filename)
     builder = BuilderFromSource(source, filename)
     try:
         for node in builder.Generate():

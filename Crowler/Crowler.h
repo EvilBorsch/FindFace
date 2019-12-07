@@ -1,25 +1,23 @@
-#include "../AbstractClasses/AbstractAPI.h"
-#include "../AbstractClasses/Abstract_id_list_generator_strategy.h"
+#include "AbstractClasses/AbstractAPI.h"
+#include "AbstractClasses/Abstract_id_list_generator_strategy.h"
+#include <thread>
+#include <atomic>
+#include <chrono>
 
-class Container {
-
-};
 
 
 class Crowler {
-    const int stopState = 2;
-    AbstractIdListGeneratorStrategy *lg;
-    std::vector<url> id_list;
-
-    Container getContainerFromUrls(const std::vector<url> &urls);
-    int *fd;
-    AbstractAPI *api;
+    std::shared_ptr<AbstractIdListGeneratorStrategy> lg;
+    std::thread *t;
+    std::shared_ptr<AbstractAPI> api;
 public:
     void startCrowl();
 
-    void stopCrowlAndSaveIdList();
+    void crowl();
 
-    Crowler(AbstractAPI *m_api, AbstractIdListGeneratorStrategy *m_lg, int *fd);
+    void stopCrowl();
+
+    Crowler(std::shared_ptr<AbstractAPI> m_api, std::shared_ptr<AbstractIdListGeneratorStrategy> m_lg);
 
 
 };

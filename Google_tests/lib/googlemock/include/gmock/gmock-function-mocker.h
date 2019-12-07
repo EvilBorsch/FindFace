@@ -40,10 +40,10 @@
 #include "gmock/internal/gmock-pp.h"
 
 namespace testing {
-namespace internal {
-template <typename T>
-using identity_t = T;
-}  // namespace internal
+    namespace internal {
+        template<typename T>
+        using identity_t = T;
+    }  // namespace internal
 }  // namespace testing
 
 #define MOCK_METHOD(...) \
@@ -107,8 +107,8 @@ using identity_t = T;
 #define GMOCK_INTERNAL_ASSERT_VALID_SPEC(_Spec) \
   GMOCK_PP_FOR_EACH(GMOCK_INTERNAL_ASSERT_VALID_SPEC_ELEMENT, ~, _Spec)
 
-#define GMOCK_INTERNAL_MOCK_METHOD_IMPL(_N, _MethodName, _Constness,           \
-                                        _Override, _Final, _NoexceptSpec,      \
+#define GMOCK_INTERNAL_MOCK_METHOD_IMPL(_N, _MethodName, _Constness, \
+                                        _Override, _Final, _NoexceptSpec, \
                                         _CallType, _Signature)                 \
   typename ::testing::internal::Function<GMOCK_PP_REMOVE_PARENS(               \
       _Signature)>::Result                                                     \

@@ -14,19 +14,21 @@ import sys
 
 SUBST_PATH_ENV_VAR_NAME = "SUBST_PATH"
 
+
 def main():
-  if SUBST_PATH_ENV_VAR_NAME in os.environ:
-    os.environ["PATH"] = os.environ[SUBST_PATH_ENV_VAR_NAME]
+    if SUBST_PATH_ENV_VAR_NAME in os.environ:
+        os.environ["PATH"] = os.environ[SUBST_PATH_ENV_VAR_NAME]
 
-  exit_code = subprocess.Popen(sys.argv[1:]).wait()
+    exit_code = subprocess.Popen(sys.argv[1:]).wait()
 
-  # exit_code is negative (-signal) if the process has been terminated by
-  # a signal. Returning negative exit code is not portable and so we return
-  # 100 instead.
-  if exit_code < 0:
-    exit_code = 100
+    # exit_code is negative (-signal) if the process has been terminated by
+    # a signal. Returning negative exit code is not portable and so we return
+    # 100 instead.
+    if exit_code < 0:
+        exit_code = 100
 
-  sys.exit(exit_code)
+    sys.exit(exit_code)
+
 
 if __name__ == "__main__":
-  main()
+    main()

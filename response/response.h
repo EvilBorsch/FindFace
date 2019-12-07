@@ -1,13 +1,17 @@
-#include <map>
-
+#include <boost/property_tree/ptree.hpp>
+#include "url/url.h"
+#include <boost/property_tree/json_parser.hpp>
 
 class response {
 private:
-    std::map<std::string, std::string> mp;
+    boost::property_tree::ptree pt;
 public:
-    void parse(const std::string &st) {}
 
-    std::string get_body() {
-        return {};
-    }
+    void parse(const std::string &st);
+
+    explicit response(const std::string &st);
+
+    boost::property_tree::ptree getData();
+
+
 };
