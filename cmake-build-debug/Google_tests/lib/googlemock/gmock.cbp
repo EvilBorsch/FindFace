@@ -1,0 +1,446 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="gmock"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="clang"/>
+		<Option virtualFolders="CMake Files\;CMake Files\Google_tests\;CMake Files\Google_tests\lib\;CMake Files\Google_tests\lib\googlemock\;CMake Files\Google_tests\lib\googlemock\cmake\;CMake Files\Google_tests\lib\googletest\;CMake Files\Google_tests\lib\googletest\cmake\;CMake Files\..\;CMake Files\..\..\;CMake Files\..\..\..\;CMake Files\..\..\..\..\;CMake Files\..\..\..\..\usr\;CMake Files\..\..\..\..\usr\local\;CMake Files\..\..\..\..\usr\local\lib\;CMake Files\..\..\..\..\usr\local\lib\cmake\;CMake Files\..\..\..\..\usr\local\lib\cmake\Boost-1.71.0\;CMake Files\..\..\..\..\usr\local\lib\cmake\boost_headers-1.71.0\;CMake Files\..\..\..\..\usr\local\lib\cmake\boost_system-1.71.0\;CMake Files\..\..\..\..\usr\local\lib\cmake\boost_filesystem-1.71.0\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="/Users/dmitrijgulacenkov/CLionProjects/kursach_final/cmake-build-debug/Google_tests/lib/googlemock"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/dmitrijgulacenkov/CLionProjects/kursach_final/cmake-build-debug/Google_tests/lib/googlemock/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/dmitrijgulacenkov/CLionProjects/kursach_final/cmake-build-debug/Google_tests/lib/googlemock/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/dmitrijgulacenkov/CLionProjects/kursach_final/cmake-build-debug/Google_tests/lib/googlemock/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/dmitrijgulacenkov/CLionProjects/kursach_final/cmake-build-debug/Google_tests/lib/googlemock/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="gmock">
+				<Option output="/Users/dmitrijgulacenkov/CLionProjects/kursach_final/cmake-build-debug/lib/libgmockd.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/dmitrijgulacenkov/CLionProjects/kursach_final/cmake-build-debug/Google_tests/lib/googlemock"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="clang"/>
+				<Compiler>
+					<Add directory="/Users/dmitrijgulacenkov/CLionProjects/kursach_final"/>
+					<Add directory="/Users/dmitrijgulacenkov/CLionProjects/kursach_final/AbstractClasses"/>
+					<Add directory="/Users/dmitrijgulacenkov/CLionProjects/kursach_final/API"/>
+					<Add directory="/Users/dmitrijgulacenkov/CLionProjects/kursach_final/Crowler"/>
+					<Add directory="/Users/dmitrijgulacenkov/CLionProjects/kursach_final/Id_list_generator_strategy"/>
+					<Add directory="/Users/dmitrijgulacenkov/CLionProjects/kursach_final/NetService"/>
+					<Add directory="/Users/dmitrijgulacenkov/CLionProjects/kursach_final/response"/>
+					<Add directory="/Users/dmitrijgulacenkov/CLionProjects/kursach_final/url"/>
+					<Add directory="/Users/dmitrijgulacenkov/CLionProjects/kursach_final/API/FacebookAPI.cpp"/>
+					<Add directory="/Users/dmitrijgulacenkov/CLionProjects/kursach_final/API/OkAPI.cpp"/>
+					<Add directory="/Users/dmitrijgulacenkov/CLionProjects/kursach_final/API/VkAPI.cpp"/>
+					<Add directory="/Users/dmitrijgulacenkov/CLionProjects/kursach_final/Id_list_generator_strategy/Facebook_id_list_generator_strategy.cpp"/>
+					<Add directory="/Users/dmitrijgulacenkov/CLionProjects/kursach_final/Id_list_generator_strategy/Vk_id_list_generator_strategy.cpp"/>
+					<Add directory="/Users/dmitrijgulacenkov/CLionProjects/kursach_final/Id_list_generator_strategy/Ok_id_list_generator_strategy.cpp"/>
+					<Add directory="/Users/dmitrijgulacenkov/CLionProjects/kursach_final/NetService/NetService.cpp"/>
+					<Add directory="/Users/dmitrijgulacenkov/CLionProjects/kursach_final/response/response.cpp"/>
+					<Add directory="/Users/dmitrijgulacenkov/CLionProjects/kursach_final/Crowler/Crowler.cpp"/>
+					<Add directory="/Users/dmitrijgulacenkov/CLionProjects/kursach_final/Google_tests/lib/googlemock/include"/>
+					<Add directory="/Users/dmitrijgulacenkov/CLionProjects/kursach_final/Google_tests/lib/googlemock"/>
+					<Add directory="/Users/dmitrijgulacenkov/CLionProjects/kursach_final/Google_tests/lib/googletest/include"/>
+					<Add directory="/Users/dmitrijgulacenkov/CLionProjects/kursach_final/Google_tests/lib/googletest"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/11.0.0/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/dmitrijgulacenkov/CLionProjects/kursach_final/cmake-build-debug/Google_tests/lib/googlemock/Makefile&quot;  VERBOSE=1 gmock"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/dmitrijgulacenkov/CLionProjects/kursach_final/cmake-build-debug/Google_tests/lib/googlemock/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/dmitrijgulacenkov/CLionProjects/kursach_final/cmake-build-debug/Google_tests/lib/googlemock/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/dmitrijgulacenkov/CLionProjects/kursach_final/cmake-build-debug/Google_tests/lib/googlemock/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="gmock/fast">
+				<Option output="/Users/dmitrijgulacenkov/CLionProjects/kursach_final/cmake-build-debug/lib/libgmockd.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/dmitrijgulacenkov/CLionProjects/kursach_final/cmake-build-debug/Google_tests/lib/googlemock"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="clang"/>
+				<Compiler>
+					<Add directory="/Users/dmitrijgulacenkov/CLionProjects/kursach_final"/>
+					<Add directory="/Users/dmitrijgulacenkov/CLionProjects/kursach_final/AbstractClasses"/>
+					<Add directory="/Users/dmitrijgulacenkov/CLionProjects/kursach_final/API"/>
+					<Add directory="/Users/dmitrijgulacenkov/CLionProjects/kursach_final/Crowler"/>
+					<Add directory="/Users/dmitrijgulacenkov/CLionProjects/kursach_final/Id_list_generator_strategy"/>
+					<Add directory="/Users/dmitrijgulacenkov/CLionProjects/kursach_final/NetService"/>
+					<Add directory="/Users/dmitrijgulacenkov/CLionProjects/kursach_final/response"/>
+					<Add directory="/Users/dmitrijgulacenkov/CLionProjects/kursach_final/url"/>
+					<Add directory="/Users/dmitrijgulacenkov/CLionProjects/kursach_final/API/FacebookAPI.cpp"/>
+					<Add directory="/Users/dmitrijgulacenkov/CLionProjects/kursach_final/API/OkAPI.cpp"/>
+					<Add directory="/Users/dmitrijgulacenkov/CLionProjects/kursach_final/API/VkAPI.cpp"/>
+					<Add directory="/Users/dmitrijgulacenkov/CLionProjects/kursach_final/Id_list_generator_strategy/Facebook_id_list_generator_strategy.cpp"/>
+					<Add directory="/Users/dmitrijgulacenkov/CLionProjects/kursach_final/Id_list_generator_strategy/Vk_id_list_generator_strategy.cpp"/>
+					<Add directory="/Users/dmitrijgulacenkov/CLionProjects/kursach_final/Id_list_generator_strategy/Ok_id_list_generator_strategy.cpp"/>
+					<Add directory="/Users/dmitrijgulacenkov/CLionProjects/kursach_final/NetService/NetService.cpp"/>
+					<Add directory="/Users/dmitrijgulacenkov/CLionProjects/kursach_final/response/response.cpp"/>
+					<Add directory="/Users/dmitrijgulacenkov/CLionProjects/kursach_final/Crowler/Crowler.cpp"/>
+					<Add directory="/Users/dmitrijgulacenkov/CLionProjects/kursach_final/Google_tests/lib/googlemock/include"/>
+					<Add directory="/Users/dmitrijgulacenkov/CLionProjects/kursach_final/Google_tests/lib/googlemock"/>
+					<Add directory="/Users/dmitrijgulacenkov/CLionProjects/kursach_final/Google_tests/lib/googletest/include"/>
+					<Add directory="/Users/dmitrijgulacenkov/CLionProjects/kursach_final/Google_tests/lib/googletest"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/11.0.0/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/dmitrijgulacenkov/CLionProjects/kursach_final/cmake-build-debug/Google_tests/lib/googlemock/Makefile&quot;  VERBOSE=1 gmock/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/dmitrijgulacenkov/CLionProjects/kursach_final/cmake-build-debug/Google_tests/lib/googlemock/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/dmitrijgulacenkov/CLionProjects/kursach_final/cmake-build-debug/Google_tests/lib/googlemock/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/dmitrijgulacenkov/CLionProjects/kursach_final/cmake-build-debug/Google_tests/lib/googlemock/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="gmock_main">
+				<Option output="/Users/dmitrijgulacenkov/CLionProjects/kursach_final/cmake-build-debug/lib/libgmock_maind.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/dmitrijgulacenkov/CLionProjects/kursach_final/cmake-build-debug/Google_tests/lib/googlemock"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="clang"/>
+				<Compiler>
+					<Add directory="/Users/dmitrijgulacenkov/CLionProjects/kursach_final"/>
+					<Add directory="/Users/dmitrijgulacenkov/CLionProjects/kursach_final/AbstractClasses"/>
+					<Add directory="/Users/dmitrijgulacenkov/CLionProjects/kursach_final/API"/>
+					<Add directory="/Users/dmitrijgulacenkov/CLionProjects/kursach_final/Crowler"/>
+					<Add directory="/Users/dmitrijgulacenkov/CLionProjects/kursach_final/Id_list_generator_strategy"/>
+					<Add directory="/Users/dmitrijgulacenkov/CLionProjects/kursach_final/NetService"/>
+					<Add directory="/Users/dmitrijgulacenkov/CLionProjects/kursach_final/response"/>
+					<Add directory="/Users/dmitrijgulacenkov/CLionProjects/kursach_final/url"/>
+					<Add directory="/Users/dmitrijgulacenkov/CLionProjects/kursach_final/API/FacebookAPI.cpp"/>
+					<Add directory="/Users/dmitrijgulacenkov/CLionProjects/kursach_final/API/OkAPI.cpp"/>
+					<Add directory="/Users/dmitrijgulacenkov/CLionProjects/kursach_final/API/VkAPI.cpp"/>
+					<Add directory="/Users/dmitrijgulacenkov/CLionProjects/kursach_final/Id_list_generator_strategy/Facebook_id_list_generator_strategy.cpp"/>
+					<Add directory="/Users/dmitrijgulacenkov/CLionProjects/kursach_final/Id_list_generator_strategy/Vk_id_list_generator_strategy.cpp"/>
+					<Add directory="/Users/dmitrijgulacenkov/CLionProjects/kursach_final/Id_list_generator_strategy/Ok_id_list_generator_strategy.cpp"/>
+					<Add directory="/Users/dmitrijgulacenkov/CLionProjects/kursach_final/NetService/NetService.cpp"/>
+					<Add directory="/Users/dmitrijgulacenkov/CLionProjects/kursach_final/response/response.cpp"/>
+					<Add directory="/Users/dmitrijgulacenkov/CLionProjects/kursach_final/Crowler/Crowler.cpp"/>
+					<Add directory="/Users/dmitrijgulacenkov/CLionProjects/kursach_final/Google_tests/lib/googlemock/include"/>
+					<Add directory="/Users/dmitrijgulacenkov/CLionProjects/kursach_final/Google_tests/lib/googlemock"/>
+					<Add directory="/Users/dmitrijgulacenkov/CLionProjects/kursach_final/Google_tests/lib/googletest/include"/>
+					<Add directory="/Users/dmitrijgulacenkov/CLionProjects/kursach_final/Google_tests/lib/googletest"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/11.0.0/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/dmitrijgulacenkov/CLionProjects/kursach_final/cmake-build-debug/Google_tests/lib/googlemock/Makefile&quot;  VERBOSE=1 gmock_main"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/dmitrijgulacenkov/CLionProjects/kursach_final/cmake-build-debug/Google_tests/lib/googlemock/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/dmitrijgulacenkov/CLionProjects/kursach_final/cmake-build-debug/Google_tests/lib/googlemock/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/dmitrijgulacenkov/CLionProjects/kursach_final/cmake-build-debug/Google_tests/lib/googlemock/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="gmock_main/fast">
+				<Option output="/Users/dmitrijgulacenkov/CLionProjects/kursach_final/cmake-build-debug/lib/libgmock_maind.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/dmitrijgulacenkov/CLionProjects/kursach_final/cmake-build-debug/Google_tests/lib/googlemock"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="clang"/>
+				<Compiler>
+					<Add directory="/Users/dmitrijgulacenkov/CLionProjects/kursach_final"/>
+					<Add directory="/Users/dmitrijgulacenkov/CLionProjects/kursach_final/AbstractClasses"/>
+					<Add directory="/Users/dmitrijgulacenkov/CLionProjects/kursach_final/API"/>
+					<Add directory="/Users/dmitrijgulacenkov/CLionProjects/kursach_final/Crowler"/>
+					<Add directory="/Users/dmitrijgulacenkov/CLionProjects/kursach_final/Id_list_generator_strategy"/>
+					<Add directory="/Users/dmitrijgulacenkov/CLionProjects/kursach_final/NetService"/>
+					<Add directory="/Users/dmitrijgulacenkov/CLionProjects/kursach_final/response"/>
+					<Add directory="/Users/dmitrijgulacenkov/CLionProjects/kursach_final/url"/>
+					<Add directory="/Users/dmitrijgulacenkov/CLionProjects/kursach_final/API/FacebookAPI.cpp"/>
+					<Add directory="/Users/dmitrijgulacenkov/CLionProjects/kursach_final/API/OkAPI.cpp"/>
+					<Add directory="/Users/dmitrijgulacenkov/CLionProjects/kursach_final/API/VkAPI.cpp"/>
+					<Add directory="/Users/dmitrijgulacenkov/CLionProjects/kursach_final/Id_list_generator_strategy/Facebook_id_list_generator_strategy.cpp"/>
+					<Add directory="/Users/dmitrijgulacenkov/CLionProjects/kursach_final/Id_list_generator_strategy/Vk_id_list_generator_strategy.cpp"/>
+					<Add directory="/Users/dmitrijgulacenkov/CLionProjects/kursach_final/Id_list_generator_strategy/Ok_id_list_generator_strategy.cpp"/>
+					<Add directory="/Users/dmitrijgulacenkov/CLionProjects/kursach_final/NetService/NetService.cpp"/>
+					<Add directory="/Users/dmitrijgulacenkov/CLionProjects/kursach_final/response/response.cpp"/>
+					<Add directory="/Users/dmitrijgulacenkov/CLionProjects/kursach_final/Crowler/Crowler.cpp"/>
+					<Add directory="/Users/dmitrijgulacenkov/CLionProjects/kursach_final/Google_tests/lib/googlemock/include"/>
+					<Add directory="/Users/dmitrijgulacenkov/CLionProjects/kursach_final/Google_tests/lib/googlemock"/>
+					<Add directory="/Users/dmitrijgulacenkov/CLionProjects/kursach_final/Google_tests/lib/googletest/include"/>
+					<Add directory="/Users/dmitrijgulacenkov/CLionProjects/kursach_final/Google_tests/lib/googletest"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/11.0.0/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/dmitrijgulacenkov/CLionProjects/kursach_final/cmake-build-debug/Google_tests/lib/googlemock/Makefile&quot;  VERBOSE=1 gmock_main/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/dmitrijgulacenkov/CLionProjects/kursach_final/cmake-build-debug/Google_tests/lib/googlemock/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/dmitrijgulacenkov/CLionProjects/kursach_final/cmake-build-debug/Google_tests/lib/googlemock/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/dmitrijgulacenkov/CLionProjects/kursach_final/cmake-build-debug/Google_tests/lib/googlemock/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="gtest_main">
+				<Option output="/Users/dmitrijgulacenkov/CLionProjects/kursach_final/cmake-build-debug/lib/libgtest_maind.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/dmitrijgulacenkov/CLionProjects/kursach_final/cmake-build-debug/Google_tests/lib/googletest"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="clang"/>
+				<Compiler>
+					<Add directory="/Users/dmitrijgulacenkov/CLionProjects/kursach_final"/>
+					<Add directory="/Users/dmitrijgulacenkov/CLionProjects/kursach_final/AbstractClasses"/>
+					<Add directory="/Users/dmitrijgulacenkov/CLionProjects/kursach_final/API"/>
+					<Add directory="/Users/dmitrijgulacenkov/CLionProjects/kursach_final/Crowler"/>
+					<Add directory="/Users/dmitrijgulacenkov/CLionProjects/kursach_final/Id_list_generator_strategy"/>
+					<Add directory="/Users/dmitrijgulacenkov/CLionProjects/kursach_final/NetService"/>
+					<Add directory="/Users/dmitrijgulacenkov/CLionProjects/kursach_final/response"/>
+					<Add directory="/Users/dmitrijgulacenkov/CLionProjects/kursach_final/url"/>
+					<Add directory="/Users/dmitrijgulacenkov/CLionProjects/kursach_final/API/FacebookAPI.cpp"/>
+					<Add directory="/Users/dmitrijgulacenkov/CLionProjects/kursach_final/API/OkAPI.cpp"/>
+					<Add directory="/Users/dmitrijgulacenkov/CLionProjects/kursach_final/API/VkAPI.cpp"/>
+					<Add directory="/Users/dmitrijgulacenkov/CLionProjects/kursach_final/Id_list_generator_strategy/Facebook_id_list_generator_strategy.cpp"/>
+					<Add directory="/Users/dmitrijgulacenkov/CLionProjects/kursach_final/Id_list_generator_strategy/Vk_id_list_generator_strategy.cpp"/>
+					<Add directory="/Users/dmitrijgulacenkov/CLionProjects/kursach_final/Id_list_generator_strategy/Ok_id_list_generator_strategy.cpp"/>
+					<Add directory="/Users/dmitrijgulacenkov/CLionProjects/kursach_final/NetService/NetService.cpp"/>
+					<Add directory="/Users/dmitrijgulacenkov/CLionProjects/kursach_final/response/response.cpp"/>
+					<Add directory="/Users/dmitrijgulacenkov/CLionProjects/kursach_final/Crowler/Crowler.cpp"/>
+					<Add directory="/Users/dmitrijgulacenkov/CLionProjects/kursach_final/Google_tests/lib/googletest/include"/>
+					<Add directory="/Users/dmitrijgulacenkov/CLionProjects/kursach_final/Google_tests/lib/googletest"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/11.0.0/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/dmitrijgulacenkov/CLionProjects/kursach_final/cmake-build-debug/Google_tests/lib/googletest/Makefile&quot;  VERBOSE=1 gtest_main"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/dmitrijgulacenkov/CLionProjects/kursach_final/cmake-build-debug/Google_tests/lib/googletest/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/dmitrijgulacenkov/CLionProjects/kursach_final/cmake-build-debug/Google_tests/lib/googletest/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/dmitrijgulacenkov/CLionProjects/kursach_final/cmake-build-debug/Google_tests/lib/googletest/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="gtest_main/fast">
+				<Option output="/Users/dmitrijgulacenkov/CLionProjects/kursach_final/cmake-build-debug/lib/libgtest_maind.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/dmitrijgulacenkov/CLionProjects/kursach_final/cmake-build-debug/Google_tests/lib/googletest"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="clang"/>
+				<Compiler>
+					<Add directory="/Users/dmitrijgulacenkov/CLionProjects/kursach_final"/>
+					<Add directory="/Users/dmitrijgulacenkov/CLionProjects/kursach_final/AbstractClasses"/>
+					<Add directory="/Users/dmitrijgulacenkov/CLionProjects/kursach_final/API"/>
+					<Add directory="/Users/dmitrijgulacenkov/CLionProjects/kursach_final/Crowler"/>
+					<Add directory="/Users/dmitrijgulacenkov/CLionProjects/kursach_final/Id_list_generator_strategy"/>
+					<Add directory="/Users/dmitrijgulacenkov/CLionProjects/kursach_final/NetService"/>
+					<Add directory="/Users/dmitrijgulacenkov/CLionProjects/kursach_final/response"/>
+					<Add directory="/Users/dmitrijgulacenkov/CLionProjects/kursach_final/url"/>
+					<Add directory="/Users/dmitrijgulacenkov/CLionProjects/kursach_final/API/FacebookAPI.cpp"/>
+					<Add directory="/Users/dmitrijgulacenkov/CLionProjects/kursach_final/API/OkAPI.cpp"/>
+					<Add directory="/Users/dmitrijgulacenkov/CLionProjects/kursach_final/API/VkAPI.cpp"/>
+					<Add directory="/Users/dmitrijgulacenkov/CLionProjects/kursach_final/Id_list_generator_strategy/Facebook_id_list_generator_strategy.cpp"/>
+					<Add directory="/Users/dmitrijgulacenkov/CLionProjects/kursach_final/Id_list_generator_strategy/Vk_id_list_generator_strategy.cpp"/>
+					<Add directory="/Users/dmitrijgulacenkov/CLionProjects/kursach_final/Id_list_generator_strategy/Ok_id_list_generator_strategy.cpp"/>
+					<Add directory="/Users/dmitrijgulacenkov/CLionProjects/kursach_final/NetService/NetService.cpp"/>
+					<Add directory="/Users/dmitrijgulacenkov/CLionProjects/kursach_final/response/response.cpp"/>
+					<Add directory="/Users/dmitrijgulacenkov/CLionProjects/kursach_final/Crowler/Crowler.cpp"/>
+					<Add directory="/Users/dmitrijgulacenkov/CLionProjects/kursach_final/Google_tests/lib/googletest/include"/>
+					<Add directory="/Users/dmitrijgulacenkov/CLionProjects/kursach_final/Google_tests/lib/googletest"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/11.0.0/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/dmitrijgulacenkov/CLionProjects/kursach_final/cmake-build-debug/Google_tests/lib/googletest/Makefile&quot;  VERBOSE=1 gtest_main/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/dmitrijgulacenkov/CLionProjects/kursach_final/cmake-build-debug/Google_tests/lib/googletest/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/dmitrijgulacenkov/CLionProjects/kursach_final/cmake-build-debug/Google_tests/lib/googletest/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/dmitrijgulacenkov/CLionProjects/kursach_final/cmake-build-debug/Google_tests/lib/googletest/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="gtest">
+				<Option output="/Users/dmitrijgulacenkov/CLionProjects/kursach_final/cmake-build-debug/lib/libgtestd.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/dmitrijgulacenkov/CLionProjects/kursach_final/cmake-build-debug/Google_tests/lib/googletest"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="clang"/>
+				<Compiler>
+					<Add directory="/Users/dmitrijgulacenkov/CLionProjects/kursach_final"/>
+					<Add directory="/Users/dmitrijgulacenkov/CLionProjects/kursach_final/AbstractClasses"/>
+					<Add directory="/Users/dmitrijgulacenkov/CLionProjects/kursach_final/API"/>
+					<Add directory="/Users/dmitrijgulacenkov/CLionProjects/kursach_final/Crowler"/>
+					<Add directory="/Users/dmitrijgulacenkov/CLionProjects/kursach_final/Id_list_generator_strategy"/>
+					<Add directory="/Users/dmitrijgulacenkov/CLionProjects/kursach_final/NetService"/>
+					<Add directory="/Users/dmitrijgulacenkov/CLionProjects/kursach_final/response"/>
+					<Add directory="/Users/dmitrijgulacenkov/CLionProjects/kursach_final/url"/>
+					<Add directory="/Users/dmitrijgulacenkov/CLionProjects/kursach_final/API/FacebookAPI.cpp"/>
+					<Add directory="/Users/dmitrijgulacenkov/CLionProjects/kursach_final/API/OkAPI.cpp"/>
+					<Add directory="/Users/dmitrijgulacenkov/CLionProjects/kursach_final/API/VkAPI.cpp"/>
+					<Add directory="/Users/dmitrijgulacenkov/CLionProjects/kursach_final/Id_list_generator_strategy/Facebook_id_list_generator_strategy.cpp"/>
+					<Add directory="/Users/dmitrijgulacenkov/CLionProjects/kursach_final/Id_list_generator_strategy/Vk_id_list_generator_strategy.cpp"/>
+					<Add directory="/Users/dmitrijgulacenkov/CLionProjects/kursach_final/Id_list_generator_strategy/Ok_id_list_generator_strategy.cpp"/>
+					<Add directory="/Users/dmitrijgulacenkov/CLionProjects/kursach_final/NetService/NetService.cpp"/>
+					<Add directory="/Users/dmitrijgulacenkov/CLionProjects/kursach_final/response/response.cpp"/>
+					<Add directory="/Users/dmitrijgulacenkov/CLionProjects/kursach_final/Crowler/Crowler.cpp"/>
+					<Add directory="/Users/dmitrijgulacenkov/CLionProjects/kursach_final/Google_tests/lib/googletest/include"/>
+					<Add directory="/Users/dmitrijgulacenkov/CLionProjects/kursach_final/Google_tests/lib/googletest"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/11.0.0/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/dmitrijgulacenkov/CLionProjects/kursach_final/cmake-build-debug/Google_tests/lib/googletest/Makefile&quot;  VERBOSE=1 gtest"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/dmitrijgulacenkov/CLionProjects/kursach_final/cmake-build-debug/Google_tests/lib/googletest/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/dmitrijgulacenkov/CLionProjects/kursach_final/cmake-build-debug/Google_tests/lib/googletest/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/dmitrijgulacenkov/CLionProjects/kursach_final/cmake-build-debug/Google_tests/lib/googletest/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="gtest/fast">
+				<Option output="/Users/dmitrijgulacenkov/CLionProjects/kursach_final/cmake-build-debug/lib/libgtestd.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/dmitrijgulacenkov/CLionProjects/kursach_final/cmake-build-debug/Google_tests/lib/googletest"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="clang"/>
+				<Compiler>
+					<Add directory="/Users/dmitrijgulacenkov/CLionProjects/kursach_final"/>
+					<Add directory="/Users/dmitrijgulacenkov/CLionProjects/kursach_final/AbstractClasses"/>
+					<Add directory="/Users/dmitrijgulacenkov/CLionProjects/kursach_final/API"/>
+					<Add directory="/Users/dmitrijgulacenkov/CLionProjects/kursach_final/Crowler"/>
+					<Add directory="/Users/dmitrijgulacenkov/CLionProjects/kursach_final/Id_list_generator_strategy"/>
+					<Add directory="/Users/dmitrijgulacenkov/CLionProjects/kursach_final/NetService"/>
+					<Add directory="/Users/dmitrijgulacenkov/CLionProjects/kursach_final/response"/>
+					<Add directory="/Users/dmitrijgulacenkov/CLionProjects/kursach_final/url"/>
+					<Add directory="/Users/dmitrijgulacenkov/CLionProjects/kursach_final/API/FacebookAPI.cpp"/>
+					<Add directory="/Users/dmitrijgulacenkov/CLionProjects/kursach_final/API/OkAPI.cpp"/>
+					<Add directory="/Users/dmitrijgulacenkov/CLionProjects/kursach_final/API/VkAPI.cpp"/>
+					<Add directory="/Users/dmitrijgulacenkov/CLionProjects/kursach_final/Id_list_generator_strategy/Facebook_id_list_generator_strategy.cpp"/>
+					<Add directory="/Users/dmitrijgulacenkov/CLionProjects/kursach_final/Id_list_generator_strategy/Vk_id_list_generator_strategy.cpp"/>
+					<Add directory="/Users/dmitrijgulacenkov/CLionProjects/kursach_final/Id_list_generator_strategy/Ok_id_list_generator_strategy.cpp"/>
+					<Add directory="/Users/dmitrijgulacenkov/CLionProjects/kursach_final/NetService/NetService.cpp"/>
+					<Add directory="/Users/dmitrijgulacenkov/CLionProjects/kursach_final/response/response.cpp"/>
+					<Add directory="/Users/dmitrijgulacenkov/CLionProjects/kursach_final/Crowler/Crowler.cpp"/>
+					<Add directory="/Users/dmitrijgulacenkov/CLionProjects/kursach_final/Google_tests/lib/googletest/include"/>
+					<Add directory="/Users/dmitrijgulacenkov/CLionProjects/kursach_final/Google_tests/lib/googletest"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/11.0.0/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/dmitrijgulacenkov/CLionProjects/kursach_final/cmake-build-debug/Google_tests/lib/googletest/Makefile&quot;  VERBOSE=1 gtest/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/dmitrijgulacenkov/CLionProjects/kursach_final/cmake-build-debug/Google_tests/lib/googletest/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/dmitrijgulacenkov/CLionProjects/kursach_final/cmake-build-debug/Google_tests/lib/googletest/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/dmitrijgulacenkov/CLionProjects/kursach_final/cmake-build-debug/Google_tests/lib/googletest/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="/Users/dmitrijgulacenkov/CLionProjects/kursach_final/Google_tests/lib/googlemock/src/gmock-all.cc">
+			<Option target="gmock"/>
+		</Unit>
+		<Unit filename="/Users/dmitrijgulacenkov/CLionProjects/kursach_final/Google_tests/lib/googlemock/src/gmock_main.cc">
+			<Option target="gmock_main"/>
+		</Unit>
+		<Unit filename="/Users/dmitrijgulacenkov/CLionProjects/kursach_final/Google_tests/lib/googletest/src/gtest-all.cc">
+			<Option target="gtest"/>
+		</Unit>
+		<Unit filename="/Users/dmitrijgulacenkov/CLionProjects/kursach_final/Google_tests/lib/googletest/src/gtest_main.cc">
+			<Option target="gtest_main"/>
+		</Unit>
+		<Unit filename="/Users/dmitrijgulacenkov/CLionProjects/kursach_final/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+		<Unit filename="/Users/dmitrijgulacenkov/CLionProjects/kursach_final/Google_tests/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\Google_tests\"/>
+		</Unit>
+		<Unit filename="/Users/dmitrijgulacenkov/CLionProjects/kursach_final/Google_tests/lib/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\Google_tests\lib\"/>
+		</Unit>
+		<Unit filename="/Users/dmitrijgulacenkov/CLionProjects/kursach_final/Google_tests/lib/googlemock/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\Google_tests\lib\googlemock\"/>
+		</Unit>
+		<Unit filename="/Users/dmitrijgulacenkov/CLionProjects/kursach_final/Google_tests/lib/googlemock/cmake/gmock.pc.in">
+			<Option virtualFolder="CMake Files\Google_tests\lib\googlemock\cmake\"/>
+		</Unit>
+		<Unit filename="/Users/dmitrijgulacenkov/CLionProjects/kursach_final/Google_tests/lib/googlemock/cmake/gmock_main.pc.in">
+			<Option virtualFolder="CMake Files\Google_tests\lib\googlemock\cmake\"/>
+		</Unit>
+		<Unit filename="/Users/dmitrijgulacenkov/CLionProjects/kursach_final/Google_tests/lib/googletest/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\Google_tests\lib\googletest\"/>
+		</Unit>
+		<Unit filename="/Users/dmitrijgulacenkov/CLionProjects/kursach_final/Google_tests/lib/googletest/cmake/Config.cmake.in">
+			<Option virtualFolder="CMake Files\Google_tests\lib\googletest\cmake\"/>
+		</Unit>
+		<Unit filename="/Users/dmitrijgulacenkov/CLionProjects/kursach_final/Google_tests/lib/googletest/cmake/gtest.pc.in">
+			<Option virtualFolder="CMake Files\Google_tests\lib\googletest\cmake\"/>
+		</Unit>
+		<Unit filename="/Users/dmitrijgulacenkov/CLionProjects/kursach_final/Google_tests/lib/googletest/cmake/gtest_main.pc.in">
+			<Option virtualFolder="CMake Files\Google_tests\lib\googletest\cmake\"/>
+		</Unit>
+		<Unit filename="/Users/dmitrijgulacenkov/CLionProjects/kursach_final/Google_tests/lib/googletest/cmake/internal_utils.cmake">
+			<Option virtualFolder="CMake Files\Google_tests\lib\googletest\cmake\"/>
+		</Unit>
+		<Unit filename="/Users/dmitrijgulacenkov/CLionProjects/kursach_final/../../../../usr/local/lib/cmake/BoostDetectToolset-1.71.0.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\local\lib\cmake\"/>
+		</Unit>
+		<Unit filename="/Users/dmitrijgulacenkov/CLionProjects/kursach_final/../../../../usr/local/lib/cmake/Boost-1.71.0/BoostConfig.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\local\lib\cmake\Boost-1.71.0\"/>
+		</Unit>
+		<Unit filename="/Users/dmitrijgulacenkov/CLionProjects/kursach_final/../../../../usr/local/lib/cmake/Boost-1.71.0/BoostConfigVersion.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\local\lib\cmake\Boost-1.71.0\"/>
+		</Unit>
+		<Unit filename="/Users/dmitrijgulacenkov/CLionProjects/kursach_final/../../../../usr/local/lib/cmake/boost_headers-1.71.0/boost_headers-config-version.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\local\lib\cmake\boost_headers-1.71.0\"/>
+		</Unit>
+		<Unit filename="/Users/dmitrijgulacenkov/CLionProjects/kursach_final/../../../../usr/local/lib/cmake/boost_headers-1.71.0/boost_headers-config.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\local\lib\cmake\boost_headers-1.71.0\"/>
+		</Unit>
+		<Unit filename="/Users/dmitrijgulacenkov/CLionProjects/kursach_final/../../../../usr/local/lib/cmake/boost_system-1.71.0/boost_system-config-version.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\local\lib\cmake\boost_system-1.71.0\"/>
+		</Unit>
+		<Unit filename="/Users/dmitrijgulacenkov/CLionProjects/kursach_final/../../../../usr/local/lib/cmake/boost_system-1.71.0/boost_system-config.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\local\lib\cmake\boost_system-1.71.0\"/>
+		</Unit>
+		<Unit filename="/Users/dmitrijgulacenkov/CLionProjects/kursach_final/../../../../usr/local/lib/cmake/boost_system-1.71.0/libboost_system-variant-mt-shared.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\local\lib\cmake\boost_system-1.71.0\"/>
+		</Unit>
+		<Unit filename="/Users/dmitrijgulacenkov/CLionProjects/kursach_final/../../../../usr/local/lib/cmake/boost_system-1.71.0/libboost_system-variant-mt-static.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\local\lib\cmake\boost_system-1.71.0\"/>
+		</Unit>
+		<Unit filename="/Users/dmitrijgulacenkov/CLionProjects/kursach_final/../../../../usr/local/lib/cmake/boost_system-1.71.0/libboost_system-variant-shared.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\local\lib\cmake\boost_system-1.71.0\"/>
+		</Unit>
+		<Unit filename="/Users/dmitrijgulacenkov/CLionProjects/kursach_final/../../../../usr/local/lib/cmake/boost_system-1.71.0/libboost_system-variant-static.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\local\lib\cmake\boost_system-1.71.0\"/>
+		</Unit>
+		<Unit filename="/Users/dmitrijgulacenkov/CLionProjects/kursach_final/../../../../usr/local/lib/cmake/boost_filesystem-1.71.0/boost_filesystem-config-version.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\local\lib\cmake\boost_filesystem-1.71.0\"/>
+		</Unit>
+		<Unit filename="/Users/dmitrijgulacenkov/CLionProjects/kursach_final/../../../../usr/local/lib/cmake/boost_filesystem-1.71.0/boost_filesystem-config.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\local\lib\cmake\boost_filesystem-1.71.0\"/>
+		</Unit>
+		<Unit filename="/Users/dmitrijgulacenkov/CLionProjects/kursach_final/../../../../usr/local/lib/cmake/boost_filesystem-1.71.0/libboost_filesystem-variant-mt-shared.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\local\lib\cmake\boost_filesystem-1.71.0\"/>
+		</Unit>
+		<Unit filename="/Users/dmitrijgulacenkov/CLionProjects/kursach_final/../../../../usr/local/lib/cmake/boost_filesystem-1.71.0/libboost_filesystem-variant-mt-static.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\local\lib\cmake\boost_filesystem-1.71.0\"/>
+		</Unit>
+		<Unit filename="/Users/dmitrijgulacenkov/CLionProjects/kursach_final/../../../../usr/local/lib/cmake/boost_filesystem-1.71.0/libboost_filesystem-variant-shared.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\local\lib\cmake\boost_filesystem-1.71.0\"/>
+		</Unit>
+		<Unit filename="/Users/dmitrijgulacenkov/CLionProjects/kursach_final/../../../../usr/local/lib/cmake/boost_filesystem-1.71.0/libboost_filesystem-variant-static.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\local\lib\cmake\boost_filesystem-1.71.0\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>
