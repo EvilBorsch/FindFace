@@ -1,3 +1,0 @@
-/home/awerkiler/progs/Mail/old1/AdvancedC ++/Project/CMakeFiles/rebuild_cache.dir
-/home/awerkiler/progs/Mail/old1/AdvancedC ++/Project/CMakeFiles/runTests.dir
-/home/awerkiler/progs/Mail/old1/AdvancedC ++/Project/CMakeFiles/edit_cache.dir
