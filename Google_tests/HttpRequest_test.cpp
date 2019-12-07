@@ -4,17 +4,13 @@
 
 #include "gtest/gtest.h"
 #include <iostream>
-#include "../HttpRequest.cpp"
+#include "../HttpRequest/HttpRequest.cpp"
 
 
-
-
-class HttpRequestTest : public ::testing::Test
-{
+class HttpResponseTest : public ::testing::Test {
 protected:
     void SetUp() {
-        http_request = new HttpRequest;
-        std::string http_data = "GET /?var1=1&var2=string&var3=0.1 HTTP/1.1\n"
+        http_data = "GET /?var1=1&var2=string&var3=0.1 HTTP/1.1\n"
                                 "Host: 127.0.0.1:5000\n"
                                 "Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8\n"
                                 "Upgrade-Insecure-Requests: 1\n"
@@ -24,46 +20,78 @@ protected:
                                 "Accept-Encoding: gzip, deflate\n"
                                 "Connection: keep-alive";
     }
-    void TearDown()
-    {
-        delete http_request;
-    }
-    HttpRequest *http_request;
-    std::string request_data;
+    std::string http_data;
+
+    int var1 = 1;
+    std::string var2 = "string";
+    double var3 = 0.1;
 };
 
-TEST_F(HttpRequestTest, test1)
-{
-    http_request->add_data(request_data);
+TEST_F(HttpResponseTest, addHeadersTest) {
+    HttpRequest request;
 
-    std::map<std::string, std::string> get_data = http_request->GET();
+    request.addHeaders(http_data.c_str());
+
+    std::map<std::string, any> get_data = request.GET();
+
+    ASSERT_EQ(request.METHOD(), "GET");
 
     for(auto & it : get_data) {
         std::string key = it.first;
-        std::string val;
-        int n;
 
         if(key == "var1") {
-            val = get_data.at(key);
-            n = val.length();
-            char val_char[n+1];
-            strcpy(val_char, val.c_str());
-            char expected_value[] = {'1', '\0'};
-            ASSERT_STREQ(expected_value, val_char) << key;
+            ASSERT_EQ(it.second.type, 'i') << key;
+            ASSERT_EQ(it.second.i, var1) << key;
         } else if(key == "var2") {
-            val = get_data.at(key);
-            n = val.length();
-            char val_char[n+1];
-            strcpy(val_char, val.c_str());
-            char expected_value[] = {'s', 't', 'r', 'i', 'n', 'g', '\0'};
-            ASSERT_STREQ(expected_value, val_char) << key;
+            ASSERT_EQ(it.second.type, 's') << key;
+            ASSERT_EQ(it.second.s, var2) << key;
         } else if(key == "var3") {
-            val = get_data.at(key);
-            n = val.length();
-            char val_char[n+1];
-            strcpy(val_char, val.c_str());
-            char expected_value[] = {'0', '.', '1', '\0'};
-            ASSERT_STREQ(expected_value, val_char) << key;
+            ASSERT_EQ(it.second.type, 'd') << key;
+            ASSERT_DOUBLE_EQ(it.second.d, var3) << key;
         } else FAIL() << key;
     }
+
+}
+
+TEST_F(HttpResponseTest, ParamsParserTest) {
+    HttpParser parser;
+
+    std::string args = "a=1&"
+                       "abcd_very_long_name_of_a_variable___________=0.00001&"
+                       "std_val="
+                       "aaaaaaaaaaaaaaaaaaaaaaaaabbbbbbbbbbbbbCCCCCCCCCC";
+    parser.parseArgs(args, parser.get);
+    for(auto & arg: parser.get) {
+        std::string key = arg.first;
+
+        if(key == "a") {
+            ASSERT_EQ(arg.second.type, 'i') << key;
+            ASSERT_EQ(arg.second.i, 1) << key;
+
+        } else if(key == "abcd_very_long_name_of_a_variable___________") {
+            ASSERT_EQ(arg.second.type, 'd') << key;
+            ASSERT_DOUBLE_EQ(arg.second.d, 0.00001) << key;
+
+        } else if(key == "std_val") {
+            ASSERT_EQ(arg.second.type, 's') << key;
+            ASSERT_EQ(arg.second.s,
+                    "aaaaaaaaaaaaaaaaaaaaaaaaabbbbbbbbbbbbbCCCCCCCCCC")
+                    << key;
+
+        } else FAIL() << key;
+    }
+}
+
+TEST_F(HttpResponseTest, isNumberTest) {
+    HttpParser parser;
+//    String
+    ASSERT_EQ(parser.isNumber("Это точно не число"), 0);
+//    Double
+    ASSERT_EQ(parser.isNumber("1.1"), 1);
+    ASSERT_EQ(parser.isNumber(".0"), 2);
+    ASSERT_EQ(parser.isNumber("0.01"), 1);
+//    Integer
+    ASSERT_EQ(parser.isNumber("1.0"), 2);
+    ASSERT_EQ(parser.isNumber("1"), 2);
+
 }
