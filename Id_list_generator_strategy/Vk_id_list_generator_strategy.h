@@ -6,6 +6,7 @@ private:
     int size;
     std::string path;
     size_t currentId = 0;
+
     size_t getCurrentId();
 
 public:
@@ -19,8 +20,7 @@ public:
     std::vector<url> generate() override;
 
 
-
-    void save() override ;
+    void save() override;
 
 
 };

@@ -21,7 +21,7 @@ size_t VkIdListGeneratorStrategy::getCurrentId() {
     return currentId;
 }
 
-void VkIdListGeneratorStrategy::save() { //TODO этот метод должен взаимодействовать с БД
+void VkIdListGeneratorStrategy::save() { //TODO этот метод должен взаимодействовать с БД (использовать метод Александра)
     std::ofstream fout(path);
     currentId += size;
     fout << currentId;

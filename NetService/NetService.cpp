@@ -24,7 +24,7 @@ response NetService::request(url mUrl) {
         curl_easy_setopt(curl_handle, CURLOPT_WRITEDATA, &content);
 
         CURLcode res = curl_easy_perform(curl_handle);
-        if(res != CURLE_OK) {
+        if (res != CURLE_OK) {
             throw "No internet connection";
         }
 
