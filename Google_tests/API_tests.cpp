@@ -6,7 +6,7 @@
 #include "Id_list_generator_strategy/Facebook_id_list_generator_strategy.h"
 #include "Crowler/Crowler.h"
 #include <iostream>
-#include "url/url.h"
+#include "url.h"
 #include "gtest/gtest.h"
 
 using std::vector, std::string;
@@ -84,31 +84,35 @@ TEST_F(TestAPI, testok) {
 
 }
 
+bool checkFacebookEqual(const std::string &st, const std::string &ans) {
+    const int serverPlustIdIndex = 83;
+    std::string firstPart;
+    std::string firstPartResult;
+    std::copy(st.begin(), st.begin() + serverPlustIdIndex, std::back_inserter(firstPart));
+    std::copy(ans.begin(), ans.begin() + serverPlustIdIndex, std::back_inserter(firstPartResult));
+    return (firstPart == firstPartResult);
+}
+
 TEST_F(TestAPI, test_facebook) {
-    //url temp1("113498916761448&set=a.113453566765983&type=3&theater");
-    //url temp2("113453540099319&set=a.113453566765983&type=3&theater");
-    //vector<url> facebook_get_photo_ans = {temp1, temp2};
 
     url mUrl("id=100043040207420", "facebook");
     std::vector<url> vec = facebook->getPhotoUrlsById(mUrl);
-    EXPECT_EQ(vec[0].toStr(),
-              "https://scontent.xx.fbcdn.net/v/t1.0-1/74394721_113498920094781_7916501690130366464_n.jpg?_nc_cat=106&_nc_ohc=1Hq29VKwkEUAQnBJKFtmCztLho7_fP4mWJ6nFO6UBhBKDB0fnCUFJ29LQ&_nc_ht=scontent.xx&oh=9d6a74eda6a04e48bb7ccf27d2759b27&oe=5E7AFA4E");
-    url mUrl2("id=100043askdklasj040207420", "facebook");
+
+    EXPECT_TRUE(checkFacebookEqual(vec[0].toStr(),
+                                   "https://scontent.xx.fbcdn.net/v/t1.0-1/74394721_113498920094781_7916501690130366464_n.jpg?_nc_cat=106&_nc_ohc=1Hq29VKwkEUAQnBJKFtmCztLho7_fP4mWJ6nFO6UBhBKDB0fnCUFJ29LQ&_nc_ht=scontent.xx&oh=9d6a74eda6a04e48bb7ccf27d2759b27&oe=5E7AFA4E"));
+
+
+    url mUrl2("id=123123", "facebook");
     std::vector<url> vec2 = facebook->getPhotoUrlsById(mUrl2);
-    EXPECT_EQ(vec2, vector<url>());
+    std::cout << vec2[0].toStr();
 
+    EXPECT_TRUE(checkFacebookEqual(vec2[0].toStr(),
+                                   "https://scontent.xx.fbcdn.net/v/t1.0-1/1620881_10101142776962602_38379520_n.jpg?_nc_cat=103&_nc_ohc=ye0Ef5jC0RgAQmkJ5JmGQtEw7dDLpHLZZxudGXANaE_ogoqB4s_iG_3AQ&_nc_ht=scontent.xx&oh=aff2448c2407b15752df24a61c32abe0&oe=5E86748D"));
 
-    //url photoId("100043040207420");
+    url mUrl3("id=asdkjhaskjdh", "facebook");
+    std::vector<url> vec3 = facebook->getPhotoUrlsById(mUrl3);
+    EXPECT_EQ(vec3, vector<url>());
 
-
-    //EXPECT_EQ(facebook->getPhotoUrlsById(photoId),
-    //         facebook_get_photo_ans);
-
-
-    //url photoId2("100043040207420ahsjdhja");
-
-
-    //EXPECT_EQ(facebook->getPhotoUrlsById(photoId2), vector<url>());
 
 }
 
@@ -177,6 +181,8 @@ TEST_F(TestListGenerator, test_facebook_lg) {
     vector<url> ans = {url("id=1235", "facebook"), url("id=1236", "facebook"), url("id=1237", "facebook"),
                        url("id=1238", "facebook"),
                        url("id=1239", "facebook")};
+
+
     std::vector<url> vec = facebook_lg->generate();
 
 
