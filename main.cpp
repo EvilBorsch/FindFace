@@ -1,33 +1,67 @@
-#include <iostream>
-#include "Server.h"
-#include "LRU.h"
-#include "HttpRequest.cpp"
+#include <vector>
+#include <string>
+#include <sstream>
+#include "HttpRequest/HttpRequest.h"
+#include "HttpResponse/HttpResponse.h"
+#include "Server/Server.h"
+
+HttpResponse not_found_view(HttpRequest request) {
+    HttpResponse response;
+    std::stringstream response_body;
+    response_body << "<title>Ничего не найдено</title>\n"
+                  << "<h1>Зачем спросил, чего не знаю?</h1>\n";
+
+    response.setContentType("text/html; charset=utf-8");
+    response.setResponseBody(response_body.str());
+
+    response.setStatus("404", "Not Found");
+
+    return response;
+}
+
+HttpResponse api_method(HttpRequest request) {
+    HttpResponse response;
+
+    if(request.METHOD() == "GET") {
+        std::map<std::string, any> get = request.GET();
+
+        try {
+
+            any test_value = request.GET_search("test");
+            std::stringstream response_body;
+            response_body << "<title>Test</title>\n"
+                          << "<h1>Test</h1>\n"
+                          << "<p>This is body of the test page...</p>\n"
+                          << "<h2>Request headers</h2>\n"
+                          << "<pre>" << test_value.s << "</pre>\n"
+                          << "<em><small>Test C++ Http Server</small></em>\n";
+
+
+//        response.setOKStatus();
+            response.setContentType("text/html; charset=utf-8");
+            response.setResponseBody(response_body.str());
+
+            return response;
+        } catch (NoValueFound) {
+            return not_found_view(request);
+        }
+
+
+
+    }
+    response.setStatus("405", "Method Not Allowed");
+    response.setResponseBody("Only GET method allowed");
+
+    return response;
+}
+
 
 int main() {
-    std::string a;
-    a = "GET /?var1=1&var2=string HTTP/1.1\n"
-        "Host: 127.0.0.1:5000\n"
-        "Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8\n"
-        "Upgrade-Insecure-Requests: 1\n"
-        "Cookie: csrftoken=PiJBMxa1zfWGOVgn92kjZ3zcLJOSywXPqEx2scDBp7kQk93AGZoDYt411YhCMQhM; sessionid=852x1dw8igpg6c29ctitnek1irxcd5ya\n"
-        "User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_6) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/12.1.2 Safari/605.1.15\n"
-        "Accept-Language: en-us\n"
-        "Accept-Encoding: gzip, deflate\n"
-        "Connection: keep-alive";
-    HttpRequest h;
-    h.add_data(a);
-    std::map<std::string, std::string> get_data = h.GET();
-    std::map<std::string, std::string>::const_iterator pos = get_data.find("var3");
+    Server server(8080);
 
-    for(auto & it : get_data) {
-        std::cout << it.first << " ";
-    }
-    std::cout << std::endl;
-    if (pos == get_data.end()) {
-        std::cout << "ERROR!";
-    } else {
-        std::string value = pos->second;
-        std::cout << value;
-    }
+    server.set_not_found_view(not_found_view);
+    server.add_view(api_method, "/some_api_method/");
+
+    server.run();
     return 0;
 }
