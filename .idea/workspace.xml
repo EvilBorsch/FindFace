@@ -1,14 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="CMakeRunConfigurationManager" shouldGenerate="true" shouldDeleteObsolete="true">
-    <generated>
-      <config projectName="CPProject" targetName="CPProject.out" />
-      <config projectName="CPProject" targetName="gtest_main" />
-      <config projectName="CPProject" targetName="gmock_main" />
-      <config projectName="CPProject" targetName="gmock" />
-      <config projectName="CPProject" targetName="Google_Tests_run" />
-      <config projectName="CPProject" targetName="gtest" />
-    </generated>
+    <generated />
   </component>
   <component name="CMakeSettings">
     <configurations>
@@ -17,7 +10,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b93eabee-f619-4724-8675-9cd2ae40e4c5" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/Google_tests/googletest" beforeDir="false" afterPath="$PROJECT_DIR$/Google_tests/googletest" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Google_tests/googletest/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Google_tests/googletest/CMakeLists.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Google_tests/googletest/googlemock/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Google_tests/googletest/googlemock/CMakeLists.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Google_tests/googletest/googlemock/test/gmock_test_utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/Google_tests/googletest/googlemock/test/gmock_test_utils.py" afterDir="false" />
@@ -35,7 +27,6 @@
   <component name="ClangdSettings">
     <option name="formatViaClangd" value="false" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="CMakeBuildProfile:Debug" />
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
@@ -64,46 +55,6 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="CMake Application.CPProject.out">
-    <configuration name="CPProject.out" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="CPProject" TARGET_NAME="CPProject.out" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="CPProject" RUN_TARGET_NAME="CPProject.out">
-      <method v="2">
-        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="Google_Tests_run" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="CPProject" TARGET_NAME="Google_Tests_run" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="CPProject" RUN_TARGET_NAME="Google_Tests_run">
-      <method v="2">
-        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="gmock" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="CPProject" TARGET_NAME="gmock" CONFIG_NAME="Debug">
-      <method v="2">
-        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="gmock_main" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="CPProject" TARGET_NAME="gmock_main" CONFIG_NAME="Debug">
-      <method v="2">
-        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="gtest" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="CPProject" TARGET_NAME="gtest" CONFIG_NAME="Debug">
-      <method v="2">
-        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="gtest_main" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="CPProject" TARGET_NAME="gtest_main" CONFIG_NAME="Debug">
-      <method v="2">
-        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
-      </method>
-    </configuration>
-    <list>
-      <item itemvalue="CMake Application.CPProject.out" />
-      <item itemvalue="CMake Application.Google_Tests_run" />
-      <item itemvalue="CMake Application.gmock" />
-      <item itemvalue="CMake Application.gmock_main" />
-      <item itemvalue="CMake Application.gtest" />
-      <item itemvalue="CMake Application.gtest_main" />
-    </list>
-  </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -114,7 +65,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1576431208104</updated>
-      <workItem from="1576431209950" duration="485000" />
+      <workItem from="1576431209950" duration="932000" />
     </task>
     <servers />
   </component>
