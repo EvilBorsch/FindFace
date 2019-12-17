@@ -11,8 +11,6 @@
 #include <cstring>
 #include <vector>
 #include <string>
-#include <sstream>
-#include <iostream>
 #include <thread>
 #include <mutex>
 
@@ -41,15 +39,13 @@ std::vector<std::string> Server::get_from_cache(const std::vector<double>&) {
 }
 
 std::vector<std::string> Server::put_to_cache(const std::vector<double>&) {
-    return std::vector<std::string>();
+    return {};
 }
 
-
-void *Server::runThread(void *arg) {
-    int new_socket = *((int*) arg);
+void Server::runThread(int _new_socket) {
     int status;
     char buffer[1024];
-    status = read(new_socket, buffer, sizeof(buffer));
+    status = read(_new_socket, buffer, sizeof(buffer));
 
     if ( status < 0 ) {
         fprintf(stderr,"Error reading from socket.");
@@ -70,9 +66,9 @@ void *Server::runThread(void *arg) {
 
     std::string serialized_response = response.getSerializedResponse();
 
-    write(new_socket , serialized_response.c_str(),
+    write(_new_socket , serialized_response.c_str(),
           serialized_response.length());
-    close(new_socket);
+    close(_new_socket);
     pthread_exit(nullptr);
 }
 
@@ -85,7 +81,7 @@ void Server::run() {
             exit(EXIT_FAILURE);
         }
 
-        std::thread thr(&Server::runThread, this, &new_socket);
+        std::thread thr(&Server::runThread, this, new_socket);
         thr.detach();
     }
 }

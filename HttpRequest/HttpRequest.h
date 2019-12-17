@@ -9,9 +9,9 @@
 #include <utility>
 #include "iostream"
 
-class NoValueFound : public std::exception {
+class NoValueFoundException : public std::exception {
 public:
-    explicit NoValueFound(std::string msg) : m_message(std::move(msg)) {}
+    explicit NoValueFoundException(std::string msg) : m_message(std::move(msg)) {}
     const char * what () const noexcept override {
         return m_message.c_str();
     }
@@ -26,14 +26,14 @@ struct URL{
     std::string query_string;
 };
 
-struct any{
+struct Any{
     int i{};
     std::string s{};
     double d{};
     char type;
-    explicit any(int t): i(t), type('i'){};
-    explicit any(double t): d(t), type('d'){};
-    explicit any(std::string t): s(std::move(t)), type('s'){};
+    explicit Any(int t): i(t), type('i'){};
+    explicit Any(double t): d(t), type('d'){};
+    explicit Any(std::string t): s(std::move(t)), type('s'){};
     void* data() {
         if(type == 'i') return &i;
         if(type == 'd') return &d;
@@ -45,16 +45,16 @@ struct any{
 class HttpParser {
 public:
     void parsePostParams();
-    void parseGetParams();
+    void parseGetParams(const std::string& get_params);
     void parseRequest();
 
     void parseArgs(std::string const & query_string,
-                   std::map<std::string, any>& params_map);
+                   std::map<std::string, Any>& params_map);
 
     std::vector<std::string> split(const std::string& s, char delimiter);
 
-    std::map<std::string, any> get;
-    std::map<std::string, any> post;
+    std::map<std::string, Any> get;
+    std::map<std::string, Any> post;
     std::map<std::string, std::string> files;
 
     std::map<std::string, std::string> headers;
@@ -64,19 +64,24 @@ public:
     std::string content_type;
 
     static int isNumber(const std::string& s);
+    bool noErrors = true;
 };
 
 class HttpRequest : private HttpParser{
+private:
+    int parseAllHeaders(std::vector<std::string> headers_vector,
+                        int headers_size);
+
 public:
     HttpRequest() = default;
     ~HttpRequest() = default;
 
     int addHeaders(const char*);
 
-    any GET_search(const std::string& key);
+    Any GET_search(const std::string& key);
 
-    std::map<std::string, any> GET() { return get;};
-    std::map<std::string, any> POST() { return post;};
+    std::map<std::string, Any> GET() { return get;};
+    std::map<std::string, Any> POST() { return post;};
     std::map<std::string, std::string> FILES() { return files;};
     std::map<std::string, std::string> HEADERS() { return headers;};
     std::string METHOD() { return method;};
@@ -85,6 +90,8 @@ public:
 
     std::string get_content_type() { return content_type;};
     static int isNumber(const std::string& s);
+
+    bool noParsingErrors() { return noErrors; };
 };
 
 

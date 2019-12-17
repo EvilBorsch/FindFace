@@ -23,11 +23,11 @@ HttpResponse api_method(HttpRequest request) {
     HttpResponse response;
 
     if(request.METHOD() == "GET") {
-        std::map<std::string, any> get = request.GET();
+        std::map<std::string, Any> get = request.GET();
 
         try {
 
-            any test_value = request.GET_search("test");
+            Any test_value = request.GET_search("test");
             std::stringstream response_body;
             response_body << "<title>Test</title>\n"
                           << "<h1>Test</h1>\n"
@@ -42,7 +42,7 @@ HttpResponse api_method(HttpRequest request) {
             response.setResponseBody(response_body.str());
 
             return response;
-        } catch (NoValueFound) {
+        } catch (NoValueFoundException) {
             return not_found_view(request);
         }
 

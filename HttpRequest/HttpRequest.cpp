@@ -16,57 +16,41 @@ int HttpRequest::addHeaders(const char* buffer) {
 
     headers_vector[0].pop_back();
     std::vector<std::string> first_line = split(headers_vector[0], ' ');
+    if(first_line.size() < 2) {
+        noErrors = false;
+        return -1;
+    }
+
     method = first_line[0];
     url.raw = first_line[1];
     url.protocol = first_line[2];
 
     if (method == "GET") {
-        std::vector<std::string> separated_url = split(
-                first_line[1], '?');
-
-        if(separated_url.size() == 2) {
-            url.path = separated_url[0];
-            url.query_string = separated_url[1];
-        } else {
-            url.path = separated_url[0];
-            url.query_string = "";
-        }
-        parseGetParams();
+        parseGetParams(first_line[1]);
     } else if(method == "POST") {
         url.protocol = first_line[2];
         url.path = first_line[1];
         url.query_string = "";
     }
 
-//  PARSE ALL HEADERS
-    int last_header_line = 0;
-    for(int i = 1; i < headers_vector.size(); ++i) {
-        headers_size += headers_vector[i].length();
-
-        headers_vector[i].pop_back();
-
-        std::vector<std::string> key_value_pair = split(headers_vector[i], ':');
-        if(key_value_pair.size() < 2) {
-            last_header_line = i;
-            break;
-        }
-        key_value_pair[1].erase(0, 1);
-        std::transform(
-                key_value_pair[0].begin(), key_value_pair[0].end(),
-                key_value_pair[0].begin(),
-                [](unsigned char c){ return std::tolower(c); }
-        );
-        headers.insert(std::pair<std::string,std::string>(
-                key_value_pair[0], key_value_pair[1]));
-    }
-    return headers_size;
+    return parseAllHeaders(headers_vector, headers_size);
 }
 
 void HttpParser::parsePostParams() {
 
 }
 
-void HttpParser::parseGetParams() {
+void HttpParser::parseGetParams(const std::string& get_params) {
+    std::vector<std::string> separated_url = split(
+            get_params, '?');
+
+    if(separated_url.size() == 2) {
+        url.path = separated_url[0];
+        url.query_string = separated_url[1];
+    } else {
+        url.path = separated_url[0];
+        url.query_string = "";
+    }
     parseArgs(url.query_string, get);
 }
 
@@ -108,7 +92,7 @@ int HttpParser::isNumber(const std::string &s) {
 }
 
 void HttpParser::parseArgs(std::string const & query_string,
-                            std::map<std::string, any>& params_map) {
+                            std::map<std::string, Any>& params_map) {
 
     std::vector<std::string> params_vector = split(query_string, '&');
     for(auto param: params_vector) {
@@ -117,29 +101,53 @@ void HttpParser::parseArgs(std::string const & query_string,
         param.erase(0, delimiter_pos + 1);
         switch (isNumber(param)){
             case 0:
-                params_map.insert(std::pair<std::string, any> (
-                        token, any(param)
+                params_map.insert(std::pair<std::string, Any> (
+                        token, Any(param)
                         ));
                 break;
             case 1:
-                params_map.insert(std::pair<std::string, any> (
-                        token, any(std::stod(param))
+                params_map.insert(std::pair<std::string, Any> (
+                        token, Any(std::stod(param))
                         ));
                 break;
             case 2:
-                params_map.insert(std::pair<std::string, any> (
-                        token, any(std::stoi(param))
+                params_map.insert(std::pair<std::string, Any> (
+                        token, Any(std::stoi(param))
                         ));
         }
     }
 
 }
 
-any HttpRequest::GET_search(const std::string& key) {
+Any HttpRequest::GET_search(const std::string& key) {
     auto it = get.find(key);
     if (it != get.end()) {
         return it->second;
-    } else {
-        throw NoValueFound("Value with key'" + key + "' not found");
     }
+    throw NoValueFoundException("Value with key'" + key + "' not found");
+}
+
+int HttpRequest::parseAllHeaders(std::vector<std::string> headers_vector,
+        int headers_size) {
+    int last_header_line = 0;
+    for(int i = 1; i < headers_vector.size(); ++i) {
+        headers_size += headers_vector[i].length();
+
+        headers_vector[i].pop_back();
+
+        std::vector<std::string> key_value_pair = split(headers_vector[i], ':');
+        if(key_value_pair.size() < 2) {
+            last_header_line = i;
+            break;
+        }
+        key_value_pair[1].erase(0, 1);
+        std::transform(
+                key_value_pair[0].begin(), key_value_pair[0].end(),
+                key_value_pair[0].begin(),
+                [](unsigned char c){ return std::tolower(c); }
+        );
+        headers.insert(std::pair<std::string,std::string>(
+                key_value_pair[0], key_value_pair[1]));
+    }
+    return headers_size;
 }
