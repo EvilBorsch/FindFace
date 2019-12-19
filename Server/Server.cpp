@@ -14,6 +14,7 @@
 #include <thread>
 #include <mutex>
 
+
 HttpRequest RequestsManager::readRequest(int connection) {
     return HttpRequest();
 }
@@ -43,9 +44,11 @@ std::vector<std::string> Server::put_to_cache(const std::vector<double>&) {
 }
 
 void Server::runThread(int _new_socket) {
-    int status;
-    char buffer[1024];
+    int status, buffer_size = 1024;
+    char buffer[buffer_size];
+
     status = read(_new_socket, buffer, sizeof(buffer));
+
 
     if ( status < 0 ) {
         fprintf(stderr,"Error reading from socket.");
@@ -55,6 +58,38 @@ void Server::runThread(int _new_socket) {
     HttpRequest request;
 
     int headers_size = request.addHeaders(buffer);
+
+    auto headers = request.HEADERS();
+
+    auto it = headers.find("content-length");
+
+    int content_length;
+    if(it == headers.end()) {
+        content_length = -1;
+    } else {
+        content_length = std::stoi(it->second);
+    }
+
+
+    if((request.METHOD() == "POST")) {
+        auto headers_end = strstr(buffer, "\n\n");
+        int unread_content = content_length;
+        if(headers_end != nullptr) {
+            unread_content -= (buffer_size - headers_size);
+
+        }
+
+        char new_buffer[content_length];
+
+        status = read(_new_socket, new_buffer, sizeof(new_buffer));
+
+        request.addBody(*new_buffer);
+        if ( status < 0 ) {
+            fprintf(stderr,"Error reading from socket.");
+            exit(0);
+        }
+    }
+
     URL url = request.URL();
     api_method view;
     try {

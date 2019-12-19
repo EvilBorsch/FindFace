@@ -44,14 +44,15 @@ struct Any{
 
 class HttpParser {
 public:
-    void parsePostParams();
+    void parsePostParams(char& buffer);
+    void parsePostParam(std::string& param);
     void parseGetParams(const std::string& get_params);
     void parseRequest();
 
     void parseArgs(std::string const & query_string,
                    std::map<std::string, Any>& params_map);
 
-    std::vector<std::string> split(const std::string& s, char delimiter);
+    static std::vector<std::string> split(const std::string& s, char delimiter);
 
     std::map<std::string, Any> get;
     std::map<std::string, Any> post;
@@ -89,9 +90,9 @@ public:
     struct URL URL() { return url;};
 
     std::string get_content_type() { return content_type;};
-    static int isNumber(const std::string& s);
 
     bool noParsingErrors() { return noErrors; };
+    void addBody(char& buffer);
 };
 
 

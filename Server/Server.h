@@ -66,7 +66,6 @@ public:
     void set_not_found_view(api_method view);
 private:
     void runThread(int _new_socket);
-    std::mutex mtx;
 
     int server_fd{}, new_socket{}, PORT{};
     struct sockaddr_in address{};
