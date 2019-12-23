@@ -3,7 +3,7 @@
 //
 
 #include "Serializator.h"
-
+#include "UserData/UserData.h"
 #include <boost/property_tree/ptree.hpp>
 #include <boost/property_tree/json_parser.hpp>
 using boost::property_tree::ptree;

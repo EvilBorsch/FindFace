@@ -9,7 +9,7 @@
 #include <ImageView/ImageView.h>
 #include <TextView/TextView.h>
 #include <TableView/TableView.h>
-
+#pragma once
 
 class PersonView : public View {
 public:
@@ -18,10 +18,12 @@ public:
     const int imageHeight = 128;
     const int imageWidth = 128;
     ImageView *userImage;
-    TextView *username;
+//    SecondaryView* username;
+    TextView* username;
     TableView *infoTable;
 
     explicit PersonView(UserData userData, int id);
+    PersonView();
 
     ~PersonView();
 

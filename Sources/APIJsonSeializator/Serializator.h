@@ -6,7 +6,7 @@
 #define CPPROJECT_SERIALIZATOR_H
 
 
-#include "UserData/UserData.h"
+#include "Views/UserData/UserData.h"
 
 class Serializator {
 public:

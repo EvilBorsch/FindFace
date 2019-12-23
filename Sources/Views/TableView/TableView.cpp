@@ -107,13 +107,13 @@ bool TableView::appendRowsInCell(int cellIndex,
 }
 
 bool TableView::removeSubview(std::string subviewName) {
-return false;
+
 }
 
 void TableView::destroy() {
-    cells.clear();
+
 }
 
 TableView::~TableView() {
-    destroy()
+
 }

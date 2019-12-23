@@ -5,15 +5,12 @@
 #ifndef CPPROJECT_SAMPLEVIEWS_H
 #define CPPROJECT_SAMPLEVIEWS_H
 
-#include <View/View.h>
-
-#include "SecondaryView/SecondaryView.h"
-#include "ImageView/ImageView.h"
-#include "TextView/TextView.h"
-#include "PersonView/PersonView.h"
-#include "StaticGeneration/PageData/PageData.h"
 #include "Form/FormView.h"
-#include "StaticGeneration/PageGenerator/PageGenerator.h"
+#include "PersonView/PersonView.h"
+#include "SecondaryView/SecondaryView.h"
+#include "PageData/PageData.h"
+
+
 
 
 void
@@ -37,9 +34,6 @@ organizeCells(Organize o, int &rows, int &cells, int count) {
 
 
 View* createNavbar(){
-    const std::string navbarTitle = "Наш файндфейс";
-    const std::string navItem1 ="Найти человека";
-    const std::string navItem2 ="О нас";
     View *navBar = new View("mainNav", Type::NAV, BClass::MAIN_NAVBAR, "mainNav");
 
 
@@ -54,7 +48,7 @@ View* createNavbar(){
                                                                     Attribute("href",
                                                                               "#page-top"),
                                                                     Attribute("TEXT",
-                                                                              navbarTitle),
+                                                                              "Наш файндвейс"),
                                                             }));
     navBar->appendInSubview("Container", *new View("navbarResponsive", Type::DIV,
                                                    BClass::NAVBAR_COLLPAPSE,
@@ -74,7 +68,7 @@ View* createNavbar(){
                                                                          BClass::NAVBAR_LINK)),
                                                        Attribute("href", "#about"),
                                                        Attribute("TEXT",
-                                                                 navItem1),
+                                                                 "Найти человечка"),
                                                }));
 
     navBar->appendInSubview("navbarML",
@@ -87,8 +81,9 @@ View* createNavbar(){
                                                                          BClass::NAVBAR_LINK)),
                                                        Attribute("href",
                                                                  "#portfolio"),
-                                                       Attribute("TEXT", navItem2),
+                                                       Attribute("TEXT", "О нас"),
                                                }));
+
     return navBar;
 }
 
@@ -103,13 +98,12 @@ View* createDecorate(){
 }
 
 View* createHead(std::string name){
-    std::string logoSource = "https://www.pinclipart.com/picdir/big/133-1331433_free-user-avatar-icons-happy-flat-design-png.png";
     View* head = new View("Head", Type::HEADER, BClass::MASTHEAD_PRIMARY_CENTER);
 
     head->append(*new View("FlexColumn", Type::DIV, BClass::FLEX_COLUMN));
     head->appendInSubview("FlexColumn", *new ImageView("Avatar", Type::IMG,
                                                        BClass::MASTHEAD_AVATAR,
-                                                       logoSource));
+                                                       "https://www.pinclipart.com/picdir/big/133-1331433_free-user-avatar-icons-happy-flat-design-png.png"));
     head->appendInSubview("FlexColumn", *new TextView("HeadingText", Type::H1,
                                                       BClass::MASTHEAD_HEADING,
                                                       name));
@@ -271,8 +265,6 @@ View* createFileForm(std::string link){
 
 
 View* createContactSection(){
-    std::string contactTitle1 = "Мы тут";
-    std::string contactTitle2 = "МГТУ им. Н.Э. Баумана  ГЗ ауд.395";
     View* contactInfo = new View("SectionContact", Type::SECTION, BClass::PAGE_SECTION,
                                  "contact");
     contactInfo->append(
@@ -282,10 +274,10 @@ View* createContactSection(){
                                    BClass::FOOTER_TEXT));
     contactInfo->appendInSubview("FooterText", *new TextView("ContactText0", Type::H4,
                                                              BClass::MB4_UPCASE,
-                                                             contactTitle1));
+                                                             "Мы тута"));
     contactInfo->appendInSubview("FooterText",
                                  *new TextView("ContactFace", Type::P, BClass::MB0_LEAD,
-                                               contactTitle2));
+                                               "МГТУ им. Н.Э. Баумана  ГЗ ауд.395"));
     return contactInfo;
 }
 

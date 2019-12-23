@@ -4,10 +4,8 @@
 
 #ifndef CPPROJECT_FORMVIEW_H
 #define CPPROJECT_FORMVIEW_H
-
-
-#include <StaticGeneration/Views/Container/ContainerView.h>
-
+#include <Views/Container/ContainerView.h>
+#pragma once
 class FormView : public ContainerView{
     std::string action;
     std::string method;
@@ -21,6 +19,7 @@ public:
         method = formMethod;
         enctype = formEnctype;
     }
+    ~FormView() = default;
     std::string toStringOpen(int depth = 0) override;
 
     std::string toStringClose(int depth = 0) override;

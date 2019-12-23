@@ -6,10 +6,10 @@
 #define CPPROJECT_PAGEGENERATOR_H
 
 #include <math.h>
-#include <StaticGeneration/Page/Page.h>
-#include <StaticGeneration/Views/PersonView/PersonView.h>
-#include <StaticGeneration/Views/Form/FormView.h>
-#include <StaticGeneration/PageData/PageData.h>
+#include <Page/Page.h>
+//#include <Views/PersonView/PersonView.h>
+//#include <Views/Form/FormView.h>
+#include <PageData/PageData.h>
 
 
 

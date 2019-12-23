@@ -65,9 +65,9 @@ SecondaryView::~SecondaryView() {
 
 }
 
-Attribute::Attribute(std::string aKey, std::string aValue) {
-    key = std::move(aKey);
-    value = std::move(aValue);
+Attribute::Attribute(std::string k, std::string v) {
+    key = std::move(k);
+    value = std::move(v);
 }
 
 Attribute::Attribute(std::string templateAttibute) {

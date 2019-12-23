@@ -28,8 +28,8 @@ public:
 
     ~ImageView();
 
-    ImageView(std::string containerName, Type containerType, BClass containerClass, std::string containerSource, int heigt, int width);
-    ImageView(std::string containerName, Type containerType, BClass containerClass, std::string containerSource);
+    ImageView(std::string n, Type t, BClass c, std::string s, int h, int w);
+    ImageView(std::string n, Type t, BClass c, std::string s);
 
     std::string toStringOpen(int depth) override;
 

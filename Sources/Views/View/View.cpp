@@ -131,7 +131,7 @@ bool View::removeSubview(std::string subviewName) {
 }
 
 View::~View() {
-
+    destroy();
 }
 
 View::View(std::string viewName, Type t, BClass c, std::string _id) {

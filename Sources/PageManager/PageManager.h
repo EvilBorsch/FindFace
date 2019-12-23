@@ -5,7 +5,7 @@
 #ifndef CPPROJECT_PAGEMANAGER_H
 #define CPPROJECT_PAGEMANAGER_H
 
-#include <StaticGeneration/PageGenerator/PageGenerator.h>
+#include <PageGenerator/PageGenerator.h>
 #include <fstream>
 #include <thread>
 #include <iostream>

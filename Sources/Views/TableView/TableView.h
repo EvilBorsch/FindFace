@@ -11,6 +11,8 @@
 #include "Cell/CellView.h"
 #include "View/View.h"
 
+#pragma once
+
 class TableView : public ContainerView {
 private:
     int rowsCount;

@@ -19,7 +19,6 @@ public:
     // Template constructor
     Attribute(std::string templateAttibute);
 
-
     std::string getKey(){ return key;}
     std::string getValue(){ return value;}
 };
