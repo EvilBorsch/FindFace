@@ -1,67 +1,57 @@
-#include <vector>
-#include <string>
+#include <iostream>
+#include <stdexcept>
+#include <cstdio>
 #include <sstream>
-#include "HttpRequest/HttpRequest.h"
-#include "HttpResponse/HttpResponse.h"
-#include "Server/Server.h"
-
-HttpResponse not_found_view(HttpRequest request) {
-    HttpResponse response;
-    std::stringstream response_body;
-    response_body << "<title>Ничего не найдено</title>\n"
-                  << "<h1>Зачем спросил, чего не знаю?</h1>\n";
-
-    response.setContentType("text/html; charset=utf-8");
-    response.setResponseBody(response_body.str());
-
-    response.setStatus("404", "Not Found");
-
-    return response;
-}
-
-HttpResponse api_method(HttpRequest request) {
-    HttpResponse response;
-
-    if(request.METHOD() == "GET") {
-        std::map<std::string, Any> get = request.GET();
-
-        try {
-
-            Any test_value = request.GET_search("test");
-            std::stringstream response_body;
-            response_body << "<title>Test</title>\n"
-                          << "<h1>Test</h1>\n"
-                          << "<p>This is body of the test page...</p>\n"
-                          << "<h2>Request headers</h2>\n"
-                          << "<pre>" << test_value.s << "</pre>\n"
-                          << "<em><small>Test C++ Http Server</small></em>\n";
+#include <vector>
 
 
-//        response.setOKStatus();
-            response.setContentType("text/html; charset=utf-8");
-            response.setResponseBody(response_body.str());
-
-            return response;
-        } catch (NoValueFoundException) {
-            return not_found_view(request);
+std::vector<std::vector<double>> getFacesVector(std::string link) {
+    char buffer[128];
+    std::string cmd = "source env/bin/activate; python python_magic.py " + link;
+    std::string result = "";
+    FILE* pipe = popen(cmd.c_str(), "r");
+    if (!pipe) throw std::runtime_error("popen() failed!");
+    try {
+        while (fgets(buffer, sizeof buffer, pipe) != NULL) {
+            result += buffer;
         }
-
-
-
+    } catch (...) {
+        pclose(pipe);
+        throw;
     }
-    response.setStatus("405", "Method Not Allowed");
-    response.setResponseBody("Only GET method allowed");
+    std::cout << result;
+    pclose(pipe);
+    std::stringstream output(result);
+    int n;
+    output >> n;
+    std::cout << n;
+    std::vector<std::vector<double>> faces;
+    std::vector<double> tmp_vector;
+    std::string num;
+    while(output >> num) {
+        if(num[0] == '[') {
+            tmp_vector.clear();
+            num.erase(num.begin());
+        } else if(num.back() == ']'){
+            num.pop_back();
+            if(!num.empty()) {
+                tmp_vector.push_back(std::stod(num));
+            }
+            faces.push_back(tmp_vector);
+            continue;
+        }
+        tmp_vector.push_back(std::stod(num));
+    }
+    for (const auto& i: faces) {
+        for(auto j: i)
+            std::cout << j << ' ';
+        std::cout << "\n";
+    }
 
-    return response;
+    return faces;
 }
-
 
 int main() {
-    Server server(8080);
-
-    server.set_not_found_view(not_found_view);
-    server.add_view(api_method, "/some_api_method/");
-
-    server.run();
+    auto a = getFacesVector("https://24smi.org/public/media/resize/800x-/2018/10/16/30085313-161676521175028-6270825408061505536-n-768x512.jpg");
     return 0;
 }

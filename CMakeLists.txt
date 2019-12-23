@@ -1,6 +1,13 @@
 cmake_minimum_required(VERSION 3.14)
 project(CPProject)
 
+find_package(PythonLibs REQUIRED)
+include_directories(${PYTHON_INCLUDE_DIRS})
+
+find_package(Boost)
+include_directories(${Boost_INCLUDE_DIRS})
+
+
 set(CMAKE_CXX_STANDARD 14)
 set(CMAKE_MODULE_PATH_REQUEST ${CMAKE_CURRENT_SOURCE_DIR}/HttpRequest)
 set(CMAKE_MODULE_PATH_RESPONSE ${CMAKE_CURRENT_SOURCE_DIR}/HttpResponse)
