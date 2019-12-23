@@ -1,7 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="CMakeRunConfigurationManager" shouldGenerate="true" shouldDeleteObsolete="true">
-    <generated />
+    <generated>
+      <config projectName="FindFace" targetName="gmock" />
+      <config projectName="FindFace" targetName="gtest_main" />
+      <config projectName="FindFace" targetName="gmock_main" />
+      <config projectName="FindFace" targetName="gtest" />
+      <config projectName="FindFace" targetName="Google_Tests_run" />
+    </generated>
   </component>
   <component name="CMakeSettings">
     <configurations>
@@ -10,6 +16,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b93eabee-f619-4724-8675-9cd2ae40e4c5" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/Sources/Views/Container/HtmlAttributes.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/FindFace.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/FindFace.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Google_tests/googletest/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Google_tests/googletest/CMakeLists.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Google_tests/googletest/googlemock/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Google_tests/googletest/googlemock/CMakeLists.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Google_tests/googletest/googlemock/test/gmock_test_utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/Google_tests/googletest/googlemock/test/gmock_test_utils.py" afterDir="false" />
@@ -17,6 +27,19 @@
       <change beforePath="$PROJECT_DIR$/Google_tests/googletest/googletest/test/gtest_xml_outfiles_test.py" beforeDir="false" afterPath="$PROJECT_DIR$/Google_tests/googletest/googletest/test/gtest_xml_outfiles_test.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Google_tests/googletest/googletest/test/gtest_xml_output_unittest.py" beforeDir="false" afterPath="$PROJECT_DIR$/Google_tests/googletest/googletest/test/gtest_xml_output_unittest.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Google_tests/googletest/googletest/test/gtest_xml_test_utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/Google_tests/googletest/googletest/test/gtest_xml_test_utils.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Sources/Views/Container/ContainerView.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Sources/Views/Container/ContainerView.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Sources/Views/Container/ContainerView.h" beforeDir="false" afterPath="$PROJECT_DIR$/Sources/Views/Container/ContainerView.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Sources/Views/ImageView/ImageView.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Sources/Views/ImageView/ImageView.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Sources/Views/ImageView/ImageView.h" beforeDir="false" afterPath="$PROJECT_DIR$/Sources/Views/ImageView/ImageView.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Sources/Views/PersonView/PersonView.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Sources/Views/PersonView/PersonView.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Sources/Views/PersonView/PersonView.h" beforeDir="false" afterPath="$PROJECT_DIR$/Sources/Views/PersonView/PersonView.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Sources/Views/Row/RowView.h" beforeDir="false" afterPath="$PROJECT_DIR$/Sources/Views/Row/RowView.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Sources/Views/Samples/SampleViews.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Sources/Views/Samples/SampleViews.h" beforeDir="false" afterPath="$PROJECT_DIR$/Sources/Views/Samples/SampleViews.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Sources/Views/SecondaryView/SecondaryView.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Sources/Views/SecondaryView/SecondaryView.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Sources/Views/SecondaryView/SecondaryView.h" beforeDir="false" afterPath="$PROJECT_DIR$/Sources/Views/SecondaryView/SecondaryView.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Sources/Views/TableView/TableView.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Sources/Views/TableView/TableView.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-log.txt" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -27,6 +50,7 @@
   <component name="ClangdSettings">
     <option name="formatViaClangd" value="false" />
   </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="CMakeBuildProfile:Debug" />
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
@@ -37,11 +61,30 @@
       </set>
     </option>
   </component>
+  <component name="OCFindUsagesOptions" text="true" ivars="false" properties="true" derivedClasses="false" />
+  <component name="ProjectConfigurationFiles">
+    <option name="files">
+      <list>
+        <option value="$PROJECT_DIR$/.idea/misc.xml" />
+      </list>
+    </option>
+  </component>
   <component name="ProjectId" id="1V1qzFDu2W8K2BsnpNMgb736BbK" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/Sources/Views/Container" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -55,6 +98,40 @@
       </list>
     </option>
   </component>
+  <component name="RunManager" selected="CMake Application.Google_Tests_run">
+    <configuration name="Google_Tests_run" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="FindFace" TARGET_NAME="Google_Tests_run" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="FindFace" RUN_TARGET_NAME="Google_Tests_run">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="gmock" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="FindFace" TARGET_NAME="gmock" CONFIG_NAME="Debug">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="gmock_main" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="FindFace" TARGET_NAME="gmock_main" CONFIG_NAME="Debug">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="gtest" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="FindFace" TARGET_NAME="gtest" CONFIG_NAME="Debug">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="gtest_main" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="FindFace" TARGET_NAME="gtest_main" CONFIG_NAME="Debug">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="CMake Application.Google_Tests_run" />
+      <item itemvalue="CMake Application.gmock" />
+      <item itemvalue="CMake Application.gmock_main" />
+      <item itemvalue="CMake Application.gtest" />
+      <item itemvalue="CMake Application.gtest_main" />
+    </list>
+  </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -66,6 +143,7 @@
       <option name="presentableId" value="Default" />
       <updated>1576431208104</updated>
       <workItem from="1576431209950" duration="1261000" />
+      <workItem from="1577080761503" duration="3622000" />
     </task>
     <servers />
   </component>
@@ -77,7 +155,9 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>

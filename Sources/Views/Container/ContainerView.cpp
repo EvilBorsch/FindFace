@@ -18,17 +18,17 @@ std::string ContainerView::getId(){
     return id;
 }
 
-ContainerView::ContainerView(std::string n, Type t, std::string c){
-    name = n;
-    type = enumToString(t);
-    _class = c;
+ContainerView::ContainerView(std::string containerName, Type containerType, std::string containerClass){
+    name = containerName;
+    type = enumToString(containerType);
+    _class = containerClass;
     id = "";
 }
-ContainerView::ContainerView(std::string n, Type t, std::string c, std::string _id ){
-    name = n;
-    type = enumToString(t);
-    _class = c;
-    id = _id;
+ContainerView::ContainerView(std::string containerName, Type containerType, std::string containerClass, std::string containerId ){
+    name = containerName;
+    type = enumToString(containerType);
+    _class = containerClass;
+    id = containerId;
 }
 
 std::string ContainerView::getAction() {

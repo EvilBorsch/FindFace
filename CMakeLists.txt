@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.14)
-project(CPProject)
+project(FindFace)
 
 set(CMAKE_CXX_STANDARD 14)
 set(CMAKE_MODULE_PATH ${CMAKE_CURRENT_SOURCE_DIR}/Sources)
@@ -34,6 +34,7 @@ set(ALL_SOURCES
 
 
 set(ALL_VIEWS_HEADERS
+
         ${CMAKE_MODULE_PATH}/Views/UserData/
         ${CMAKE_MODULE_PATH}/Views/Container/
         ${CMAKE_MODULE_PATH}/Views/Cell/
@@ -54,7 +55,7 @@ set(ALL_VIEWS_HEADERS
 include_directories(${ALL_SOURCES})
 include_directories(${ALL_HEADERS})
 
-add_executable(CPProject.out  ${CMAKE_MODULE_PATH}/main.cpp ${ALL_SOURCES} )
+#add_executable(FindFace  ${CMAKE_MODULE_PATH}/main.cpp ${ALL_SOURCES} )
 
 add_subdirectory(Google_tests)
 

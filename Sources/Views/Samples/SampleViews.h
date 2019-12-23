@@ -37,6 +37,9 @@ organizeCells(Organize o, int &rows, int &cells, int count) {
 
 
 View* createNavbar(){
+    const std::string navbarTitle = "Наш файндфейс";
+    const std::string navItem1 ="Найти человека";
+    const std::string navItem2 ="О нас";
     View *navBar = new View("mainNav", Type::NAV, BClass::MAIN_NAVBAR, "mainNav");
 
 
@@ -51,7 +54,7 @@ View* createNavbar(){
                                                                     Attribute("href",
                                                                               "#page-top"),
                                                                     Attribute("TEXT",
-                                                                              "Наш файндвейс"),
+                                                                              navbarTitle),
                                                             }));
     navBar->appendInSubview("Container", *new View("navbarResponsive", Type::DIV,
                                                    BClass::NAVBAR_COLLPAPSE,
@@ -71,7 +74,7 @@ View* createNavbar(){
                                                                          BClass::NAVBAR_LINK)),
                                                        Attribute("href", "#about"),
                                                        Attribute("TEXT",
-                                                                 "Найти человечка"),
+                                                                 navItem1),
                                                }));
 
     navBar->appendInSubview("navbarML",
@@ -84,9 +87,8 @@ View* createNavbar(){
                                                                          BClass::NAVBAR_LINK)),
                                                        Attribute("href",
                                                                  "#portfolio"),
-                                                       Attribute("TEXT", "О нас"),
+                                                       Attribute("TEXT", navItem2),
                                                }));
-
     return navBar;
 }
 
@@ -101,12 +103,13 @@ View* createDecorate(){
 }
 
 View* createHead(std::string name){
+    std::string logoSource = "https://www.pinclipart.com/picdir/big/133-1331433_free-user-avatar-icons-happy-flat-design-png.png";
     View* head = new View("Head", Type::HEADER, BClass::MASTHEAD_PRIMARY_CENTER);
 
     head->append(*new View("FlexColumn", Type::DIV, BClass::FLEX_COLUMN));
     head->appendInSubview("FlexColumn", *new ImageView("Avatar", Type::IMG,
                                                        BClass::MASTHEAD_AVATAR,
-                                                       "https://www.pinclipart.com/picdir/big/133-1331433_free-user-avatar-icons-happy-flat-design-png.png"));
+                                                       logoSource));
     head->appendInSubview("FlexColumn", *new TextView("HeadingText", Type::H1,
                                                       BClass::MASTHEAD_HEADING,
                                                       name));
@@ -268,6 +271,8 @@ View* createFileForm(std::string link){
 
 
 View* createContactSection(){
+    std::string contactTitle1 = "Мы тут";
+    std::string contactTitle2 = "МГТУ им. Н.Э. Баумана  ГЗ ауд.395";
     View* contactInfo = new View("SectionContact", Type::SECTION, BClass::PAGE_SECTION,
                                  "contact");
     contactInfo->append(
@@ -277,10 +282,10 @@ View* createContactSection(){
                                    BClass::FOOTER_TEXT));
     contactInfo->appendInSubview("FooterText", *new TextView("ContactText0", Type::H4,
                                                              BClass::MB4_UPCASE,
-                                                             "Мы тута"));
+                                                             contactTitle1));
     contactInfo->appendInSubview("FooterText",
                                  *new TextView("ContactFace", Type::P, BClass::MB0_LEAD,
-                                               "МГТУ им. Н.Э. Баумана  ГЗ ауд.395"));
+                                               contactTitle2));
     return contactInfo;
 }
 

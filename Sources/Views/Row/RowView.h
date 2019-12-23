@@ -5,7 +5,7 @@
 #ifndef CPPROJECT_ROWVIEW_H
 #define CPPROJECT_ROWVIEW_H
 
-#include <StaticGeneration/Views/View/View.h>
+#include <Views/View/View.h>
 
 class RowView : public View {
 public:

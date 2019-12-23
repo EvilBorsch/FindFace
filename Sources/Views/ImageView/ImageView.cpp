@@ -20,20 +20,20 @@ void ImageView::destroy() {
 
 }
 
-ImageView::ImageView(std::string n, Type t, BClass c, std::string s, int h,
-                     int w) {
-    name = n;
-    type = enumToString(t);
-    _class = enumToString(c);
-    src = s;
-    height = h;
-    width = w;
+ImageView::ImageView(std::string containerName, Type containerType, BClass containerClass, std::string containerSource, int containerHeight,
+                     int containerWidth) {
+    name = containerName;
+    type = enumToString(containerType);
+    _class = enumToString(containerClass);
+    src = containerSource;
+    height = containerHeight;
+    width = containerWidth;
 }
-ImageView::ImageView(std::string n, Type t, BClass c, std::string s) {
-    name = n;
-    type = enumToString(t);
-    _class = enumToString(c);
-    src = s;
+ImageView::ImageView(std::string containerName, Type containerType, BClass containerClass, std::string containerSource) {
+    name = containerName;
+    type = enumToString(containerType);
+    _class = enumToString(containerClass);
+    src = containerSource;
     height = 0;
     width = 0;
 }
