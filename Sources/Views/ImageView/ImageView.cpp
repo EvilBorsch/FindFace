@@ -29,6 +29,14 @@ ImageView::ImageView(std::string n, Type t, BClass c, std::string s, int h,
     height = h;
     width = w;
 }
+ImageView::ImageView(std::string n, Type t, BClass c, std::string s) {
+    name = n;
+    type = enumToString(t);
+    _class = enumToString(c);
+    src = s;
+    height = 0;
+    width = 0;
+}
 
 std::string ImageView::toStringOpen(int depth) {
     std::string res = "";
@@ -36,8 +44,8 @@ std::string ImageView::toStringOpen(int depth) {
         res += " ";
     }
     res += "<" + type + " class=\"" + _class + "\" src=\"" + src + "\""
-           + R"( alt="" width=")" + std::to_string(width)
-           + "\" height=\"" + std::to_string(height) + "\">\n\n";
+           + R"( alt="" width=")" + ((width==0)? "":std::to_string(width))
+           + "\" height=\"" + ((height == 0)?"":std::to_string(height)) + "\">\n\n";
     return res;
 }
 

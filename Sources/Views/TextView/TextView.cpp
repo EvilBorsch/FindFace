@@ -2,7 +2,9 @@
 // Created by Сергей Петренко on 2019-11-16.
 //
 
+#include <boost/algorithm/string.hpp>
 #include "TextView.h"
+#include "iostream"
 
 bool TextView::append(ContainerView &mView){
     return false;
@@ -57,5 +59,23 @@ std::string TextView::toString(int depth) {
 }
 
 TextView::~TextView() {
+
+}
+
+TextView::TextView(std::string templateTextView){
+    std::vector<std::string> result;
+
+    templateTextView = boost::replace_all_copy(templateTextView, "<", " ");
+    templateTextView = boost::replace_all_copy(templateTextView, ">", " ");
+
+    std::cout<<templateTextView<<std::endl;
+
+    boost::split(result, templateTextView, boost::is_any_of(" "));
+    type = result[0];
+    boost::split(result, templateTextView, boost::is_any_of("\""));
+    _class = result[1];
+    boost::split(result, result[2], boost::is_any_of("/"));
+    text = result[0];
+
 
 }

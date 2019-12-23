@@ -6,7 +6,7 @@
 #define CPPROJECT_PAGEDATA_H
 
 #include<vector>
-#include <Views/UserData/UserData.h>
+#include <StaticGeneration/Views/UserData/UserData.h>
 
 enum class PageType : uint8_t {
     ONE_USER_PAGE,
@@ -17,7 +17,6 @@ enum class PageType : uint8_t {
 enum class Organize : uint8_t {
     ONE_LINE_VERTICAL,
     ONE_LINE_HORIZONTAL,
-    SQUARE,
     RECT_HORIZONTAL,
     RECT_VERTICAL
 

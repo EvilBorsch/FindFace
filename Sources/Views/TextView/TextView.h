@@ -24,6 +24,7 @@ public:
     TextView(std::string n, Type t, BClass c, std::string txt);
 
     TextView(std::string n, Type t, std::string txt);
+    TextView(std::string templateTextView);
 
     ~TextView();
 

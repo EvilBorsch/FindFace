@@ -2,9 +2,10 @@
 // Created by Сергей Петренко on 2019-12-02.
 //
 
+#include <StaticGeneration/Views/SecondaryView/SecondaryView.h>
 #include "PersonView.h"
 
-PersonView::PersonView(UserData userData){
+PersonView::PersonView(UserData userData,int id){
 type = enumToString(Type::DIV);
 _class = enumToString(BClass::CARD_DECK);
 name = "PersonView";
@@ -14,10 +15,14 @@ name = "PersonView";
                               userData.imageUrl,
                               imageHeight,
                               imageWidth);
-username = new TextView("slug",
-                        Type::H4,
-                        BClass::TEXT_NORMAL,
-                        userData.slug);
+
+//username = new SecondaryView("slug",Type::A,std::vector<Attribute>{
+//    Attribute("href","/userpage/"+std::to_string(id)),
+//    Attribute("class","my-0 font-weight-normal"),
+//    Attribute("TEXT",userData.slug )
+//});
+    username = new TextView("slug",Type::H4,BClass::TEXT_NORMAL,userData.slug);
+
 
 infoTable = new TableView("table",
                           rowsCount,

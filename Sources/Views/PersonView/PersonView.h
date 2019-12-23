@@ -18,10 +18,11 @@ public:
     const int imageHeight = 128;
     const int imageWidth = 128;
     ImageView *userImage;
-    TextView *username;
+//    SecondaryView* username;
+    TextView* username;
     TableView *infoTable;
 
-    explicit PersonView(UserData userData);
+    explicit PersonView(UserData userData, int id);
 
     ~PersonView();
 

@@ -14,10 +14,24 @@ std::string ContainerView::getType(){
 std::string ContainerView::getClass(){
     return _class;
 }
+std::string ContainerView::getId(){
+    return id;
+}
 
 ContainerView::ContainerView(std::string n, Type t, std::string c){
     name = n;
     type = enumToString(t);
     _class = c;
+    id = "";
+}
+ContainerView::ContainerView(std::string n, Type t, std::string c, std::string _id ){
+    name = n;
+    type = enumToString(t);
+    _class = c;
+    id = _id;
+}
+
+std::string ContainerView::getAction() {
+    return action;
 }
 

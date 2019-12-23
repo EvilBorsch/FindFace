@@ -14,6 +14,9 @@ public:
 
     ~View();
 
+
+    View(std::string n, Type t, BClass c, std::string id);
+
     View(std::string n, Type t, BClass c);
 
     View(std::string n, Type t);

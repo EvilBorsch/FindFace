@@ -3,32 +3,16 @@
 //
 
 #include "PageGenerator.h"
+#include "Samples/SampleViews.h"
 
-void
-PageGenerator::organizeCells(Organize o, int &rows, int &cells, int count) {
-    switch (o) {
-        case Organize::ONE_LINE_VERTICAL:
-            rows = 1;
-            cells = count;
-            break;
-        case Organize::ONE_LINE_HORIZONTAL:
-            cells = 2;
-            rows = count;
-            break;
-
-        case Organize::RECT_HORIZONTAL:
-            break;
-        case Organize::RECT_VERTICAL:
-            break;
-    }
-}
 
 Page *
 PageGenerator::generateTablePage(std::vector<UserData *> userData, Organize o) {
     page = new Page();
     std::vector<PersonView *> persons;
+    int i = 0;
     for (auto &u : userData) {
-        persons.push_back(new PersonView(*u));
+        persons.push_back(new PersonView(*u, i++));
     }
 
     int rowsCount = 0;
@@ -56,13 +40,72 @@ PageGenerator::generateTablePage(std::vector<UserData *> userData, Organize o) {
     return page;
 }
 
-Page *PageGenerator::generateStartPage() {
-    page = new Page();
 
+
+Page *PageGenerator::generateStartPage(std::vector<UserData *> userData) {
+    const std::string title1 = "Наш файндфейс!";
+    const std::string title2 = "Лучшие разрабы";
+    const std::string link = "http://localhost:"+ std::to_string(PORT) + "/request/";
+    page = new Page();
+    View *v = new View("Main", Type::DIV);
+    View *nav = createNavbar();
+    v->append(*nav);
+    v->append(*createHead(title1));
+    v->append(*createDevSection(userData,title2));
+    v->append(*createFileForm(link));
+    v->append(*createContactSection());
+    page->appendInBody(*v);
+    return page;
+}
+
+Page *PageGenerator::generateLinkPage(std::string url) {
+    const std::string title1 = "Наш файндфейс!";
+    const std::string title2 = "Лучшие разрабы";
+    const std::string link = "http://localhost:" + std::to_string(PORT) + "/request/";
+    page = new Page();
+    View *v = new View("Main", Type::DIV);
+    View *nav = createNavbar();
+    v->append(*nav);
+    v->append(*createHead(title1));
+//    v->append(*new SecondaryView("URL",Type::LINK,std::vector<Attribute>{
+//      Attribute("TEXT","НАШЛИ ССЫЛКУ")
+//    }));
+    v->append(*new TextView("URL",Type::H4,BClass::TEXT_NORMAL,url));
+    v->append(*createFileForm(link));
+    v->append(*createContactSection());
+    page->appendInBody(*v);
+    return page;
 }
 
 Page *PageGenerator::generateUserPage(UserData userData) {
-    Page *page = new Page();
+    const std::string title = "Мы что-то нашли";
+
+    page = new Page();
+    View *v = new View("Main", Type::DIV);
+    View *nav = createNavbar();
+    v->append(*nav);
+    v->append(*createDecorate());
+    v->append(*createUserCard(&userData));
+    v->append(*createContactSection());
+    page->appendInBody(*v);
+
+    return page;
+}
+
+
+Page *PageGenerator::generateSimilarUsersPage(std::vector<UserData *> userData,Organize o) {
+    const std::string title = "Мы что-то нашли";
+
+    page = new Page();
+
+    View *v = new View("Main", Type::DIV);
+    v->append(*createNavbar());
+    v->append(*createBar("Похожие"));
+    v->append(*new View("usersContainer", Type::DIV,BClass::CONTAINER));
+    v->appendInSubview("usersContainer",*createUserTable(userData,Organize::RECT_HORIZONTAL));
+    v->append(*createContactSection());
+    page->appendInBody(*v);
+
     return page;
 }
 

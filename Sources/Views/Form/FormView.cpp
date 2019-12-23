@@ -1,62 +1,33 @@
 //
-// Created by Сергей Петренко on 2019-11-07.
+// Created by Сергей Петренко on 2019-12-17.
 //
 
-#include "View.h"
+#include "FormView.h"
 
-
-
-
-View::View(std::string n, Type t, BClass c) {
-    name = n;
-    type = enumToString(t);
-    _class = enumToString(c);
-    id ="";
-    action = "";
-}
-
-View::View(std::string n, Type t) {
-    name = n;
-    type = enumToString(t);
-    _class = "";
-    id ="";
-    action = "";
-}
-
-std::string View::toStringOpen(int depth) {
-
+std::string FormView::toStringOpen(int depth) {
     std::string res;
     for (int i = 0; i < 3 * depth; i++) {
         res += " ";
     }
-    res += "<" + getType() + " class=\"" + getClass()+"\"";
-    if(std::strcmp(id.data(),"")){
-        res+= " id= \"" + getId()+"\"";
-    }
-    res+=">\n\n";
+    res +=  "<form action= \"" + getAction() + "\" method= \""+ getMethod()+ "\" enctype= \""+ getEnctype()+"\"";
+    res+=  ">\n\n";
     return res;
 }
 
-std::string View::toStringClose(int depth) {
+std::string FormView::toStringClose(int depth) {
     std::string res;
     for (int i = 0; i < 3 * depth; i++) {
         res += " ";
     }
-    if(std::strcmp(getType().data(),"li")){
-    res += "</" + getType() + ">\n\n";
-        }
-    else
-        res += "<" + getType() + ">\n\n";
+
+        res += "</form>\n\n";
     return res;
 }
 
-std::string View::toString(int depth) {
+std::string FormView::toString(int depth) {
     std::string res;
     if (depth == 0) {
-        res += "<" + getType() + " class=\"" + getClass()+"\"" + " action=" + getAction();
-        if(!std::strcmp(id.data(),"")){
-            res+= " id= \"" + getId()+"\"";
-        }
+        res += "<form action= \"" + getAction() + "\" method= \""+ getMethod()+ "\" enctype= \""+ getEnctype()+"\"";
         res+=  ">\n\n";
         depth++;
     }
@@ -73,13 +44,12 @@ std::string View::toString(int depth) {
 
     }
     if (--depth == 0) {
-        res += "</" + getType() + ">\n\n";
+        res += "</form> \n\n";
     }
     return res;
 }
 
-bool View::appendInSubview(std::string subviewName, ContainerView &mView) {
-
+bool FormView::appendInSubview(std::string subviewName, ContainerView &mView) {
     for (ContainerView &v : subviews) {
         if (std::strcmp(subviewName.data(), v.getName().data()) == 0) {
             v.append(mView);
@@ -92,11 +62,11 @@ bool View::appendInSubview(std::string subviewName, ContainerView &mView) {
     return false;
 }
 
-bool View::append(ContainerView &mView) {
+bool FormView::append(ContainerView &mView) {
     subviews.emplace_back(mView);
 }
 
-void View::destroy() {
+void FormView::destroy() {
     int i = 0;
     for (ContainerView &v: subviews) {
         if (!v.subviews.empty()) {
@@ -107,7 +77,7 @@ void View::destroy() {
     }
 }
 
-bool View::removeSubview(std::string subviewName) {
+bool FormView::removeSubview(std::string subviewName) {
     int i = 0;
     for (ContainerView &v : subviews) {
         auto it = std::find_if(v.subviews.begin(), v.subviews.end(),
@@ -129,17 +99,3 @@ bool View::removeSubview(std::string subviewName) {
         i++;
     }
 }
-
-View::~View() {
-
-}
-
-View::View(std::string viewName, Type t, BClass c, std::string _id) {
-    name = viewName;
-    type = enumToString(t);
-    _class = enumToString(c);
-    id = _id;
-}
-
-
-

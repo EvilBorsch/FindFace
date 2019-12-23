@@ -29,6 +29,7 @@ public:
     ~ImageView();
 
     ImageView(std::string n, Type t, BClass c, std::string s, int h, int w);
+    ImageView(std::string n, Type t, BClass c, std::string s);
 
     std::string toStringOpen(int depth) override;
 
