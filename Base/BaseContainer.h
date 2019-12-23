@@ -14,8 +14,8 @@ public:
 
 	BaseContainer(const std::string &id_);
 
-	virtual void save(bsoncxx::v_noabi::builder::stream::key_context<bsoncxx::v_noabi::builder::stream::key_context<>> &document) = 0;
-	virtual void load(const bsoncxx::document::view& document_reader) = 0;
+	virtual void save(bsoncxx::builder::basic::sub_document &document) = 0;
+	virtual void load(const bsoncxx::v_noabi::document::element& document_reader) = 0;
 
 	const std::string id;
 };

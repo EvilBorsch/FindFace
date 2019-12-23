@@ -1,7 +1,11 @@
 #pragma once
 
 #include <vector>
+#include <utility>
+
+#include <bsoncxx/builder/basic/sub_document.hpp>
 #include <bsoncxx/builder/stream/document.hpp>
+
 #include "BaseContainer.h"
 
 
@@ -10,17 +14,18 @@ public:
 
 	Container(const std::string &id_);
 
-	void save(bsoncxx::v_noabi::builder::stream::key_context<bsoncxx::v_noabi::builder::stream::key_context<>>& document);
-	void load(const bsoncxx::document::view& document_reader);
+	void save(bsoncxx::builder::basic::sub_document &document);
+	void load(const bsoncxx::v_noabi::document::element& document_reader);
 
-	std::vector<double> get_key();
-	std::string get_data();
+	std::vector<std::pair<std::vector<double>, std::string>> get_data();
+	std::vector<std::string> get_containers_id();
 
-	void set_key(const std::vector<double>& key_);
-	void set_data(const std::string& data_);
+	void set_data(const std::vector<std::pair<std::vector<double>, std::string>>& data);
+	void set_containers_id(const std::vector<std::string> &containers_id);
+
 
 private:
 
-	std::vector<double> key;
-	std::string data;
+	std::vector<std::pair<std::vector<double>, std::string>> data;
+	std::vector<std::string> containers_id;
 };

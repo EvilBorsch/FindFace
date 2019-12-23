@@ -11,6 +11,8 @@
 #include "BaseDBManager.h"
 #include "BaseContainer.h"
 #include "Container.h"
+#include "BaseDBManager.h"
+#include "BaseDataStructure.h"
 
 class DBManager: public BaseDBManager{
 public:
@@ -19,8 +21,11 @@ public:
 
 	void save_container(BaseContainer *container_ptr);
 
-	Container* get_container(const std::string &id);
-	Container* get_free_container();
+	BaseContainer* get_container(const std::string &id);
+	BaseContainer* get_free_container();
+
+	BaseContainer* get_free_kd_tree(DBManager *db_manager, size_t max_containers_count);
+	BaseContainer* get_kd_tree(const std::string &id, DBManager *db_manager, size_t max_containers_count);
 
 private:
 

@@ -1,335 +1,224 @@
 #include <iostream>
 #include <vector>
 #include <queue>
-#include <cmath>
 #include <utility>
 #include <algorithm>
+#include <memory>
 
 #include <bsoncxx/builder/stream/document.hpp>
 
-#include "BaseDataStructure.h" 
+#include "BaseDataStructure.h"
+#include "BaseDBManager.h" 
+#include "BaseContainer.h"
+#include "BaseComporator.h"
+#include "BaseMetrificator.h"
+
 #include "DBManager.h"
 #include "Container.h"
 #include "KDTree.h"
 
 
-
-Cmp::Cmp(const size_t &depth_):depth(depth_){}
-Cmp::Cmp(){}
-
-bool Cmp::operator()(const std::vector<double>& a, const std::vector<double>& b, const double& bias){
-    return a[depth % a.size()] + bias < b[depth % b.size()];
-}
-
-
-bool Cmp::operator()(const double& a, const double& b){
-    return a < b;
-}
-
-
-double Metric::operator()( const std::vector<double>& a, const std::vector<double>& b){
-    double ret = 0.0;
-    for(size_t c = 0; c < a.size(); ++c){
-    	double dist = a[c] - b[c];
-    	ret += dist * dist;	
-    }
-	return ret > 0.0 ? sqrt(ret) : 0.0;
-}
-
-
-KDTree::KDTree(const std::string &id, const DBManager *db_manager):BaseDataStructure(id, db_manager){}
+KDTree::KDTree(const std::string &id, DBManager *db_manager, const size_t &max_containers_count_):
+	BaseDataStructure(id, db_manager), max_containers_count(max_containers_count_){}
 
 KDTree::~KDTree(){}
 
-void KDTree::add(const std::vector<double>& key, const std::string& data){
-
-	Container *container = ((DBManager*)db_manager)->get_free_container();
-	container->set_key(key);
-	container->set_data(data);
-	((DBManager*)db_manager)->save_container(container);
-
-	KDTreeNode **currient_kd_tree_node = &root;
-	size_t depth = 0;
-
-	while((*currient_kd_tree_node != nullptr)&&((*currient_kd_tree_node)->containers.size() == 1)){
-		if(Cmp(depth)(load_key((*currient_kd_tree_node)->containers[0]), load_key(container->id))){
-			currient_kd_tree_node = &((*currient_kd_tree_node)->right_node);
-		}
-		else{
-			currient_kd_tree_node = &((*currient_kd_tree_node)->left_node);
-		}
-	}
-
-	if(*currient_kd_tree_node == nullptr){
-		*currient_kd_tree_node = new KDTreeNode(container->id, db_manager);
+void KDTree::add(const std::vector<double>& key, const std::string& data, BaseComporator *cmp){
+	if(root_container_id.empty()){
+		
+		std::shared_ptr<Container> root_container((Container*)db_manager->get_free_container());
+		root_container_id = root_container->id;
+		root_container->set_data({std::make_pair(key, data)});
+		db_manager->save_container(root_container.get());
 	}
 	else{
-		(**currient_kd_tree_node)(container->id, Cmp(depth));
-	}
+		std::string container_id = root_container_id;
+		std::shared_ptr<Container> container((Container*)db_manager->get_container(container_id));
+		size_t currient_depth = 0;
 
-	delete container;
-	std::cout << "\n";
-}
+		while(!container->get_containers_id().empty()){
+			cmp->set_depth(currient_depth);
 
-
-
-std::vector<std::string> KDTree::range_search(const std::vector<double>& min, const std::vector<double>& max){
-
-	std::vector<std::string> out_data;
-	std::queue<KDTreeNode*> kd_tree_node_queue;
-	std::queue<size_t> kd_tree_depth_queue;
-
-	if(root != nullptr){
-		kd_tree_node_queue.push(root);
-		kd_tree_depth_queue.push(0);
-	}
-
-	while(!kd_tree_node_queue.empty()){
-		KDTreeNode *currient_kd_tree_node = kd_tree_node_queue.front();
-		size_t currient_kd_tree_depth = kd_tree_depth_queue.front();
-
-		if(Cmp(currient_kd_tree_depth)(load_key(currient_kd_tree_node->containers[0]), min)){
-			if(currient_kd_tree_node->right_node != nullptr){
-				kd_tree_node_queue.push(currient_kd_tree_node->right_node);
-				kd_tree_depth_queue.push(currient_kd_tree_depth + 1);
-			}
-		}
-		else if(Cmp(currient_kd_tree_depth)(max, load_key(currient_kd_tree_node->containers[0]))){
-			if(currient_kd_tree_node->left_node != nullptr){
-				kd_tree_node_queue.push(currient_kd_tree_node->left_node);
-				kd_tree_depth_queue.push(currient_kd_tree_depth + 1);
-			}
-		}
-		else{
-			if(currient_kd_tree_node->containers.size() == 1){
-				out_data.push_back(currient_kd_tree_node->containers[0]);
+			if((*cmp)(container->get_data()[0].first, key)){
+				container_id = container->get_containers_id()[0];
 			}
 			else{
-				out_data.insert(out_data.end(), currient_kd_tree_node->containers.begin(), currient_kd_tree_node->containers.end());
+				container_id = container->get_containers_id()[1];
 			}
 
-			if(currient_kd_tree_node->left_node != nullptr){
-				kd_tree_node_queue.push(currient_kd_tree_node->left_node);
-				kd_tree_depth_queue.push(currient_kd_tree_depth + 1);
-			}
-			if(currient_kd_tree_node->right_node != nullptr){
-				kd_tree_node_queue.push(currient_kd_tree_node->right_node);
-				kd_tree_depth_queue.push(currient_kd_tree_depth + 1);
-			}
-		}
-		
-		kd_tree_node_queue.pop();
-		kd_tree_depth_queue.pop();
-	}
+			container = std::shared_ptr<Container>((Container*)db_manager->get_container(container_id));
 
-	std::vector<std::string> out;
-	for(size_t c = 0; c < out_data.size(); ++c){
-		Container *container = ((DBManager*)db_manager)->get_container(out_data[c]);
-		out.push_back(container->get_data());
-		delete container;
-	}
-
-	return out;
-}
-
-
-
-std::vector<std::string> KDTree::neighbor_search(const std::vector<double>& container){
-
-	std::vector<std::string> nearest_containers;
-
-	if(root == nullptr){
-		return nearest_containers;
-	}
-
-	nearest_containers = find_range(container);
-	
-	if(nearest_containers.empty()){
-		return nearest_containers;
-	}
-
-	auto best_metric = Metric()(load_key(nearest_containers[0]), container);
-
-	std::queue<KDTreeNode*> kd_tree_node_queue;
-	std::queue<size_t> kd_tree_depth_queue;
-
-	if(root != nullptr){
-		kd_tree_node_queue.push(root);
-		kd_tree_depth_queue.push(0);
-	}
-
-	while(!kd_tree_node_queue.empty()){
-		KDTreeNode *currient_kd_tree_node = kd_tree_node_queue.front();
-		size_t currient_kd_tree_depth = kd_tree_depth_queue.front();
-
-		for(size_t c = 0; c < currient_kd_tree_node->containers.size(); ++c){
-			auto buff_metric = Metric()(container, load_key(currient_kd_tree_node->containers[c]));
-
-			if(Cmp()(buff_metric, best_metric)){
-				best_metric = buff_metric;
-				nearest_containers.clear();
-				nearest_containers.push_back(currient_kd_tree_node->containers[c]);
-			}
-			else if(!Cmp()(best_metric, buff_metric)){
-				
-				nearest_containers.push_back(currient_kd_tree_node->containers[c]);
-			}
+			currient_depth++;
 		}
 
-		if(Cmp(currient_kd_tree_depth)(container, load_key(currient_kd_tree_node->containers[0]))){
-			if(!Cmp(currient_kd_tree_depth)(container, load_key(currient_kd_tree_node->containers[0]), best_metric)){
-				if(currient_kd_tree_node->left_node != nullptr){
-					kd_tree_node_queue.push(currient_kd_tree_node->left_node);
-					kd_tree_depth_queue.push(currient_kd_tree_depth + 1);
+		std::vector<std::pair<std::vector<double>, std::string>> container_data = container->get_data();
+
+		container_data.insert( 
+			std::upper_bound(container_data.begin(), container_data.end(), std::make_pair(key, data), 
+				[cmp](std::pair<std::vector<double>, std::string> a, std::pair<std::vector<double>, std::string> b){
+					return (*cmp)(a.first, b.first);
 				}
-				if(currient_kd_tree_node->right_node != nullptr){
-					kd_tree_node_queue.push(currient_kd_tree_node->right_node);
-					kd_tree_depth_queue.push(currient_kd_tree_depth + 1);
-				}
-			}
-			else{
-				if(currient_kd_tree_node->left_node != nullptr){
-					kd_tree_node_queue.push(currient_kd_tree_node->left_node);
-					kd_tree_depth_queue.push(currient_kd_tree_depth + 1);
-				}
-			}
-		}
-		else{
-			if(Cmp(currient_kd_tree_depth)(container, load_key(currient_kd_tree_node->containers[0]), -best_metric)){
-				if(currient_kd_tree_node->left_node != nullptr){
-					kd_tree_node_queue.push(currient_kd_tree_node->left_node);
-					kd_tree_depth_queue.push(currient_kd_tree_depth);
-				}
-				if(currient_kd_tree_node->right_node != nullptr){
-					kd_tree_node_queue.push(currient_kd_tree_node->right_node);
-					kd_tree_depth_queue.push(currient_kd_tree_depth);
-				}
-			}
-			else{
-				if(currient_kd_tree_node->right_node != nullptr){
-					kd_tree_node_queue.push(currient_kd_tree_node->right_node);
-					kd_tree_depth_queue.push(currient_kd_tree_depth);
-				}
-			}	
-		}
+			),
+			std::make_pair(key, data)
+		);
 
-		kd_tree_node_queue.pop();
-		kd_tree_depth_queue.pop();
-	}
+		container->set_data(container_data);
+		db_manager->save_container(container.get());
 
-
-	std::vector<std::string> out;
-	for(size_t c = 0; c < nearest_containers.size(); ++c){
-		Container *container = ((DBManager*)db_manager)->get_container(nearest_containers[c]);
-		out.push_back(container->get_data());
-		delete container;
-	}
-
-	return out;
-}
-
-
-void KDTree::save(bsoncxx::v_noabi::builder::stream::key_context<bsoncxx::v_noabi::builder::stream::key_context<>>& document){}
-void KDTree::load(const bsoncxx::document::view& document_reader){}
-
-
-std::vector<std::string> KDTree::find_range(const std::vector<double>& container){
-
-	KDTreeNode *currient_kd_tree_node = root;
-	std::vector<std::string> nearest_containers;
-	size_t depth = 0;
-
-	auto best_metric = Metric()(container, load_key(root->containers[0]));
-	nearest_containers.push_back(root->containers[0]);
-
-	while(currient_kd_tree_node != nullptr){
-		for(size_t c = 0; c < currient_kd_tree_node->containers.size(); ++c){
-			auto buff_metric = Metric()(container, load_key(currient_kd_tree_node->containers[c]));
-
-			if(Cmp()(buff_metric, best_metric)){
-				best_metric = buff_metric;
-				nearest_containers.clear();
-				nearest_containers.push_back(currient_kd_tree_node->containers[c]);
-			}
-			else if(!Cmp()(best_metric, buff_metric)){
-				
-				nearest_containers.push_back(currient_kd_tree_node->containers[c]);
-			}
-		}
-
-		if(Cmp(depth)(load_key(currient_kd_tree_node->containers[0]), container)){
-			currient_kd_tree_node = currient_kd_tree_node->right_node;
-		}
-		else{
-			currient_kd_tree_node = currient_kd_tree_node->left_node;
-		}
-		++depth;
-	}
-
-	return nearest_containers;
-}
-
-
-std::vector<double> KDTree::load_key(const std::string &id){
-	Container *container = ((DBManager*)db_manager)->get_container(id);
-	std::vector<double> out = container->get_key();
-	delete container;
-	return(out);
-}
-
-
-KDTree::KDTreeNode::KDTreeNode(const std::string& container, const BaseDBManager *db_manager_):
-db_manager(db_manager_){
-	containers.push_back(container);
-}
-
-
-KDTree::KDTreeNode::KDTreeNode(const std::vector<std::string>& containers_, const BaseDBManager *db_manager_):
-containers(containers_), db_manager(db_manager_){}
-
-
-void KDTree::KDTreeNode::operator()(const std::string& container, const Cmp& cmp){
-	if(containers.size() < max_containers_count){
-		insert_sorted(containers, container, cmp);
-	}
-	else{
-		size_t median = containers.size() / 2;
-		std::vector<std::string> l_vector(containers.begin(), containers.begin() + median);
-		std::vector<std::string> r_vector(containers.begin() + median + 1, containers.end());
-
-		left_node = new KDTreeNode(l_vector, db_manager);
-		right_node = new KDTreeNode(r_vector, db_manager);
-
-		containers = std::vector<std::string>{containers[median]};
+		if(container_data.size() >= max_containers_count){
+			split_container(container->id);
+		}	
 	}
 }
 
-
-typename std::vector<std::string>::iterator
-KDTree::KDTreeNode::insert_sorted(std::vector<std::string> &containers, const std::string &container, const Cmp &cmp){
-	
-	struct LoadCmp{
-		Cmp cmp;
-		const BaseDBManager *db_manager;
-		
-		LoadCmp(const Cmp &cmp_, const BaseDBManager *db_manager_):cmp(cmp_), db_manager(db_manager_){}
-
-		bool operator()(const std::string &a, const std::string &b){
-
-			Container *a_container = ((DBManager*)db_manager)->get_container(a);
-			std::vector<double> key_a = a_container->get_key();
-			delete a_container;
-
-			Container *b_container = ((DBManager*)db_manager)->get_container(b);
-			std::vector<double> key_b = b_container->get_key();
-			delete b_container;
-
-			return(cmp(key_a, key_b));
-		}
-	};
-
-	return containers.insert( 
-		std::upper_bound(containers.begin(), containers.end(), container, LoadCmp(cmp, db_manager)),
-		container
+void KDTree::save(bsoncxx::builder::basic::sub_document &document){
+	document.append(
+		bsoncxx::builder::basic::kvp("root_container_id", root_container_id)
 	);
+}
+
+void KDTree::load(const bsoncxx::v_noabi::document::element& document_reader){
+	root_container_id = (std::string)document_reader["root_container_id"].get_utf8().value;
+	std::cout << "root_container_id" << root_container_id << "\n";
+}
+
+void KDTree::split_container(std::string container_id){
+	std::shared_ptr<Container> container((Container*)db_manager->get_container(container_id));
+	std::vector<std::pair<std::vector<double>, std::string>> container_data = container->get_data();
+
+	if(container_data.size() >= max_containers_count){
+		size_t median = container_data.size() / 2;
+
+		std::shared_ptr<Container> left_container((Container*)db_manager->get_free_container());
+		std::shared_ptr<Container> right_container((Container*)db_manager->get_free_container());
+
+		left_container->set_data({container_data.begin(), container_data.begin() + median});
+		right_container->set_data({container_data.begin() + median + 1, container_data.end()});
+		container->set_data({container_data[median]});
+
+		container->set_containers_id({left_container->id, right_container->id});
+
+		db_manager->save_container(container.get());
+		db_manager->save_container(left_container.get());
+		db_manager->save_container(right_container.get());
+	}
+}
+
+std::vector<std::string> KDTree::neighbor_search(const std::vector<double>& key, BaseComporator *cmp, BaseMetrificator *mth){
+
+	std::vector<std::string> nearest_containers_data;
+
+	if(root_container_id.empty()){
+		return nearest_containers_data;
+	}
+
+	std::pair<std::vector<std::string>, double> find_range_data = find_range(key, cmp, mth);
+	nearest_containers_data = find_range_data.first;
+	double best_metric = find_range_data.second;
+
+	if(nearest_containers_data.empty()){
+		return nearest_containers_data;
+	}
+
+	std::queue<std::string> containers_id_queue;
+	std::queue<size_t> depth_queue;
+
+	containers_id_queue.push(root_container_id);
+	depth_queue.push(0);
+
+	while(!containers_id_queue.empty()){
+
+		std::string currient_container_id = containers_id_queue.front();
+		std::shared_ptr<Container> currient_container((Container*)db_manager->get_container(currient_container_id));
+		size_t currient_depth = depth_queue.front();
+		cmp->set_depth(currient_depth);
+
+		for(auto &pair : currient_container->get_data()){
+			double buff_metric = (*mth)(pair.first, key);
+			if((*cmp)(buff_metric, best_metric)){
+				best_metric = buff_metric;
+				nearest_containers_data = {pair.second};
+			}
+			else if(!(*cmp)(best_metric, buff_metric)){
+				nearest_containers_data.push_back(pair.second);
+			}
+		}
+
+		if(!currient_container->get_containers_id().empty()){
+			if((*cmp)(key, currient_container->get_data()[0].first)){
+				if(!(*cmp)(key, currient_container->get_data()[0].first, best_metric)){
+
+					for(auto &id : currient_container->get_containers_id()){
+						containers_id_queue.push(id);
+						depth_queue.push(currient_depth);
+					}
+				}
+				else{
+					containers_id_queue.push(currient_container->get_containers_id()[0]);
+					depth_queue.push(currient_depth);
+				}
+			}
+			else{
+				if((*cmp)(key, currient_container->get_data()[0].first, -best_metric)){
+					for(auto &id : currient_container->get_containers_id()){
+						containers_id_queue.push(id);
+						depth_queue.push(currient_depth);
+					}
+				}
+				else{
+					containers_id_queue.push(currient_container->get_containers_id()[1]);
+					depth_queue.push(currient_depth);
+				}	
+			}
+		}
+
+		containers_id_queue.pop();
+		depth_queue.pop();
+	}
+
+	return nearest_containers_data;
+}
+
+std::pair<std::vector<std::string>, double> KDTree::find_range(const std::vector<double>& key, BaseComporator *cmp, BaseMetrificator *mth){
+
+	std::vector<std::string> nearest_containers_data;
+	size_t currient_depth = 0;
+
+	if(root_container_id.empty()){
+		return std::make_pair(nearest_containers_data, 0);
+	}
+
+	std::string container_id = root_container_id;
+	std::shared_ptr<Container> container((Container*)db_manager->get_container(container_id));
+
+	std::vector<std::pair<std::vector<double>, std::string>> container_data = container->get_data();
+	double best_metric = (*mth)(container_data[0].first, key);
+
+	while(!container->get_containers_id().empty()){
+
+		cmp->set_depth(currient_depth);
+		for(auto &pair : container_data){
+			double buff_metric = (*mth)(pair.first, key);
+			if((*cmp)(buff_metric, best_metric)){
+				best_metric = buff_metric;
+				nearest_containers_data = {pair.second};
+			}
+			else if(!(*cmp)(best_metric, buff_metric)){
+				nearest_containers_data.push_back(pair.second);
+			}
+		}
+
+		if((*cmp)(container->get_data()[0].first, key)){
+			container_id = container->get_containers_id()[0];
+		}
+		else{
+			container_id = container->get_containers_id()[1];
+		}
+
+		container = std::shared_ptr<Container>((Container*)db_manager->get_container(container_id));
+		container_data = container->get_data();
+		currient_depth++;
+	}
+
+	return std::make_pair(nearest_containers_data, best_metric);
 }
