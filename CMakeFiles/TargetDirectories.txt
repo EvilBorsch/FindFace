@@ -1,3 +1,0 @@
-/home/awerkiler/progs/Mail/old1/AdvancedC ++/Project/7/CMakeFiles/rebuild_cache.dir
-/home/awerkiler/progs/Mail/old1/AdvancedC ++/Project/7/CMakeFiles/KDDB.dir
-/home/awerkiler/progs/Mail/old1/AdvancedC ++/Project/7/CMakeFiles/edit_cache.dir
