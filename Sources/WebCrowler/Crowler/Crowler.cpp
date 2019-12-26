@@ -26,6 +26,8 @@ void Crowler::startCrowl() {
 void Crowler::stopCrowl() {
     thread_must_end = true;
     t->join();
+    delete t;
+    std::cerr<< "Crowler stoped";
 }
 
 void Crowler::crowl() {
@@ -96,4 +98,8 @@ std::vector<std::vector<double>> Crowler::getFacesVector(std::string link) {
         }
     }
     return faces;
+}
+
+Crowler::~Crowler() {
+    stopCrowl();
 }

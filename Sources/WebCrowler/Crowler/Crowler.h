@@ -13,10 +13,8 @@ public:
     void crowl();
     void stopCrowl();
     Crowler(std::shared_ptr<AbstractAPI> m_api, std::shared_ptr<AbstractIdListGeneratorStrategy> m_lg, DB* m_db);
-
-
-
     std::vector<std::vector<double>> getFacesVector(std::string link);
+    ~Crowler();
 
 
 };
