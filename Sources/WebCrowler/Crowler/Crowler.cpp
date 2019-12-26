@@ -3,8 +3,8 @@
 #include <iostream>
 #include <utility>
 #include <sstream>
-#include "Base/BaseComporator.h"
-#include "Base/BaseMetrificator.h"
+#include "DataBase/Base/BaseComporator.h"
+#include "DataBase/Base/BaseMetrificator.h"
 #include "PythonMagic.h"
 
 

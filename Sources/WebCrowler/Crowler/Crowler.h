@@ -1,7 +1,7 @@
 #include "WebCrowler/AbstractClasses/AbstractAPI.h"
 #include "WebCrowler/AbstractClasses/Abstract_id_list_generator_strategy.h"
 #include <thread>
-#include "KD/DB.h"
+#include "DataBase/KD/DB.h"
 class Crowler {
     std::shared_ptr<AbstractIdListGeneratorStrategy> lg;
     std::thread *t;

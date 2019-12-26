@@ -26,8 +26,8 @@ response NetService::request(url mUrl) {
         CURLcode res = curl_easy_perform(curl_handle);
         if (res != CURLE_OK) {
             std::cerr << "no Internet";
-            const int hour = 60 * 60;
-            sleep(hour);
+            const int tenSec = 10;
+            sleep(tenSec);
             request(mUrl);
         }
 
