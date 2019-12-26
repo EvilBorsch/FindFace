@@ -3,8 +3,9 @@
 //
 
 
-#include "/usr/local/Cellar/boost/1.71.0/include/boost/log/trivial.hpp"
+#include "boost/log/attributes.hpp"
+#include "boost/log/trivial.hpp"
 int main(){
-    BOOST_LOG_TRIVIAL(debug) << "Test log";
+    //BOOST_LOG_TRIVIAL(debug) << "Test log";
     return 0;
 }

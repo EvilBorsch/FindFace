@@ -1626,8 +1626,51 @@ CMakeFiles/FindFace.dir/Sources/Views/UserData/UserData.cpp.o
 CMakeFiles/FindFace.dir/Sources/Views/View/View.cpp.o
 CMakeFiles/FindFace.dir/Sources/main.cpp.o
  /Users/sergei/Documents/GitHub/FindFace/Sources/main.cpp
- /usr/local/Cellar/boost/1.71.0/include/boost/log/trivial.hpp
  /usr/local/include/boost/assert.hpp
+ /usr/local/include/boost/atomic/atomic.hpp
+ /usr/local/include/boost/atomic/atomic_flag.hpp
+ /usr/local/include/boost/atomic/capabilities.hpp
+ /usr/local/include/boost/atomic/detail/addressof.hpp
+ /usr/local/include/boost/atomic/detail/atomic_flag.hpp
+ /usr/local/include/boost/atomic/detail/atomic_template.hpp
+ /usr/local/include/boost/atomic/detail/bitwise_cast.hpp
+ /usr/local/include/boost/atomic/detail/bitwise_fp_cast.hpp
+ /usr/local/include/boost/atomic/detail/config.hpp
+ /usr/local/include/boost/atomic/detail/extra_fp_operations.hpp
+ /usr/local/include/boost/atomic/detail/extra_fp_operations_fwd.hpp
+ /usr/local/include/boost/atomic/detail/extra_fp_ops_emulated.hpp
+ /usr/local/include/boost/atomic/detail/extra_fp_ops_generic.hpp
+ /usr/local/include/boost/atomic/detail/extra_operations.hpp
+ /usr/local/include/boost/atomic/detail/extra_operations_fwd.hpp
+ /usr/local/include/boost/atomic/detail/extra_ops_emulated.hpp
+ /usr/local/include/boost/atomic/detail/extra_ops_generic.hpp
+ /usr/local/include/boost/atomic/detail/float_sizes.hpp
+ /usr/local/include/boost/atomic/detail/fp_operations.hpp
+ /usr/local/include/boost/atomic/detail/fp_operations_fwd.hpp
+ /usr/local/include/boost/atomic/detail/fp_ops_emulated.hpp
+ /usr/local/include/boost/atomic/detail/fp_ops_generic.hpp
+ /usr/local/include/boost/atomic/detail/int_sizes.hpp
+ /usr/local/include/boost/atomic/detail/integral_extend.hpp
+ /usr/local/include/boost/atomic/detail/link.hpp
+ /usr/local/include/boost/atomic/detail/lockpool.hpp
+ /usr/local/include/boost/atomic/detail/operations.hpp
+ /usr/local/include/boost/atomic/detail/operations_fwd.hpp
+ /usr/local/include/boost/atomic/detail/operations_lockfree.hpp
+ /usr/local/include/boost/atomic/detail/ops_emulated.hpp
+ /usr/local/include/boost/atomic/detail/platform.hpp
+ /usr/local/include/boost/atomic/detail/storage_type.hpp
+ /usr/local/include/boost/atomic/detail/string_ops.hpp
+ /usr/local/include/boost/atomic/detail/type_traits/conditional.hpp
+ /usr/local/include/boost/atomic/detail/type_traits/integral_constant.hpp
+ /usr/local/include/boost/atomic/detail/type_traits/is_floating_point.hpp
+ /usr/local/include/boost/atomic/detail/type_traits/is_function.hpp
+ /usr/local/include/boost/atomic/detail/type_traits/is_iec559.hpp
+ /usr/local/include/boost/atomic/detail/type_traits/is_integral.hpp
+ /usr/local/include/boost/atomic/detail/type_traits/is_signed.hpp
+ /usr/local/include/boost/atomic/detail/type_traits/is_trivially_default_constructible.hpp
+ /usr/local/include/boost/atomic/detail/type_traits/make_signed.hpp
+ /usr/local/include/boost/atomic/detail/type_traits/make_unsigned.hpp
+ /usr/local/include/boost/atomic/fences.hpp
  /usr/local/include/boost/bind/mem_fn.hpp
  /usr/local/include/boost/bind/mem_fn_cc.hpp
  /usr/local/include/boost/bind/mem_fn_template.hpp
@@ -1721,6 +1764,53 @@ CMakeFiles/FindFace.dir/Sources/main.cpp.o
  /usr/local/include/boost/core/uncaught_exceptions.hpp
  /usr/local/include/boost/cstdint.hpp
  /usr/local/include/boost/current_function.hpp
+ /usr/local/include/boost/date_time/adjust_functors.hpp
+ /usr/local/include/boost/date_time/c_time.hpp
+ /usr/local/include/boost/date_time/compiler_config.hpp
+ /usr/local/include/boost/date_time/constrained_value.hpp
+ /usr/local/include/boost/date_time/date.hpp
+ /usr/local/include/boost/date_time/date_clock_device.hpp
+ /usr/local/include/boost/date_time/date_defs.hpp
+ /usr/local/include/boost/date_time/date_duration.hpp
+ /usr/local/include/boost/date_time/date_duration_types.hpp
+ /usr/local/include/boost/date_time/date_generators.hpp
+ /usr/local/include/boost/date_time/date_iterator.hpp
+ /usr/local/include/boost/date_time/dst_rules.hpp
+ /usr/local/include/boost/date_time/gregorian/greg_calendar.hpp
+ /usr/local/include/boost/date_time/gregorian/greg_date.hpp
+ /usr/local/include/boost/date_time/gregorian/greg_day.hpp
+ /usr/local/include/boost/date_time/gregorian/greg_day_of_year.hpp
+ /usr/local/include/boost/date_time/gregorian/greg_duration.hpp
+ /usr/local/include/boost/date_time/gregorian/greg_duration_types.hpp
+ /usr/local/include/boost/date_time/gregorian/greg_month.hpp
+ /usr/local/include/boost/date_time/gregorian/greg_weekday.hpp
+ /usr/local/include/boost/date_time/gregorian/greg_year.hpp
+ /usr/local/include/boost/date_time/gregorian/greg_ymd.hpp
+ /usr/local/include/boost/date_time/gregorian/gregorian_types.hpp
+ /usr/local/include/boost/date_time/gregorian_calendar.hpp
+ /usr/local/include/boost/date_time/gregorian_calendar.ipp
+ /usr/local/include/boost/date_time/int_adapter.hpp
+ /usr/local/include/boost/date_time/locale_config.hpp
+ /usr/local/include/boost/date_time/microsec_time_clock.hpp
+ /usr/local/include/boost/date_time/period.hpp
+ /usr/local/include/boost/date_time/posix_time/date_duration_operators.hpp
+ /usr/local/include/boost/date_time/posix_time/posix_time_config.hpp
+ /usr/local/include/boost/date_time/posix_time/posix_time_duration.hpp
+ /usr/local/include/boost/date_time/posix_time/posix_time_system.hpp
+ /usr/local/include/boost/date_time/posix_time/posix_time_types.hpp
+ /usr/local/include/boost/date_time/posix_time/ptime.hpp
+ /usr/local/include/boost/date_time/posix_time/time_period.hpp
+ /usr/local/include/boost/date_time/special_defs.hpp
+ /usr/local/include/boost/date_time/time.hpp
+ /usr/local/include/boost/date_time/time_clock.hpp
+ /usr/local/include/boost/date_time/time_defs.hpp
+ /usr/local/include/boost/date_time/time_duration.hpp
+ /usr/local/include/boost/date_time/time_iterator.hpp
+ /usr/local/include/boost/date_time/time_resolution_traits.hpp
+ /usr/local/include/boost/date_time/time_system_counted.hpp
+ /usr/local/include/boost/date_time/time_system_split.hpp
+ /usr/local/include/boost/date_time/wrapping_int.hpp
+ /usr/local/include/boost/date_time/year_month_day.hpp
  /usr/local/include/boost/detail/atomic_count.hpp
  /usr/local/include/boost/detail/container_fwd.hpp
  /usr/local/include/boost/detail/workaround.hpp
@@ -1751,6 +1841,7 @@ CMakeFiles/FindFace.dir/Sources/main.cpp.o
  /usr/local/include/boost/integer_traits.hpp
  /usr/local/include/boost/limits.hpp
  /usr/local/include/boost/locale/utf.hpp
+ /usr/local/include/boost/log/attributes.hpp
  /usr/local/include/boost/log/attributes/attribute.hpp
  /usr/local/include/boost/log/attributes/attribute_cast.hpp
  /usr/local/include/boost/log/attributes/attribute_name.hpp
@@ -1758,7 +1849,18 @@ CMakeFiles/FindFace.dir/Sources/main.cpp.o
  /usr/local/include/boost/log/attributes/attribute_value.hpp
  /usr/local/include/boost/log/attributes/attribute_value_impl.hpp
  /usr/local/include/boost/log/attributes/attribute_value_set.hpp
+ /usr/local/include/boost/log/attributes/clock.hpp
+ /usr/local/include/boost/log/attributes/constant.hpp
+ /usr/local/include/boost/log/attributes/counter.hpp
+ /usr/local/include/boost/log/attributes/current_process_id.hpp
+ /usr/local/include/boost/log/attributes/current_process_name.hpp
+ /usr/local/include/boost/log/attributes/current_thread_id.hpp
  /usr/local/include/boost/log/attributes/fallback_policy_fwd.hpp
+ /usr/local/include/boost/log/attributes/function.hpp
+ /usr/local/include/boost/log/attributes/mutable_constant.hpp
+ /usr/local/include/boost/log/attributes/named_scope.hpp
+ /usr/local/include/boost/log/attributes/time_traits.hpp
+ /usr/local/include/boost/log/attributes/timer.hpp
  /usr/local/include/boost/log/attributes/value_extraction_fwd.hpp
  /usr/local/include/boost/log/attributes/value_visitation_fwd.hpp
  /usr/local/include/boost/log/core/core.hpp
@@ -1769,8 +1871,10 @@ CMakeFiles/FindFace.dir/Sources/main.cpp.o
  /usr/local/include/boost/log/detail/code_conversion.hpp
  /usr/local/include/boost/log/detail/config.hpp
  /usr/local/include/boost/log/detail/default_attribute_names.hpp
+ /usr/local/include/boost/log/detail/embedded_string_type.hpp
  /usr/local/include/boost/log/detail/footer.hpp
  /usr/local/include/boost/log/detail/header.hpp
+ /usr/local/include/boost/log/detail/id.hpp
  /usr/local/include/boost/log/detail/is_character_type.hpp
  /usr/local/include/boost/log/detail/light_function.hpp
  /usr/local/include/boost/log/detail/light_rw_mutex.hpp
@@ -1778,7 +1882,9 @@ CMakeFiles/FindFace.dir/Sources/main.cpp.o
  /usr/local/include/boost/log/detail/native_typeof.hpp
  /usr/local/include/boost/log/detail/parameter_tools.hpp
  /usr/local/include/boost/log/detail/pp_identity.hpp
+ /usr/local/include/boost/log/detail/process_id.hpp
  /usr/local/include/boost/log/detail/sfinae_tools.hpp
+ /usr/local/include/boost/log/detail/thread_id.hpp
  /usr/local/include/boost/log/detail/trivial_keyword.hpp
  /usr/local/include/boost/log/expressions/filter.hpp
  /usr/local/include/boost/log/expressions/keyword_fwd.hpp
@@ -1789,13 +1895,17 @@ CMakeFiles/FindFace.dir/Sources/main.cpp.o
  /usr/local/include/boost/log/sources/severity_feature.hpp
  /usr/local/include/boost/log/sources/severity_logger.hpp
  /usr/local/include/boost/log/sources/threading_models.hpp
+ /usr/local/include/boost/log/trivial.hpp
  /usr/local/include/boost/log/utility/formatting_ostream.hpp
  /usr/local/include/boost/log/utility/formatting_ostream_fwd.hpp
  /usr/local/include/boost/log/utility/strictest_lock.hpp
+ /usr/local/include/boost/log/utility/string_literal.hpp
  /usr/local/include/boost/log/utility/string_literal_fwd.hpp
  /usr/local/include/boost/log/utility/type_dispatch/type_dispatcher.hpp
  /usr/local/include/boost/log/utility/unique_identifier_name.hpp
+ /usr/local/include/boost/log/utility/unused_variable.hpp
  /usr/local/include/boost/mem_fn.hpp
+ /usr/local/include/boost/memory_order.hpp
  /usr/local/include/boost/move/core.hpp
  /usr/local/include/boost/move/detail/config_begin.hpp
  /usr/local/include/boost/move/detail/config_end.hpp
@@ -1840,6 +1950,7 @@ CMakeFiles/FindFace.dir/Sources/main.cpp.o
  /usr/local/include/boost/mpl/aux_/O1_size_impl.hpp
  /usr/local/include/boost/mpl/aux_/adl_barrier.hpp
  /usr/local/include/boost/mpl/aux_/arg_typedef.hpp
+ /usr/local/include/boost/mpl/aux_/arithmetic_op.hpp
  /usr/local/include/boost/mpl/aux_/arity.hpp
  /usr/local/include/boost/mpl/aux_/arity_spec.hpp
  /usr/local/include/boost/mpl/aux_/begin_end_impl.hpp
@@ -1892,6 +2003,7 @@ CMakeFiles/FindFace.dir/Sources/main.cpp.o
  /usr/local/include/boost/mpl/aux_/lambda_no_ctps.hpp
  /usr/local/include/boost/mpl/aux_/lambda_spec.hpp
  /usr/local/include/boost/mpl/aux_/lambda_support.hpp
+ /usr/local/include/boost/mpl/aux_/largest_int.hpp
  /usr/local/include/boost/mpl/aux_/logical_op.hpp
  /usr/local/include/boost/mpl/aux_/msvc_dtw.hpp
  /usr/local/include/boost/mpl/aux_/msvc_eti_base.hpp
@@ -1935,6 +2047,7 @@ CMakeFiles/FindFace.dir/Sources/main.cpp.o
  /usr/local/include/boost/mpl/deref.hpp
  /usr/local/include/boost/mpl/distance.hpp
  /usr/local/include/boost/mpl/distance_fwd.hpp
+ /usr/local/include/boost/mpl/equal_to.hpp
  /usr/local/include/boost/mpl/eval_if.hpp
  /usr/local/include/boost/mpl/find.hpp
  /usr/local/include/boost/mpl/find_if.hpp
@@ -1962,6 +2075,7 @@ CMakeFiles/FindFace.dir/Sources/main.cpp.o
  /usr/local/include/boost/mpl/logical.hpp
  /usr/local/include/boost/mpl/long.hpp
  /usr/local/include/boost/mpl/long_fwd.hpp
+ /usr/local/include/boost/mpl/multiplies.hpp
  /usr/local/include/boost/mpl/next.hpp
  /usr/local/include/boost/mpl/next_prior.hpp
  /usr/local/include/boost/mpl/not.hpp
@@ -1976,9 +2090,33 @@ CMakeFiles/FindFace.dir/Sources/main.cpp.o
  /usr/local/include/boost/mpl/sequence_tag.hpp
  /usr/local/include/boost/mpl/sequence_tag_fwd.hpp
  /usr/local/include/boost/mpl/tag.hpp
+ /usr/local/include/boost/mpl/times.hpp
  /usr/local/include/boost/mpl/value_type_fwd.hpp
  /usr/local/include/boost/mpl/void.hpp
  /usr/local/include/boost/mpl/void_fwd.hpp
+ /usr/local/include/boost/numeric/conversion/bounds.hpp
+ /usr/local/include/boost/numeric/conversion/cast.hpp
+ /usr/local/include/boost/numeric/conversion/conversion_traits.hpp
+ /usr/local/include/boost/numeric/conversion/converter.hpp
+ /usr/local/include/boost/numeric/conversion/converter_policies.hpp
+ /usr/local/include/boost/numeric/conversion/detail/bounds.hpp
+ /usr/local/include/boost/numeric/conversion/detail/conversion_traits.hpp
+ /usr/local/include/boost/numeric/conversion/detail/converter.hpp
+ /usr/local/include/boost/numeric/conversion/detail/int_float_mixture.hpp
+ /usr/local/include/boost/numeric/conversion/detail/is_subranged.hpp
+ /usr/local/include/boost/numeric/conversion/detail/meta.hpp
+ /usr/local/include/boost/numeric/conversion/detail/numeric_cast_traits.hpp
+ /usr/local/include/boost/numeric/conversion/detail/old_numeric_cast.hpp
+ /usr/local/include/boost/numeric/conversion/detail/preprocessed/numeric_cast_traits_common.hpp
+ /usr/local/include/boost/numeric/conversion/detail/preprocessed/numeric_cast_traits_long_long.hpp
+ /usr/local/include/boost/numeric/conversion/detail/sign_mixture.hpp
+ /usr/local/include/boost/numeric/conversion/detail/udt_builtin_mixture.hpp
+ /usr/local/include/boost/numeric/conversion/int_float_mixture_enum.hpp
+ /usr/local/include/boost/numeric/conversion/numeric_cast_traits.hpp
+ /usr/local/include/boost/numeric/conversion/sign_mixture_enum.hpp
+ /usr/local/include/boost/numeric/conversion/udt_builtin_mixture_enum.hpp
+ /usr/local/include/boost/operators.hpp
+ /usr/local/include/boost/operators_v1.hpp
  /usr/local/include/boost/parameter/aux_/arg_list.hpp
  /usr/local/include/boost/parameter/aux_/augment_predicate.hpp
  /usr/local/include/boost/parameter/aux_/default.hpp
@@ -2243,6 +2381,7 @@ CMakeFiles/FindFace.dir/Sources/main.cpp.o
  /usr/local/include/boost/preprocessor/variadic/elem.hpp
  /usr/local/include/boost/preprocessor/variadic/size.hpp
  /usr/local/include/boost/ref.hpp
+ /usr/local/include/boost/shared_ptr.hpp
  /usr/local/include/boost/smart_ptr/bad_weak_ptr.hpp
  /usr/local/include/boost/smart_ptr/detail/atomic_count.hpp
  /usr/local/include/boost/smart_ptr/detail/atomic_count_gcc.hpp
@@ -2307,6 +2446,7 @@ CMakeFiles/FindFace.dir/Sources/main.cpp.o
  /usr/local/include/boost/thread/detail/platform.hpp
  /usr/local/include/boost/thread/detail/thread_safety.hpp
  /usr/local/include/boost/throw_exception.hpp
+ /usr/local/include/boost/type.hpp
  /usr/local/include/boost/type_index.hpp
  /usr/local/include/boost/type_index/ctti_type_index.hpp
  /usr/local/include/boost/type_index/detail/compile_time_type_info.hpp
@@ -2336,6 +2476,7 @@ CMakeFiles/FindFace.dir/Sources/main.cpp.o
  /usr/local/include/boost/type_traits/detail/is_rvalue_reference_msvc10_fix.hpp
  /usr/local/include/boost/type_traits/detail/yes_no_type.hpp
  /usr/local/include/boost/type_traits/enable_if.hpp
+ /usr/local/include/boost/type_traits/has_trivial_constructor.hpp
  /usr/local/include/boost/type_traits/has_trivial_copy.hpp
  /usr/local/include/boost/type_traits/has_trivial_destructor.hpp
  /usr/local/include/boost/type_traits/integral_constant.hpp
@@ -2374,6 +2515,7 @@ CMakeFiles/FindFace.dir/Sources/main.cpp.o
  /usr/local/include/boost/type_traits/is_void.hpp
  /usr/local/include/boost/type_traits/is_volatile.hpp
  /usr/local/include/boost/type_traits/make_signed.hpp
+ /usr/local/include/boost/type_traits/make_unsigned.hpp
  /usr/local/include/boost/type_traits/remove_const.hpp
  /usr/local/include/boost/type_traits/remove_cv.hpp
  /usr/local/include/boost/type_traits/remove_reference.hpp
@@ -2387,3 +2529,4 @@ CMakeFiles/FindFace.dir/Sources/main.cpp.o
  /usr/local/include/boost/winapi/basic_types.hpp
  /usr/local/include/boost/winapi/config.hpp
  /usr/local/include/boost/winapi/srw_lock.hpp
+ /usr/local/include/boost/winapi/time.hpp

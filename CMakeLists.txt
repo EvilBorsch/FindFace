@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.14)
 project(FindFace)
 
-set(-DBOOST_LOG_DYN_LINK=/usr/local/Cellar/boost/1.71.0/include/boost/log/trivial.hpp)
+
 
 set(CMAKE_CXX_STANDARD 14)
 set(CMAKE_MODULE_PATH ${CMAKE_CURRENT_SOURCE_DIR}/Sources)
