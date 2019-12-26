@@ -1,10 +1,10 @@
 #include <utility>
 
-#include "BaseDB.h"
+#include "DataBase/Base/BaseDB.h"
 #include "KDTree.h"
 #include "SearchEngine.h"
-#include "BaseComporator.h" 
-#include "BaseDataStructure.h"
+#include "DataBase/Base/BaseComporator.h"
+#include "DataBase/Base/BaseDataStructure.h"
 #include "DBManager.h"
 #include "DB.h"
 
@@ -17,9 +17,10 @@ DB::DB(mongocxx::v_noabi::collection collection, size_t max_containers_count_, s
 		data_structure = (BaseDataStructure*)((DBManager*)db_manager)->get_free_kd_tree(((DBManager*)db_manager), max_containers_count);
 		kd_tree_key = data_structure->id;
 	}
-	else{
-		data_structure = (BaseDataStructure*)((DBManager*)db_manager)->get_kd_tree(kd_tree_key, ((DBManager*)db_manager), max_containers_count);
-	}
+	else {
+        data_structure = (BaseDataStructure *) ((DBManager *) db_manager)->get_kd_tree(
+                kd_tree_key, ((DBManager *) db_manager), max_containers_count);
+    }
 
 	search_engine = new SearchEngine((KDTree*)data_structure, (DBManager*)db_manager);
 }

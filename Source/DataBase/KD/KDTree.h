@@ -9,11 +9,11 @@
 
 #include <bsoncxx/builder/stream/document.hpp>
 
-#include "BaseDataStructure.h"
-#include "BaseDBManager.h" 
-#include "BaseContainer.h"
-#include "BaseComporator.h"
-#include "BaseMetrificator.h"
+#include "DataBase/Base/BaseDataStructure.h"
+#include "DataBase/Base/BaseDBManager.h"
+#include "DataBase/Base/BaseContainer.h"
+#include "DataBase/Base/BaseComporator.h"
+#include "DataBase/Base/BaseMetrificator.h"
 
 #include "DBManager.h"
 #include "Container.h"

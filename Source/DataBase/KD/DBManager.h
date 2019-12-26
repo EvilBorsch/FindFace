@@ -8,11 +8,11 @@
 #include <mongocxx/client.hpp>
 #include <mongocxx/instance.hpp>
 
-#include "BaseDBManager.h"
-#include "BaseContainer.h"
+#include "DataBase/Base/BaseDBManager.h"
+#include "DataBase/Base/BaseContainer.h"
 #include "Container.h"
-#include "BaseDBManager.h"
-#include "BaseDataStructure.h"
+#include "DataBase/Base/BaseDBManager.h"
+#include "DataBase/Base/BaseDataStructure.h"
 
 class DBManager: public BaseDBManager{
 public:
