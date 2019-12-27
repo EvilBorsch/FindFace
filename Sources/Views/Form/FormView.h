@@ -4,7 +4,7 @@
 
 #ifndef CPPROJECT_FORMVIEW_H
 #define CPPROJECT_FORMVIEW_H
-#include <Views/Container/ContainerView.h>
+#include <StaticGeneration/Views/Container/ContainerView.h>
 #pragma once
 class FormView : public ContainerView{
     std::string action;

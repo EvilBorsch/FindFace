@@ -5,11 +5,15 @@
 #ifndef CPPROJECT_PAGEMANAGER_H
 #define CPPROJECT_PAGEMANAGER_H
 
-#include <PageGenerator/PageGenerator.h>
+#include <StaticGeneration/PageGenerator/PageGenerator.h>
 #include <fstream>
 #include <thread>
 #include <iostream>
 #include <utility>
+#include <StaticGeneration/Views/UserData/UserData.h>
+#include <StaticGeneration/Page/Page.h>
+#include <vector>
+#include <StaticGeneration/PageData/PageData.h>
 
 class PageManager {
 private:

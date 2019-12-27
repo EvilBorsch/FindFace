@@ -5,9 +5,9 @@
 #ifndef CPPROJECT_PAGE_H
 #define CPPROJECT_PAGE_H
 
-#include <Views/View/View.h>
-#include <Views/SecondaryView/SecondaryView.h>
-#include <Views/TextView/TextView.h>
+#include <StaticGeneration/Views/View/View.h>
+#include <StaticGeneration/Views/SecondaryView/SecondaryView.h>
+#include <StaticGeneration/Views/TextView/TextView.h>
 #include <string.h>
 
 class Page {

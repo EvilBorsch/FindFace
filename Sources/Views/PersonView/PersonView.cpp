@@ -2,7 +2,7 @@
 // Created by Сергей Петренко on 2019-12-02.
 //
 
-#include <Views/SecondaryView/SecondaryView.h>
+#include <StaticGeneration/Views/SecondaryView/SecondaryView.h>
 #include "PersonView.h"
 
 PersonView::PersonView(UserData userData,int id){

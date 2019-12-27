@@ -6,10 +6,10 @@
 #define CPPROJECT_PAGEGENERATOR_H
 
 #include <math.h>
-#include <Page/Page.h>
-//#include <Views/PersonView/PersonView.h>
-//#include <Views/Form/FormView.h>
-#include <PageData/PageData.h>
+#include <StaticGeneration/Page/Page.h>
+#include <StaticGeneration/Views/PersonView/PersonView.h>
+#include <StaticGeneration/Views/Form/FormView.h>
+#include <StaticGeneration/PageData/PageData.h>
 
 
 
@@ -33,6 +33,10 @@ public:
     Page *generateSimilarUsersPage(std::vector<UserData *> userData, Organize o);
 
     Page *generateLinkPage(std::string url);
+    Page *generateLinkWithImgPage(std::string img, std::string url);
+    Page *generateMessagePage(std::string msg);
+
+    Page * generateManyLinkWithImgPage(std::string img, std::vector<std::string> urls);
 
 
 };

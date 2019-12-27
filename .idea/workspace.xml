@@ -18,7 +18,6 @@
   <component name="ChangeListManager">
     <list default="true" id="b93eabee-f619-4724-8675-9cd2ae40e4c5" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Sources/Google_tests/googletest/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Sources/Google_tests/googletest/CMakeLists.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Sources/Google_tests/googletest/googlemock/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Sources/Google_tests/googletest/googlemock/CMakeLists.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Sources/Google_tests/googletest/googlemock/test/gmock_test_utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/Sources/Google_tests/googletest/googlemock/test/gmock_test_utils.py" afterDir="false" />
@@ -26,18 +25,7 @@
       <change beforePath="$PROJECT_DIR$/Sources/Google_tests/googletest/googletest/test/gtest_xml_outfiles_test.py" beforeDir="false" afterPath="$PROJECT_DIR$/Sources/Google_tests/googletest/googletest/test/gtest_xml_outfiles_test.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Sources/Google_tests/googletest/googletest/test/gtest_xml_output_unittest.py" beforeDir="false" afterPath="$PROJECT_DIR$/Sources/Google_tests/googletest/googletest/test/gtest_xml_output_unittest.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Sources/Google_tests/googletest/googletest/test/gtest_xml_test_utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/Sources/Google_tests/googletest/googletest/test/gtest_xml_test_utils.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Sources/PageManager/PageManager.h" beforeDir="false" afterPath="$PROJECT_DIR$/Sources/PageManager/PageManager.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Sources/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Sources/main.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeCache.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeCache.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/FindFace.dir/CXX.includecache" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/FindFace.dir/CXX.includecache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/FindFace.dir/Sources/PageGenerator/PageGenerator.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/FindFace.dir/Sources/PageGenerator/PageGenerator.cpp.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/FindFace.dir/Sources/Views/TableView/TableView.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/FindFace.dir/Sources/Views/TableView/TableView.cpp.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/FindFace.dir/Sources/main.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/FindFace.dir/Sources/main.cpp.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/FindFace.dir/depend.internal" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/FindFace.dir/depend.internal" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/FindFace.dir/depend.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/FindFace.dir/depend.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Progress/1" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Progress/17" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Progress/count.txt" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -196,7 +184,7 @@
       <option name="presentableId" value="Default" />
       <updated>1576431208104</updated>
       <workItem from="1576431209950" duration="1261000" />
-      <workItem from="1577080761503" duration="28804000" />
+      <workItem from="1577080761503" duration="30334000" />
     </task>
     <servers />
   </component>

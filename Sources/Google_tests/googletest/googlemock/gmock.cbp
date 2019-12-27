@@ -1,0 +1,739 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="gmock"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="clang"/>
+		<Option virtualFolders="CMake Files\;CMake Files\..\;CMake Files\..\..\;CMake Files\..\..\..\;CMake Files\..\..\..\..\;CMake Files\..\..\..\..\usr\;CMake Files\..\..\..\..\usr\local\;CMake Files\..\..\..\..\usr\local\lib\;CMake Files\..\..\..\..\usr\local\lib\cmake\;CMake Files\..\..\..\..\usr\local\lib\cmake\libmongocxx-3.4.0\;CMake Files\..\..\..\..\usr\local\lib\cmake\libbsoncxx-3.4.0\;CMake Files\..\..\..\..\usr\local\lib\cmake\Boost-1.71.0\;CMake Files\..\..\..\..\usr\local\lib\cmake\boost_headers-1.71.0\;CMake Files\Sources\;CMake Files\Sources\StaticGeneration\;CMake Files\Sources\StaticGeneration\Google_tests\;CMake Files\Sources\StaticGeneration\Google_tests\googletest\;CMake Files\Sources\StaticGeneration\Google_tests\googletest\googlemock\;CMake Files\Sources\StaticGeneration\Google_tests\googletest\googlemock\cmake\;CMake Files\Sources\StaticGeneration\Google_tests\googletest\googletest\;CMake Files\Sources\StaticGeneration\Google_tests\googletest\googletest\cmake\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="/Users/sergei/Documents/CPProject — копия 4/Sources/StaticGeneration/Google_tests/googletest/googlemock"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/sergei/Documents/CPProject —\ копия\ 4/Sources/StaticGeneration/Google_tests/googletest/googlemock/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/sergei/Documents/CPProject —\ копия\ 4/Sources/StaticGeneration/Google_tests/googletest/googlemock/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/sergei/Documents/CPProject —\ копия\ 4/Sources/StaticGeneration/Google_tests/googletest/googlemock/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/sergei/Documents/CPProject —\ копия\ 4/Sources/StaticGeneration/Google_tests/googletest/googlemock/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="gmock">
+				<Option output="/Users/sergei/Documents/CPProject — копия 4/lib/libgmockd.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/sergei/Documents/CPProject — копия 4/Sources/StaticGeneration/Google_tests/googletest/googlemock"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="clang"/>
+				<Compiler>
+					<Add directory="/usr/local/include/mongocxx/v_noabi"/>
+					<Add directory="/usr/local/include/bsoncxx/v_noabi"/>
+					<Add directory="/usr/local/include/libmongoc-1.0"/>
+					<Add directory="/usr/local/include/libbson-1.0"/>
+					<Add directory="/usr/local/lib"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/StaticGeneration/Views"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/StaticGeneration/DataBase"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/StaticGeneration/PageData"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/StaticGeneration/Page"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/StaticGeneration/PageGenerator"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/StaticGeneration/PageManager"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/StaticGeneration/HttpResponse"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/StaticGeneration/HttpRequest"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/StaticGeneration/LRU"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/StaticGeneration/Server"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/StaticGeneration/Views/SecondaryView/SecondaryView.cpp"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/StaticGeneration/Views/UserData/UserData.cpp"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/StaticGeneration/Views/Container/ContainerView.cpp"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/StaticGeneration/Views/Cell/CellView.cpp"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/StaticGeneration/Views/Row/RowView.cpp"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/StaticGeneration/Views/ImageView/ImageView.cpp"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/StaticGeneration/Views/TableView/TableView.cpp"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/StaticGeneration/Views/TextView/TextView.cpp"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/StaticGeneration/Views/View/View.cpp"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/StaticGeneration/Views/PersonView/PersonView.cpp"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/StaticGeneration/Views/Form/FormView.cpp"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/StaticGeneration/Page/Page.cpp"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/StaticGeneration/PageGenerator/PageGenerator.cpp"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/StaticGeneration/PageManager/PageManager.cpp"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/StaticGeneration/PageData/PageData.cpp"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/WebServer/HttpRequest/HttpRequest.cpp"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/WebServer/HttpResponse/HttpResponse.cpp"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/WebServer/LRU/LRU.cpp"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/WebServer/Server/Server.cpp"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/WebCrowler/API/FacebookAPI.cpp"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/WebCrowler/API/OkAPI.cpp"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/WebCrowler/API/VkAPI.cpp"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/WebCrowler/Crowler/Crowler.cpp"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/WebCrowler/Id_list_generator_strategy/Facebook_id_list_generator_strategy.cpp"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/WebCrowler/Id_list_generator_strategy/Ok_id_list_generator_strategy.cpp"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/WebCrowler/Id_list_generator_strategy/Vk_id_list_generator_strategy.cpp"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/WebCrowler/NetService/NetService.cpp"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/WebCrowler/response/response.cpp"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/DataBase/Base/BaseContainer.cpp"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/DataBase/Base/BaseComporator.cpp"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/DataBase/Base/BaseMetrificator.cpp"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/DataBase/Base/BaseDataStructure.cpp"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/DataBase/Base/BaseSearchEngine.cpp"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/DataBase/KD/Container.cpp"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/DataBase/KD/DB.cpp"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/DataBase/KD/DBManager.cpp"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/DataBase/KD/KDTree.cpp"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/DataBase/KD/SearchEngine.cpp"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/PythonMagic.h"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/StaticGeneration/APIJsonSeializator/Serializator.cpp"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/StaticGeneration/APIJsonSeializator/Serializator.h"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/StaticGeneration/Google_tests/googletest/googlemock/include"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/StaticGeneration/Google_tests/googletest/googlemock"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/StaticGeneration/Google_tests/googletest/googletest/include"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/StaticGeneration/Google_tests/googletest/googletest"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include/c++/v1"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/lib/clang/10.0.1/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/sergei/Documents/CPProject —\ копия\ 4/Sources/StaticGeneration/Google_tests/googletest/googlemock/Makefile&quot;  VERBOSE=1 gmock"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/sergei/Documents/CPProject —\ копия\ 4/Sources/StaticGeneration/Google_tests/googletest/googlemock/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/sergei/Documents/CPProject —\ копия\ 4/Sources/StaticGeneration/Google_tests/googletest/googlemock/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/sergei/Documents/CPProject —\ копия\ 4/Sources/StaticGeneration/Google_tests/googletest/googlemock/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="gmock/fast">
+				<Option output="/Users/sergei/Documents/CPProject — копия 4/lib/libgmockd.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/sergei/Documents/CPProject — копия 4/Sources/StaticGeneration/Google_tests/googletest/googlemock"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="clang"/>
+				<Compiler>
+					<Add directory="/usr/local/include/mongocxx/v_noabi"/>
+					<Add directory="/usr/local/include/bsoncxx/v_noabi"/>
+					<Add directory="/usr/local/include/libmongoc-1.0"/>
+					<Add directory="/usr/local/include/libbson-1.0"/>
+					<Add directory="/usr/local/lib"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/StaticGeneration/Views"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/StaticGeneration/DataBase"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/StaticGeneration/PageData"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/StaticGeneration/Page"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/StaticGeneration/PageGenerator"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/StaticGeneration/PageManager"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/StaticGeneration/HttpResponse"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/StaticGeneration/HttpRequest"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/StaticGeneration/LRU"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/StaticGeneration/Server"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/StaticGeneration/Views/SecondaryView/SecondaryView.cpp"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/StaticGeneration/Views/UserData/UserData.cpp"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/StaticGeneration/Views/Container/ContainerView.cpp"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/StaticGeneration/Views/Cell/CellView.cpp"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/StaticGeneration/Views/Row/RowView.cpp"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/StaticGeneration/Views/ImageView/ImageView.cpp"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/StaticGeneration/Views/TableView/TableView.cpp"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/StaticGeneration/Views/TextView/TextView.cpp"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/StaticGeneration/Views/View/View.cpp"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/StaticGeneration/Views/PersonView/PersonView.cpp"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/StaticGeneration/Views/Form/FormView.cpp"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/StaticGeneration/Page/Page.cpp"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/StaticGeneration/PageGenerator/PageGenerator.cpp"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/StaticGeneration/PageManager/PageManager.cpp"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/StaticGeneration/PageData/PageData.cpp"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/WebServer/HttpRequest/HttpRequest.cpp"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/WebServer/HttpResponse/HttpResponse.cpp"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/WebServer/LRU/LRU.cpp"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/WebServer/Server/Server.cpp"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/WebCrowler/API/FacebookAPI.cpp"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/WebCrowler/API/OkAPI.cpp"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/WebCrowler/API/VkAPI.cpp"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/WebCrowler/Crowler/Crowler.cpp"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/WebCrowler/Id_list_generator_strategy/Facebook_id_list_generator_strategy.cpp"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/WebCrowler/Id_list_generator_strategy/Ok_id_list_generator_strategy.cpp"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/WebCrowler/Id_list_generator_strategy/Vk_id_list_generator_strategy.cpp"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/WebCrowler/NetService/NetService.cpp"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/WebCrowler/response/response.cpp"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/DataBase/Base/BaseContainer.cpp"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/DataBase/Base/BaseComporator.cpp"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/DataBase/Base/BaseMetrificator.cpp"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/DataBase/Base/BaseDataStructure.cpp"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/DataBase/Base/BaseSearchEngine.cpp"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/DataBase/KD/Container.cpp"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/DataBase/KD/DB.cpp"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/DataBase/KD/DBManager.cpp"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/DataBase/KD/KDTree.cpp"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/DataBase/KD/SearchEngine.cpp"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/PythonMagic.h"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/StaticGeneration/APIJsonSeializator/Serializator.cpp"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/StaticGeneration/APIJsonSeializator/Serializator.h"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/StaticGeneration/Google_tests/googletest/googlemock/include"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/StaticGeneration/Google_tests/googletest/googlemock"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/StaticGeneration/Google_tests/googletest/googletest/include"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/StaticGeneration/Google_tests/googletest/googletest"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include/c++/v1"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/lib/clang/10.0.1/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/sergei/Documents/CPProject —\ копия\ 4/Sources/StaticGeneration/Google_tests/googletest/googlemock/Makefile&quot;  VERBOSE=1 gmock/fast"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/sergei/Documents/CPProject —\ копия\ 4/Sources/StaticGeneration/Google_tests/googletest/googlemock/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/sergei/Documents/CPProject —\ копия\ 4/Sources/StaticGeneration/Google_tests/googletest/googlemock/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/sergei/Documents/CPProject —\ копия\ 4/Sources/StaticGeneration/Google_tests/googletest/googlemock/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="gmock_main">
+				<Option output="/Users/sergei/Documents/CPProject — копия 4/lib/libgmock_maind.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/sergei/Documents/CPProject — копия 4/Sources/StaticGeneration/Google_tests/googletest/googlemock"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="clang"/>
+				<Compiler>
+					<Add directory="/usr/local/include/mongocxx/v_noabi"/>
+					<Add directory="/usr/local/include/bsoncxx/v_noabi"/>
+					<Add directory="/usr/local/include/libmongoc-1.0"/>
+					<Add directory="/usr/local/include/libbson-1.0"/>
+					<Add directory="/usr/local/lib"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/StaticGeneration/Views"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/StaticGeneration/DataBase"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/StaticGeneration/PageData"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/StaticGeneration/Page"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/StaticGeneration/PageGenerator"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/StaticGeneration/PageManager"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/StaticGeneration/HttpResponse"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/StaticGeneration/HttpRequest"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/StaticGeneration/LRU"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/StaticGeneration/Server"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/StaticGeneration/Views/SecondaryView/SecondaryView.cpp"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/StaticGeneration/Views/UserData/UserData.cpp"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/StaticGeneration/Views/Container/ContainerView.cpp"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/StaticGeneration/Views/Cell/CellView.cpp"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/StaticGeneration/Views/Row/RowView.cpp"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/StaticGeneration/Views/ImageView/ImageView.cpp"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/StaticGeneration/Views/TableView/TableView.cpp"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/StaticGeneration/Views/TextView/TextView.cpp"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/StaticGeneration/Views/View/View.cpp"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/StaticGeneration/Views/PersonView/PersonView.cpp"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/StaticGeneration/Views/Form/FormView.cpp"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/StaticGeneration/Page/Page.cpp"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/StaticGeneration/PageGenerator/PageGenerator.cpp"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/StaticGeneration/PageManager/PageManager.cpp"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/StaticGeneration/PageData/PageData.cpp"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/WebServer/HttpRequest/HttpRequest.cpp"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/WebServer/HttpResponse/HttpResponse.cpp"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/WebServer/LRU/LRU.cpp"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/WebServer/Server/Server.cpp"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/WebCrowler/API/FacebookAPI.cpp"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/WebCrowler/API/OkAPI.cpp"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/WebCrowler/API/VkAPI.cpp"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/WebCrowler/Crowler/Crowler.cpp"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/WebCrowler/Id_list_generator_strategy/Facebook_id_list_generator_strategy.cpp"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/WebCrowler/Id_list_generator_strategy/Ok_id_list_generator_strategy.cpp"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/WebCrowler/Id_list_generator_strategy/Vk_id_list_generator_strategy.cpp"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/WebCrowler/NetService/NetService.cpp"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/WebCrowler/response/response.cpp"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/DataBase/Base/BaseContainer.cpp"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/DataBase/Base/BaseComporator.cpp"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/DataBase/Base/BaseMetrificator.cpp"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/DataBase/Base/BaseDataStructure.cpp"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/DataBase/Base/BaseSearchEngine.cpp"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/DataBase/KD/Container.cpp"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/DataBase/KD/DB.cpp"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/DataBase/KD/DBManager.cpp"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/DataBase/KD/KDTree.cpp"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/DataBase/KD/SearchEngine.cpp"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/PythonMagic.h"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/StaticGeneration/APIJsonSeializator/Serializator.cpp"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/StaticGeneration/APIJsonSeializator/Serializator.h"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/StaticGeneration/Google_tests/googletest/googlemock/include"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/StaticGeneration/Google_tests/googletest/googlemock"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/StaticGeneration/Google_tests/googletest/googletest/include"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/StaticGeneration/Google_tests/googletest/googletest"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include/c++/v1"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/lib/clang/10.0.1/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/sergei/Documents/CPProject —\ копия\ 4/Sources/StaticGeneration/Google_tests/googletest/googlemock/Makefile&quot;  VERBOSE=1 gmock_main"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/sergei/Documents/CPProject —\ копия\ 4/Sources/StaticGeneration/Google_tests/googletest/googlemock/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/sergei/Documents/CPProject —\ копия\ 4/Sources/StaticGeneration/Google_tests/googletest/googlemock/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/sergei/Documents/CPProject —\ копия\ 4/Sources/StaticGeneration/Google_tests/googletest/googlemock/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="gmock_main/fast">
+				<Option output="/Users/sergei/Documents/CPProject — копия 4/lib/libgmock_maind.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/sergei/Documents/CPProject — копия 4/Sources/StaticGeneration/Google_tests/googletest/googlemock"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="clang"/>
+				<Compiler>
+					<Add directory="/usr/local/include/mongocxx/v_noabi"/>
+					<Add directory="/usr/local/include/bsoncxx/v_noabi"/>
+					<Add directory="/usr/local/include/libmongoc-1.0"/>
+					<Add directory="/usr/local/include/libbson-1.0"/>
+					<Add directory="/usr/local/lib"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/StaticGeneration/Views"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/StaticGeneration/DataBase"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/StaticGeneration/PageData"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/StaticGeneration/Page"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/StaticGeneration/PageGenerator"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/StaticGeneration/PageManager"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/StaticGeneration/HttpResponse"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/StaticGeneration/HttpRequest"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/StaticGeneration/LRU"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/StaticGeneration/Server"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/StaticGeneration/Views/SecondaryView/SecondaryView.cpp"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/StaticGeneration/Views/UserData/UserData.cpp"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/StaticGeneration/Views/Container/ContainerView.cpp"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/StaticGeneration/Views/Cell/CellView.cpp"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/StaticGeneration/Views/Row/RowView.cpp"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/StaticGeneration/Views/ImageView/ImageView.cpp"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/StaticGeneration/Views/TableView/TableView.cpp"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/StaticGeneration/Views/TextView/TextView.cpp"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/StaticGeneration/Views/View/View.cpp"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/StaticGeneration/Views/PersonView/PersonView.cpp"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/StaticGeneration/Views/Form/FormView.cpp"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/StaticGeneration/Page/Page.cpp"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/StaticGeneration/PageGenerator/PageGenerator.cpp"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/StaticGeneration/PageManager/PageManager.cpp"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/StaticGeneration/PageData/PageData.cpp"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/WebServer/HttpRequest/HttpRequest.cpp"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/WebServer/HttpResponse/HttpResponse.cpp"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/WebServer/LRU/LRU.cpp"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/WebServer/Server/Server.cpp"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/WebCrowler/API/FacebookAPI.cpp"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/WebCrowler/API/OkAPI.cpp"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/WebCrowler/API/VkAPI.cpp"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/WebCrowler/Crowler/Crowler.cpp"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/WebCrowler/Id_list_generator_strategy/Facebook_id_list_generator_strategy.cpp"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/WebCrowler/Id_list_generator_strategy/Ok_id_list_generator_strategy.cpp"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/WebCrowler/Id_list_generator_strategy/Vk_id_list_generator_strategy.cpp"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/WebCrowler/NetService/NetService.cpp"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/WebCrowler/response/response.cpp"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/DataBase/Base/BaseContainer.cpp"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/DataBase/Base/BaseComporator.cpp"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/DataBase/Base/BaseMetrificator.cpp"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/DataBase/Base/BaseDataStructure.cpp"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/DataBase/Base/BaseSearchEngine.cpp"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/DataBase/KD/Container.cpp"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/DataBase/KD/DB.cpp"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/DataBase/KD/DBManager.cpp"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/DataBase/KD/KDTree.cpp"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/DataBase/KD/SearchEngine.cpp"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/PythonMagic.h"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/StaticGeneration/APIJsonSeializator/Serializator.cpp"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/StaticGeneration/APIJsonSeializator/Serializator.h"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/StaticGeneration/Google_tests/googletest/googlemock/include"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/StaticGeneration/Google_tests/googletest/googlemock"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/StaticGeneration/Google_tests/googletest/googletest/include"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/StaticGeneration/Google_tests/googletest/googletest"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include/c++/v1"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/lib/clang/10.0.1/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/sergei/Documents/CPProject —\ копия\ 4/Sources/StaticGeneration/Google_tests/googletest/googlemock/Makefile&quot;  VERBOSE=1 gmock_main/fast"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/sergei/Documents/CPProject —\ копия\ 4/Sources/StaticGeneration/Google_tests/googletest/googlemock/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/sergei/Documents/CPProject —\ копия\ 4/Sources/StaticGeneration/Google_tests/googletest/googlemock/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/sergei/Documents/CPProject —\ копия\ 4/Sources/StaticGeneration/Google_tests/googletest/googlemock/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="gtest_main">
+				<Option output="/Users/sergei/Documents/CPProject — копия 4/lib/libgtest_maind.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/sergei/Documents/CPProject — копия 4/Sources/StaticGeneration/Google_tests/googletest/googletest"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="clang"/>
+				<Compiler>
+					<Add directory="/usr/local/include/mongocxx/v_noabi"/>
+					<Add directory="/usr/local/include/bsoncxx/v_noabi"/>
+					<Add directory="/usr/local/include/libmongoc-1.0"/>
+					<Add directory="/usr/local/include/libbson-1.0"/>
+					<Add directory="/usr/local/lib"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/StaticGeneration/Views"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/StaticGeneration/DataBase"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/StaticGeneration/PageData"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/StaticGeneration/Page"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/StaticGeneration/PageGenerator"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/StaticGeneration/PageManager"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/StaticGeneration/HttpResponse"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/StaticGeneration/HttpRequest"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/StaticGeneration/LRU"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/StaticGeneration/Server"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/StaticGeneration/Views/SecondaryView/SecondaryView.cpp"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/StaticGeneration/Views/UserData/UserData.cpp"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/StaticGeneration/Views/Container/ContainerView.cpp"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/StaticGeneration/Views/Cell/CellView.cpp"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/StaticGeneration/Views/Row/RowView.cpp"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/StaticGeneration/Views/ImageView/ImageView.cpp"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/StaticGeneration/Views/TableView/TableView.cpp"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/StaticGeneration/Views/TextView/TextView.cpp"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/StaticGeneration/Views/View/View.cpp"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/StaticGeneration/Views/PersonView/PersonView.cpp"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/StaticGeneration/Views/Form/FormView.cpp"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/StaticGeneration/Page/Page.cpp"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/StaticGeneration/PageGenerator/PageGenerator.cpp"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/StaticGeneration/PageManager/PageManager.cpp"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/StaticGeneration/PageData/PageData.cpp"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/WebServer/HttpRequest/HttpRequest.cpp"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/WebServer/HttpResponse/HttpResponse.cpp"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/WebServer/LRU/LRU.cpp"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/WebServer/Server/Server.cpp"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/WebCrowler/API/FacebookAPI.cpp"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/WebCrowler/API/OkAPI.cpp"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/WebCrowler/API/VkAPI.cpp"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/WebCrowler/Crowler/Crowler.cpp"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/WebCrowler/Id_list_generator_strategy/Facebook_id_list_generator_strategy.cpp"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/WebCrowler/Id_list_generator_strategy/Ok_id_list_generator_strategy.cpp"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/WebCrowler/Id_list_generator_strategy/Vk_id_list_generator_strategy.cpp"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/WebCrowler/NetService/NetService.cpp"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/WebCrowler/response/response.cpp"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/DataBase/Base/BaseContainer.cpp"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/DataBase/Base/BaseComporator.cpp"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/DataBase/Base/BaseMetrificator.cpp"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/DataBase/Base/BaseDataStructure.cpp"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/DataBase/Base/BaseSearchEngine.cpp"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/DataBase/KD/Container.cpp"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/DataBase/KD/DB.cpp"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/DataBase/KD/DBManager.cpp"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/DataBase/KD/KDTree.cpp"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/DataBase/KD/SearchEngine.cpp"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/PythonMagic.h"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/StaticGeneration/APIJsonSeializator/Serializator.cpp"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/StaticGeneration/APIJsonSeializator/Serializator.h"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/StaticGeneration/Google_tests/googletest/googletest/include"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/StaticGeneration/Google_tests/googletest/googletest"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include/c++/v1"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/lib/clang/10.0.1/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/sergei/Documents/CPProject —\ копия\ 4/Sources/StaticGeneration/Google_tests/googletest/googletest/Makefile&quot;  VERBOSE=1 gtest_main"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/sergei/Documents/CPProject —\ копия\ 4/Sources/StaticGeneration/Google_tests/googletest/googletest/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/sergei/Documents/CPProject —\ копия\ 4/Sources/StaticGeneration/Google_tests/googletest/googletest/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/sergei/Documents/CPProject —\ копия\ 4/Sources/StaticGeneration/Google_tests/googletest/googletest/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="gtest_main/fast">
+				<Option output="/Users/sergei/Documents/CPProject — копия 4/lib/libgtest_maind.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/sergei/Documents/CPProject — копия 4/Sources/StaticGeneration/Google_tests/googletest/googletest"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="clang"/>
+				<Compiler>
+					<Add directory="/usr/local/include/mongocxx/v_noabi"/>
+					<Add directory="/usr/local/include/bsoncxx/v_noabi"/>
+					<Add directory="/usr/local/include/libmongoc-1.0"/>
+					<Add directory="/usr/local/include/libbson-1.0"/>
+					<Add directory="/usr/local/lib"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/StaticGeneration/Views"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/StaticGeneration/DataBase"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/StaticGeneration/PageData"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/StaticGeneration/Page"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/StaticGeneration/PageGenerator"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/StaticGeneration/PageManager"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/StaticGeneration/HttpResponse"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/StaticGeneration/HttpRequest"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/StaticGeneration/LRU"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/StaticGeneration/Server"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/StaticGeneration/Views/SecondaryView/SecondaryView.cpp"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/StaticGeneration/Views/UserData/UserData.cpp"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/StaticGeneration/Views/Container/ContainerView.cpp"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/StaticGeneration/Views/Cell/CellView.cpp"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/StaticGeneration/Views/Row/RowView.cpp"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/StaticGeneration/Views/ImageView/ImageView.cpp"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/StaticGeneration/Views/TableView/TableView.cpp"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/StaticGeneration/Views/TextView/TextView.cpp"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/StaticGeneration/Views/View/View.cpp"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/StaticGeneration/Views/PersonView/PersonView.cpp"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/StaticGeneration/Views/Form/FormView.cpp"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/StaticGeneration/Page/Page.cpp"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/StaticGeneration/PageGenerator/PageGenerator.cpp"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/StaticGeneration/PageManager/PageManager.cpp"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/StaticGeneration/PageData/PageData.cpp"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/WebServer/HttpRequest/HttpRequest.cpp"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/WebServer/HttpResponse/HttpResponse.cpp"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/WebServer/LRU/LRU.cpp"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/WebServer/Server/Server.cpp"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/WebCrowler/API/FacebookAPI.cpp"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/WebCrowler/API/OkAPI.cpp"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/WebCrowler/API/VkAPI.cpp"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/WebCrowler/Crowler/Crowler.cpp"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/WebCrowler/Id_list_generator_strategy/Facebook_id_list_generator_strategy.cpp"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/WebCrowler/Id_list_generator_strategy/Ok_id_list_generator_strategy.cpp"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/WebCrowler/Id_list_generator_strategy/Vk_id_list_generator_strategy.cpp"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/WebCrowler/NetService/NetService.cpp"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/WebCrowler/response/response.cpp"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/DataBase/Base/BaseContainer.cpp"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/DataBase/Base/BaseComporator.cpp"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/DataBase/Base/BaseMetrificator.cpp"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/DataBase/Base/BaseDataStructure.cpp"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/DataBase/Base/BaseSearchEngine.cpp"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/DataBase/KD/Container.cpp"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/DataBase/KD/DB.cpp"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/DataBase/KD/DBManager.cpp"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/DataBase/KD/KDTree.cpp"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/DataBase/KD/SearchEngine.cpp"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/PythonMagic.h"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/StaticGeneration/APIJsonSeializator/Serializator.cpp"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/StaticGeneration/APIJsonSeializator/Serializator.h"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/StaticGeneration/Google_tests/googletest/googletest/include"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/StaticGeneration/Google_tests/googletest/googletest"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include/c++/v1"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/lib/clang/10.0.1/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/sergei/Documents/CPProject —\ копия\ 4/Sources/StaticGeneration/Google_tests/googletest/googletest/Makefile&quot;  VERBOSE=1 gtest_main/fast"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/sergei/Documents/CPProject —\ копия\ 4/Sources/StaticGeneration/Google_tests/googletest/googletest/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/sergei/Documents/CPProject —\ копия\ 4/Sources/StaticGeneration/Google_tests/googletest/googletest/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/sergei/Documents/CPProject —\ копия\ 4/Sources/StaticGeneration/Google_tests/googletest/googletest/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="gtest">
+				<Option output="/Users/sergei/Documents/CPProject — копия 4/lib/libgtestd.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/sergei/Documents/CPProject — копия 4/Sources/StaticGeneration/Google_tests/googletest/googletest"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="clang"/>
+				<Compiler>
+					<Add directory="/usr/local/include/mongocxx/v_noabi"/>
+					<Add directory="/usr/local/include/bsoncxx/v_noabi"/>
+					<Add directory="/usr/local/include/libmongoc-1.0"/>
+					<Add directory="/usr/local/include/libbson-1.0"/>
+					<Add directory="/usr/local/lib"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/StaticGeneration/Views"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/StaticGeneration/DataBase"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/StaticGeneration/PageData"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/StaticGeneration/Page"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/StaticGeneration/PageGenerator"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/StaticGeneration/PageManager"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/StaticGeneration/HttpResponse"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/StaticGeneration/HttpRequest"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/StaticGeneration/LRU"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/StaticGeneration/Server"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/StaticGeneration/Views/SecondaryView/SecondaryView.cpp"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/StaticGeneration/Views/UserData/UserData.cpp"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/StaticGeneration/Views/Container/ContainerView.cpp"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/StaticGeneration/Views/Cell/CellView.cpp"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/StaticGeneration/Views/Row/RowView.cpp"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/StaticGeneration/Views/ImageView/ImageView.cpp"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/StaticGeneration/Views/TableView/TableView.cpp"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/StaticGeneration/Views/TextView/TextView.cpp"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/StaticGeneration/Views/View/View.cpp"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/StaticGeneration/Views/PersonView/PersonView.cpp"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/StaticGeneration/Views/Form/FormView.cpp"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/StaticGeneration/Page/Page.cpp"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/StaticGeneration/PageGenerator/PageGenerator.cpp"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/StaticGeneration/PageManager/PageManager.cpp"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/StaticGeneration/PageData/PageData.cpp"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/WebServer/HttpRequest/HttpRequest.cpp"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/WebServer/HttpResponse/HttpResponse.cpp"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/WebServer/LRU/LRU.cpp"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/WebServer/Server/Server.cpp"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/WebCrowler/API/FacebookAPI.cpp"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/WebCrowler/API/OkAPI.cpp"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/WebCrowler/API/VkAPI.cpp"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/WebCrowler/Crowler/Crowler.cpp"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/WebCrowler/Id_list_generator_strategy/Facebook_id_list_generator_strategy.cpp"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/WebCrowler/Id_list_generator_strategy/Ok_id_list_generator_strategy.cpp"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/WebCrowler/Id_list_generator_strategy/Vk_id_list_generator_strategy.cpp"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/WebCrowler/NetService/NetService.cpp"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/WebCrowler/response/response.cpp"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/DataBase/Base/BaseContainer.cpp"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/DataBase/Base/BaseComporator.cpp"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/DataBase/Base/BaseMetrificator.cpp"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/DataBase/Base/BaseDataStructure.cpp"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/DataBase/Base/BaseSearchEngine.cpp"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/DataBase/KD/Container.cpp"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/DataBase/KD/DB.cpp"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/DataBase/KD/DBManager.cpp"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/DataBase/KD/KDTree.cpp"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/DataBase/KD/SearchEngine.cpp"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/PythonMagic.h"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/StaticGeneration/APIJsonSeializator/Serializator.cpp"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/StaticGeneration/APIJsonSeializator/Serializator.h"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/StaticGeneration/Google_tests/googletest/googletest/include"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/StaticGeneration/Google_tests/googletest/googletest"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include/c++/v1"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/lib/clang/10.0.1/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/sergei/Documents/CPProject —\ копия\ 4/Sources/StaticGeneration/Google_tests/googletest/googletest/Makefile&quot;  VERBOSE=1 gtest"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/sergei/Documents/CPProject —\ копия\ 4/Sources/StaticGeneration/Google_tests/googletest/googletest/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/sergei/Documents/CPProject —\ копия\ 4/Sources/StaticGeneration/Google_tests/googletest/googletest/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/sergei/Documents/CPProject —\ копия\ 4/Sources/StaticGeneration/Google_tests/googletest/googletest/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="gtest/fast">
+				<Option output="/Users/sergei/Documents/CPProject — копия 4/lib/libgtestd.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/sergei/Documents/CPProject — копия 4/Sources/StaticGeneration/Google_tests/googletest/googletest"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="clang"/>
+				<Compiler>
+					<Add directory="/usr/local/include/mongocxx/v_noabi"/>
+					<Add directory="/usr/local/include/bsoncxx/v_noabi"/>
+					<Add directory="/usr/local/include/libmongoc-1.0"/>
+					<Add directory="/usr/local/include/libbson-1.0"/>
+					<Add directory="/usr/local/lib"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/StaticGeneration/Views"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/StaticGeneration/DataBase"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/StaticGeneration/PageData"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/StaticGeneration/Page"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/StaticGeneration/PageGenerator"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/StaticGeneration/PageManager"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/StaticGeneration/HttpResponse"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/StaticGeneration/HttpRequest"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/StaticGeneration/LRU"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/StaticGeneration/Server"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/StaticGeneration/Views/SecondaryView/SecondaryView.cpp"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/StaticGeneration/Views/UserData/UserData.cpp"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/StaticGeneration/Views/Container/ContainerView.cpp"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/StaticGeneration/Views/Cell/CellView.cpp"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/StaticGeneration/Views/Row/RowView.cpp"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/StaticGeneration/Views/ImageView/ImageView.cpp"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/StaticGeneration/Views/TableView/TableView.cpp"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/StaticGeneration/Views/TextView/TextView.cpp"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/StaticGeneration/Views/View/View.cpp"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/StaticGeneration/Views/PersonView/PersonView.cpp"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/StaticGeneration/Views/Form/FormView.cpp"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/StaticGeneration/Page/Page.cpp"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/StaticGeneration/PageGenerator/PageGenerator.cpp"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/StaticGeneration/PageManager/PageManager.cpp"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/StaticGeneration/PageData/PageData.cpp"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/WebServer/HttpRequest/HttpRequest.cpp"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/WebServer/HttpResponse/HttpResponse.cpp"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/WebServer/LRU/LRU.cpp"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/WebServer/Server/Server.cpp"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/WebCrowler/API/FacebookAPI.cpp"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/WebCrowler/API/OkAPI.cpp"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/WebCrowler/API/VkAPI.cpp"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/WebCrowler/Crowler/Crowler.cpp"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/WebCrowler/Id_list_generator_strategy/Facebook_id_list_generator_strategy.cpp"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/WebCrowler/Id_list_generator_strategy/Ok_id_list_generator_strategy.cpp"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/WebCrowler/Id_list_generator_strategy/Vk_id_list_generator_strategy.cpp"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/WebCrowler/NetService/NetService.cpp"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/WebCrowler/response/response.cpp"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/DataBase/Base/BaseContainer.cpp"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/DataBase/Base/BaseComporator.cpp"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/DataBase/Base/BaseMetrificator.cpp"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/DataBase/Base/BaseDataStructure.cpp"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/DataBase/Base/BaseSearchEngine.cpp"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/DataBase/KD/Container.cpp"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/DataBase/KD/DB.cpp"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/DataBase/KD/DBManager.cpp"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/DataBase/KD/KDTree.cpp"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/DataBase/KD/SearchEngine.cpp"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/PythonMagic.h"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/StaticGeneration/APIJsonSeializator/Serializator.cpp"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/StaticGeneration/APIJsonSeializator/Serializator.h"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/StaticGeneration/Google_tests/googletest/googletest/include"/>
+					<Add directory="/Users/sergei/Documents/CPProject — копия 4/Sources/StaticGeneration/Google_tests/googletest/googletest"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include/c++/v1"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/lib/clang/10.0.1/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/sergei/Documents/CPProject —\ копия\ 4/Sources/StaticGeneration/Google_tests/googletest/googletest/Makefile&quot;  VERBOSE=1 gtest/fast"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/sergei/Documents/CPProject —\ копия\ 4/Sources/StaticGeneration/Google_tests/googletest/googletest/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/sergei/Documents/CPProject —\ копия\ 4/Sources/StaticGeneration/Google_tests/googletest/googletest/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/sergei/Documents/CPProject —\ копия\ 4/Sources/StaticGeneration/Google_tests/googletest/googletest/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="/Users/sergei/Documents/CPProject — копия 4/Sources/StaticGeneration/Google_tests/googletest/googlemock/src/gmock-all.cc">
+			<Option target="gmock"/>
+		</Unit>
+		<Unit filename="/Users/sergei/Documents/CPProject — копия 4/Sources/StaticGeneration/Google_tests/googletest/googlemock/src/gmock_main.cc">
+			<Option target="gmock_main"/>
+		</Unit>
+		<Unit filename="/Users/sergei/Documents/CPProject — копия 4/Sources/StaticGeneration/Google_tests/googletest/googletest/src/gtest-all.cc">
+			<Option target="gtest"/>
+		</Unit>
+		<Unit filename="/Users/sergei/Documents/CPProject — копия 4/Sources/StaticGeneration/Google_tests/googletest/googletest/src/gtest_main.cc">
+			<Option target="gtest_main"/>
+		</Unit>
+		<Unit filename="/Users/sergei/Documents/CPProject — копия 4/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+		<Unit filename="/Users/sergei/Documents/CPProject — копия 4/../../../../usr/local/lib/cmake/libmongocxx-3.4.0/libmongocxx-config-version.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\local\lib\cmake\libmongocxx-3.4.0\"/>
+		</Unit>
+		<Unit filename="/Users/sergei/Documents/CPProject — копия 4/../../../../usr/local/lib/cmake/libmongocxx-3.4.0/libmongocxx-config.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\local\lib\cmake\libmongocxx-3.4.0\"/>
+		</Unit>
+		<Unit filename="/Users/sergei/Documents/CPProject — копия 4/../../../../usr/local/lib/cmake/libbsoncxx-3.4.0/libbsoncxx-config-version.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\local\lib\cmake\libbsoncxx-3.4.0\"/>
+		</Unit>
+		<Unit filename="/Users/sergei/Documents/CPProject — копия 4/../../../../usr/local/lib/cmake/libbsoncxx-3.4.0/libbsoncxx-config.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\local\lib\cmake\libbsoncxx-3.4.0\"/>
+		</Unit>
+		<Unit filename="/Users/sergei/Documents/CPProject — копия 4/../../../../usr/local/lib/cmake/Boost-1.71.0/BoostConfig.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\local\lib\cmake\Boost-1.71.0\"/>
+		</Unit>
+		<Unit filename="/Users/sergei/Documents/CPProject — копия 4/../../../../usr/local/lib/cmake/Boost-1.71.0/BoostConfigVersion.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\local\lib\cmake\Boost-1.71.0\"/>
+		</Unit>
+		<Unit filename="/Users/sergei/Documents/CPProject — копия 4/../../../../usr/local/lib/cmake/boost_headers-1.71.0/boost_headers-config-version.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\local\lib\cmake\boost_headers-1.71.0\"/>
+		</Unit>
+		<Unit filename="/Users/sergei/Documents/CPProject — копия 4/../../../../usr/local/lib/cmake/boost_headers-1.71.0/boost_headers-config.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\local\lib\cmake\boost_headers-1.71.0\"/>
+		</Unit>
+		<Unit filename="/Users/sergei/Documents/CPProject — копия 4/Sources/StaticGeneration/Google_tests/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\Sources\StaticGeneration\Google_tests\"/>
+		</Unit>
+		<Unit filename="/Users/sergei/Documents/CPProject — копия 4/Sources/StaticGeneration/Google_tests/googletest/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\Sources\StaticGeneration\Google_tests\googletest\"/>
+		</Unit>
+		<Unit filename="/Users/sergei/Documents/CPProject — копия 4/Sources/StaticGeneration/Google_tests/googletest/googlemock/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\Sources\StaticGeneration\Google_tests\googletest\googlemock\"/>
+		</Unit>
+		<Unit filename="/Users/sergei/Documents/CPProject — копия 4/Sources/StaticGeneration/Google_tests/googletest/googlemock/cmake/gmock.pc.in">
+			<Option virtualFolder="CMake Files\Sources\StaticGeneration\Google_tests\googletest\googlemock\cmake\"/>
+		</Unit>
+		<Unit filename="/Users/sergei/Documents/CPProject — копия 4/Sources/StaticGeneration/Google_tests/googletest/googlemock/cmake/gmock_main.pc.in">
+			<Option virtualFolder="CMake Files\Sources\StaticGeneration\Google_tests\googletest\googlemock\cmake\"/>
+		</Unit>
+		<Unit filename="/Users/sergei/Documents/CPProject — копия 4/Sources/StaticGeneration/Google_tests/googletest/googletest/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\Sources\StaticGeneration\Google_tests\googletest\googletest\"/>
+		</Unit>
+		<Unit filename="/Users/sergei/Documents/CPProject — копия 4/Sources/StaticGeneration/Google_tests/googletest/googletest/cmake/Config.cmake.in">
+			<Option virtualFolder="CMake Files\Sources\StaticGeneration\Google_tests\googletest\googletest\cmake\"/>
+		</Unit>
+		<Unit filename="/Users/sergei/Documents/CPProject — копия 4/Sources/StaticGeneration/Google_tests/googletest/googletest/cmake/gtest.pc.in">
+			<Option virtualFolder="CMake Files\Sources\StaticGeneration\Google_tests\googletest\googletest\cmake\"/>
+		</Unit>
+		<Unit filename="/Users/sergei/Documents/CPProject — копия 4/Sources/StaticGeneration/Google_tests/googletest/googletest/cmake/gtest_main.pc.in">
+			<Option virtualFolder="CMake Files\Sources\StaticGeneration\Google_tests\googletest\googletest\cmake\"/>
+		</Unit>
+		<Unit filename="/Users/sergei/Documents/CPProject — копия 4/Sources/StaticGeneration/Google_tests/googletest/googletest/cmake/internal_utils.cmake">
+			<Option virtualFolder="CMake Files\Sources\StaticGeneration\Google_tests\googletest\googletest\cmake\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>
