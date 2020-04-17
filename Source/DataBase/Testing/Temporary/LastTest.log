@@ -1,0 +1,162 @@
+Start testing: Dec 23 21:03 MSK
+----------------------------------------------------------
+1/5 Testing: runContainerTest
+1/5 Test: runContainerTest
+Command: "/home/awerkiler/progs/Mail/old1/AdvancedC ++/Project/11/bin/runContainerTest"
+Directory: /home/awerkiler/progs/Mail/old1/AdvancedC ++/Project/11
+"runContainerTest" start time: Dec 23 21:03 MSK
+Output:
+----------------------------------------------------------
+[==========] Running 4 tests from 1 test case.
+[----------] Global test environment set-up.
+[----------] 4 tests from ContainerTest
+[ RUN      ] ContainerTest.InitTest
+[       OK ] ContainerTest.InitTest (0 ms)
+[ RUN      ] ContainerTest.SetGetKeyTest
+[       OK ] ContainerTest.SetGetKeyTest (1 ms)
+[ RUN      ] ContainerTest.SetGetDataTest
+[       OK ] ContainerTest.SetGetDataTest (0 ms)
+[ RUN      ] ContainerTest.SaveLoadContainerTest
+[       OK ] ContainerTest.SaveLoadContainerTest (0 ms)
+[----------] 4 tests from ContainerTest (1 ms total)
+
+[----------] Global test environment tear-down
+[==========] 4 tests from 1 test case ran. (1 ms total)
+[  PASSED  ] 4 tests.
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"runContainerTest" end time: Dec 23 21:03 MSK
+"runContainerTest" time elapsed: 00:00:00
+----------------------------------------------------------
+
+2/5 Testing: runDBManagerTest
+2/5 Test: runDBManagerTest
+Command: "/home/awerkiler/progs/Mail/old1/AdvancedC ++/Project/11/bin/runDBManagerTest"
+Directory: /home/awerkiler/progs/Mail/old1/AdvancedC ++/Project/11
+"runDBManagerTest" start time: Dec 23 21:03 MSK
+Output:
+----------------------------------------------------------
+[==========] Running 4 tests from 2 test cases.
+[----------] Global test environment set-up.
+[----------] 1 test from DBManagerTest
+[ RUN      ] DBManagerTest.InitTest
+[       OK ] DBManagerTest.InitTest (0 ms)
+[----------] 1 test from DBManagerTest (0 ms total)
+
+[----------] 3 tests from TestDBManager
+[ RUN      ] TestDBManager.GetFreeContainerTest
+[       OK ] TestDBManager.GetFreeContainerTest (2 ms)
+[ RUN      ] TestDBManager.InvalidSaveLoadContainerTest
+[       OK ] TestDBManager.InvalidSaveLoadContainerTest (0 ms)
+[ RUN      ] TestDBManager.SaveLoadContainerTest
+[       OK ] TestDBManager.SaveLoadContainerTest (2 ms)
+[----------] 3 tests from TestDBManager (4 ms total)
+
+[----------] Global test environment tear-down
+[==========] 4 tests from 2 test cases ran. (4 ms total)
+[  PASSED  ] 4 tests.
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"runDBManagerTest" end time: Dec 23 21:03 MSK
+"runDBManagerTest" time elapsed: 00:00:00
+----------------------------------------------------------
+
+3/5 Testing: runKDTreeTest
+3/5 Test: runKDTreeTest
+Command: "/home/awerkiler/progs/Mail/old1/AdvancedC ++/Project/11/bin/runKDTreeTest"
+Directory: /home/awerkiler/progs/Mail/old1/AdvancedC ++/Project/11
+"runKDTreeTest" start time: Dec 23 21:03 MSK
+Output:
+----------------------------------------------------------
+[==========] Running 3 tests from 2 test cases.
+[----------] Global test environment set-up.
+[----------] 1 test from KDTreeTest
+[ RUN      ] KDTreeTest.InitTest
+[       OK ] KDTreeTest.InitTest (0 ms)
+[----------] 1 test from KDTreeTest (0 ms total)
+
+[----------] 2 tests from TestKDTree
+[ RUN      ] TestKDTree.AddTest
+[       OK ] TestKDTree.AddTest (746 ms)
+[ RUN      ] TestKDTree.NeighborSearch
+[       OK ] TestKDTree.NeighborSearch (3009 ms)
+[----------] 2 tests from TestKDTree (3755 ms total)
+
+[----------] Global test environment tear-down
+[==========] 3 tests from 2 test cases ran. (3755 ms total)
+[  PASSED  ] 3 tests.
+<end of output>
+Test time =   3.76 sec
+----------------------------------------------------------
+Test Passed.
+"runKDTreeTest" end time: Dec 23 21:04 MSK
+"runKDTreeTest" time elapsed: 00:00:03
+----------------------------------------------------------
+
+4/5 Testing: runSearchEngineTest
+4/5 Test: runSearchEngineTest
+Command: "/home/awerkiler/progs/Mail/old1/AdvancedC ++/Project/11/bin/runSearchEngineTest"
+Directory: /home/awerkiler/progs/Mail/old1/AdvancedC ++/Project/11
+"runSearchEngineTest" start time: Dec 23 21:04 MSK
+Output:
+----------------------------------------------------------
+[==========] Running 2 tests from 2 test cases.
+[----------] Global test environment set-up.
+[----------] 1 test from KDTreeTest
+[ RUN      ] KDTreeTest.InitTest
+[       OK ] KDTreeTest.InitTest (0 ms)
+[----------] 1 test from KDTreeTest (0 ms total)
+
+[----------] 1 test from TestSearchEngine
+[ RUN      ] TestSearchEngine.BestMatchTest
+[       OK ] TestSearchEngine.BestMatchTest (3048 ms)
+[----------] 1 test from TestSearchEngine (3048 ms total)
+
+[----------] Global test environment tear-down
+[==========] 2 tests from 2 test cases ran. (3048 ms total)
+[  PASSED  ] 2 tests.
+<end of output>
+Test time =   3.06 sec
+----------------------------------------------------------
+Test Passed.
+"runSearchEngineTest" end time: Dec 23 21:04 MSK
+"runSearchEngineTest" time elapsed: 00:00:03
+----------------------------------------------------------
+
+5/5 Testing: runDBTest
+5/5 Test: runDBTest
+Command: "/home/awerkiler/progs/Mail/old1/AdvancedC ++/Project/11/bin/runDBTest"
+Directory: /home/awerkiler/progs/Mail/old1/AdvancedC ++/Project/11
+"runDBTest" start time: Dec 23 21:04 MSK
+Output:
+----------------------------------------------------------
+[==========] Running 2 tests from 2 test cases.
+[----------] Global test environment set-up.
+[----------] 1 test from DBTest
+[ RUN      ] DBTest.InitTest
+[       OK ] DBTest.InitTest (2 ms)
+[----------] 1 test from DBTest (2 ms total)
+
+[----------] 1 test from TestDB
+[ RUN      ] TestDB.SaveLoadTest
+root_container_id5e010195e13ad9085c362ea4
+5e010195e13ad9085c362ea3
+[       OK ] TestDB.SaveLoadTest (5497 ms)
+[----------] 1 test from TestDB (5498 ms total)
+
+[----------] Global test environment tear-down
+[==========] 2 tests from 2 test cases ran. (5500 ms total)
+[  PASSED  ] 2 tests.
+<end of output>
+Test time =   5.51 sec
+----------------------------------------------------------
+Test Passed.
+"runDBTest" end time: Dec 23 21:04 MSK
+"runDBTest" time elapsed: 00:00:05
+----------------------------------------------------------
+
+End testing: Dec 23 21:04 MSK
