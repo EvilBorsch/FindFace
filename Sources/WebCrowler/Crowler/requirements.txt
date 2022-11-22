@@ -3,4 +3,4 @@ dlib==19.19.0
 face-recognition==1.2.3
 face-recognition-models==0.3.0
 numpy==1.17.4
-Pillow==6.2.1
+Pillow==9.3.0
